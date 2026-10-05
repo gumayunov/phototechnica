@@ -35,3 +35,7 @@
 .parts a{color:var(--ink)}
 .part{font:700 13px "Unbounded";letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:64px 0 0;padding-top:18px;border-top:2px solid var(--ink)}
 .part-lead{font-size:17px;color:var(--muted);margin:10px 0 -24px}
+.bkv{margin:20px 0}
+.bkv .seg{margin-bottom:10px}
+.bkv-img{width:100%;border-radius:12px;display:block;background:var(--soft)}
+.bkv-cap{font-weight:600;font-size:15px;margin-top:8px}

@@ -1,0 +1,57 @@
+<section id="bkt-types" data-folio-id="bkt-types">
+  <span class="sec-num">09</span>
+  <h2>Шесть видов брекетинга</h2>
+  <p>Брекетинг на X-S10 бывает шести видов, и работают они по-разному. В трёх камера снимает <b>несколько настоящих кадров</b> подряд, в трёх других делает <b>один снимок и сохраняет его в нескольких вариантах</b>.</p>
+  <div class="rule" data-folio-id="bkt-real-vs-copy">Между настоящими кадрами (экспозиция, динамический диапазон, фокус) проходит время, поэтому сцена должна стоять на месте, а камера — лучше на штативе. Варианты одного снимка (ISO, баланс белого, симуляция) годятся и для движущейся сцены.</div>
+
+  <h3>1. Экспозиция — AE BKT</h3>
+  <p>Камера снимает серию: один кадр «по норме», остальные темнее и светлее на выбранный шаг. На X-S10 в серии 2, 3, 5, 7 или 9 кадров, а шаг — от ⅓ до 3 ступеней. Можно выбрать порядок кадров и снимать всю серию очередью или по кадру на нажатие. Зачем: закат, окно, ночной город — сцены, которые не помещаются в <a href="{{url:photo-basics}}#dr">динамический диапазон</a> матрицы. Из такой серии потом собирают HDR.</p>
+  <figure class="bkv" data-folio-id="bkt-ae-viewer">
+    <div class="seg" role="group" aria-label="Кадры серии">
+      <button type="button" aria-pressed="true" data-src="img/arch-dark.jpg" data-alt="Очень тёмный кадр: видны только фонари" data-cap="−4,7 ступени: видны только фонари и купол">−4,7</button>
+      <button type="button" aria-pressed="false" data-src="img/arch-mid.jpg" data-alt="Тёмный кадр" data-cap="−1,8: светлое в норме, тени чёрные">−1,8</button>
+      <button type="button" aria-pressed="false" data-src="img/arch-bright.jpg" data-alt="Светлый кадр" data-cap="+1,5: тени видно, фонари выгорели">+1,5</button>
+      <button type="button" aria-pressed="false" data-src="img/arch-brightest.jpg" data-alt="Очень светлый кадр" data-cap="+4,1: всё светлое стало белым">+4,1</button>
+      <button type="button" aria-pressed="false" data-src="img/arch-hdr.jpg" data-alt="Склеенный HDR-снимок" data-cap="Склейка всех кадров (HDR): из каждого взято лучшее">HDR</button>
+    </div>
+    <img class="bkv-img" src="img/arch-dark.jpg" alt="Очень тёмный кадр: видны только фонари" loading="lazy">
+    <div class="bkv-cap">−4,7 ступени: видны только фонари и купол</div>
+    <figcaption>Серия брекетинга экспозиции: одна точка съёмки, разная яркость.{{cr:arch-dark.jpg}}</figcaption>
+  </figure>
+
+  <h3>2. Динамический диапазон — DR BKT</h3>
+  <p>Три кадра с настройками <b>DR100</b>, <b>DR200</b> и <b>DR400</b>. Чем больше число, тем бережнее камера обходится со светлыми местами: облака и небо не выгорают. ISO в этом режиме не опускается ниже 640. Зачем: проверить, сколько «запаса в светах» нужно сцене с ярким небом.</p>
+
+  <h3>3. Фокус — FOCUS BKT</h3>
+  <p>Серия, в которой с каждым кадром фокус сдвигается чуть дальше. В режиме <b>MANUAL</b> задаёшь число кадров, шаг сдвига и паузу между кадрами, в режиме <b>AUTO</b> показываешь камере ближнюю и дальнюю точки предмета, а остальное она рассчитывает сама. Нужны штатив и неподвижный предмет. Зачем: в макро резкая зона тоньше миллиметра — у мухи на одном кадре резкая голова, на другом спина. Программа на компьютере собирает из серии снимок, где резко всё.</p>
+  <figure class="bkv" data-folio-id="bkt-focus-viewer">
+    <div class="seg" role="group" aria-label="Кадры фокус-серии">
+      <button type="button" aria-pressed="true" data-src="img/focus-fly-1.jpg" data-alt="Муха на листе: резкая голова, спина размыта" data-cap="Кадр 1: резкие голова и глаза">Кадр 1</button>
+      <button type="button" aria-pressed="false" data-src="img/focus-fly-2.jpg" data-alt="Муха на листе: резкая спина, голова размыта" data-cap="Кадр 2: резкие спина и крылья">Кадр 2</button>
+      <button type="button" aria-pressed="false" data-src="img/focus-fly-stack.jpg" data-alt="Муха на листе: резко всё" data-cap="Склейка шести кадров: резко от глаз до крыльев">Склейка</button>
+    </div>
+    <img class="bkv-img" src="img/focus-fly-1.jpg" alt="Муха на листе: резкая голова, спина размыта" loading="lazy">
+    <div class="bkv-cap">Кадр 1: резкие голова и глаза</div>
+    <figcaption>Муха-тахина: два кадра из фокус-серии и итог склейки.{{cr:focus-fly-stack.jpg}}</figcaption>
+  </figure>
+
+  <h3>4. ISO — ISO BKT</h3>
+  <p>Один снимок, три файла: с текущим ISO и с ISO выше и ниже на ⅓, ⅔ или 1 ступень, то есть три яркости. Зачем: быстро получить несколько вариантов яркости даже для движущейся сцены — например, бегущей собаки на закате.</p>
+
+  <h3>5. Баланс белого — WHITE BALANCE BKT</h3>
+  <p>Один снимок, три файла: как есть, теплее и холоднее на 1, 2 или 3 шага точной настройки баланса белого. Зачем: при смешанном свете (лампа и окно, костёр, сумерки) трудно угадать, какой оттенок кожи и неба окажется естественным.</p>
+  <figure class="bkv" data-folio-id="bkt-wb-viewer">
+    <div class="seg" role="group" aria-label="Баланс белого">
+      <button type="button" aria-pressed="true" data-src="img/wb-girl-tungsten.jpg" data-alt="Портрет с синим оттенком" data-cap="Холоднее: всё уходит в синеву">Холоднее</button>
+      <button type="button" aria-pressed="false" data-src="img/wb-girl-neutral.jpg" data-alt="Портрет с естественными цветами" data-cap="Нейтрально: белое — белое">Нейтрально</button>
+      <button type="button" aria-pressed="false" data-src="img/wb-girl-cold.jpg" data-alt="Портрет с жёлтым оттенком" data-cap="Теплее: всё уходит в желтизну">Теплее</button>
+    </div>
+    <img class="bkv-img" src="img/wb-girl-tungsten.jpg" alt="Портрет с синим оттенком" loading="lazy">
+    <div class="bkv-cap">Холоднее: всё уходит в синеву</div>
+    <figcaption>Для наглядности разница здесь больше, чем шаг брекетинга X-S10.{{cr:wb-girl-neutral.jpg}}</figcaption>
+  </figure>
+
+  <h3>6. Симуляция плёнки — FILM SIMULATION BKT</h3>
+  <p>Один снимок, три файла в трёх симуляциях, которые выбираешь в меню <b>FILM SIMULATION BKT</b>. Зачем: не решать на месте, Classic Chrome или Velvia, а сравнить дома. Как разные симуляции меняют один и тот же кадр — в <a href="#compare">сравнении</a> в первой части справочника.</p>
+</section>
+

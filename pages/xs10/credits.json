@@ -334,5 +334,82 @@
   "license": "CC BY 2.0",
   "artist": "Kristoffer Trolle",
   "author": "Kristoffer Trolle"
+ },
+ "arch-dark.jpg": {
+  "title": "StLouisArchMultExpEV-4.72.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:StLouisArchMultExpEV-4.72.JPG",
+  "license": "CC BY-SA 3.0",
+  "artist": "Kevin McCoy",
+  "author": "Kevin McCoy"
+ },
+ "arch-mid.jpg": {
+  "title": "StLouisArchMultExpEV-1.82.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:StLouisArchMultExpEV-1.82.JPG",
+  "license": "CC BY-SA 3.0",
+  "artist": "Kevin McCoy",
+  "author": "Kevin McCoy"
+ },
+ "arch-bright.jpg": {
+  "title": "StLouisArchMultExpEV+1.51.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:StLouisArchMultExpEV%2B1.51.JPG",
+  "license": "CC BY-SA 3.0",
+  "artist": "Kevin McCoy",
+  "author": "Kevin McCoy"
+ },
+ "arch-brightest.jpg": {
+  "title": "StLouisArchMultExpEV+4.09.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:StLouisArchMultExpEV%2B4.09.JPG",
+  "license": "CC BY-SA 3.0",
+  "artist": "Kevin McCoy",
+  "author": "Kevin McCoy"
+ },
+ "arch-hdr.jpg": {
+  "title": "StLouisArchMultExpToneMapped.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:StLouisArchMultExpToneMapped.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "StLouisArchMultExpEV-4.72.JPG: Kevin McCoy",
+  "author": "Kevin McCoy"
+ },
+ "wb-girl-tungsten.jpg": {
+  "title": "Wb girl tungsten.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Wb_girl_tungsten.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Alex1ruff",
+  "author": "Alex1ruff"
+ },
+ "wb-girl-neutral.jpg": {
+  "title": "Wb girl neutral.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Wb_girl_neutral.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Alex1ruff",
+  "author": "Alex1ruff"
+ },
+ "wb-girl-cold.jpg": {
+  "title": "Wb girl cold.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Wb_girl_cold.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Alex1ruff",
+  "author": "Alex1ruff"
+ },
+ "focus-fly-1.jpg": {
+  "title": "Focus stacking Tachinid fly.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Focus_stacking_Tachinid_fly.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Muhammad Mahdi Karim",
+  "author": "Muhammad Mahdi Karim"
+ },
+ "focus-fly-2.jpg": {
+  "title": "Focus stacking Tachinid fly.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Focus_stacking_Tachinid_fly.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Muhammad Mahdi Karim",
+  "author": "Muhammad Mahdi Karim"
+ },
+ "focus-fly-stack.jpg": {
+  "title": "Focus stacking Tachinid fly.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Focus_stacking_Tachinid_fly.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Muhammad Mahdi Karim",
+  "author": "Muhammad Mahdi Karim"
  }
 }
