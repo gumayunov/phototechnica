@@ -49,3 +49,39 @@ class PublishTest(TmpRepo):
         with self.assertRaisesRegex(PublishError, 'проверка не прошла'):
             publish('demo', self.root, folio)
         self.assertFalse(self.log.exists())
+
+    ORIG = {'title': 'Демо', 'folio': 'me/demo-x1', 'version': 2}
+
+    def test_no_json_line(self):
+        folio = self.fake('echo "готово, но без json"')
+        with self.assertRaisesRegex(PublishError, 'folio не вернул JSON(.|\n)*готово, но без json'):
+            publish('demo', self.root, folio)
+        self.assertEqual(self.meta(), self.ORIG)
+
+    def test_malformed_json_line(self):
+        folio = self.fake('echo \'{"id": broken\'')
+        with self.assertRaisesRegex(PublishError, 'могла дойти(.|\n)*broken(.|\n)*folio info me/demo-x1(.|\n)*page.json'):
+            publish('demo', self.root, folio)
+        self.assertEqual(self.meta(), self.ORIG)
+
+    def test_json_missing_version(self):
+        folio = self.fake('echo \'{"id":"me/demo-x1"}\'')
+        with self.assertRaisesRegex(PublishError, 'могла дойти(.|\n)*"id":"me/demo-x1"(.|\n)*page.json'):
+            publish('demo', self.root, folio)
+        self.assertEqual(self.meta(), self.ORIG)
+
+    def test_missing_binary(self):
+        path = str(self.root / 'no-such-folio')
+        with self.assertRaisesRegex(PublishError, 'no-such-folio(.|\n)*PT_FOLIO'):
+            publish('demo', self.root, path)
+        self.assertEqual(self.meta(), self.ORIG)
+
+    def test_other_failure_has_message_without_409_hint(self):
+        folio = self.fake('echo "folio: HTTP 500: boom" >&2\necho "partial out"\nexit 1')
+        with self.assertRaises(PublishError) as cm:
+            publish('demo', self.root, folio)
+        msg = str(cm.exception)
+        self.assertIn('HTTP 500: boom', msg)
+        self.assertIn('partial out', msg)
+        self.assertNotIn('folio info', msg)
+        self.assertEqual(self.meta(), self.ORIG)

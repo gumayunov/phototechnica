@@ -4,7 +4,7 @@ import os
 import subprocess
 from pathlib import Path
 
-from .build import ROOT, BuildError, Page, build_page
+from .build import ROOT, Page, build_page
 from .check import check_page, errors
 
 FOLIO_BIN = os.environ.get('PT_FOLIO', str(Path.home() / '.claude/skills/fc-folio/scripts/folio'))
@@ -28,18 +28,30 @@ def publish(name, root=ROOT, folio_bin=None):
             cmd += ['--base', str(page.meta['version'])]
     else:
         cmd = [folio_bin, 'publish', str(index.parent), '--title', page.meta['title']]
-    res = subprocess.run(cmd, capture_output=True, text=True)
+    try:
+        res = subprocess.run(cmd, capture_output=True, text=True)
+    except OSError as e:
+        raise PublishError(f'не удалось запустить folio CLI {folio_bin}: {e}. '
+                           'Путь задаётся переменной PT_FOLIO.') from e
+    fid = page.meta.get('folio')
     if res.returncode != 0:
-        msg = (res.stderr or res.stdout).strip()
+        msg = '\n'.join(s.strip() for s in (res.stderr, res.stdout) if s.strip())
         if 'HTTP 409' in msg:
-            msg += ('\nНа folio есть версия новее page.json: посмотреть `folio info '
-                    f'{page.meta.get("folio")}`, слить правки и обновить "version" в page.json.')
+            msg += ('\nНа folio есть версия новее page.json: ' + (f'посмотреть `folio info {fid}`, ' if fid else '')
+                    + 'слить правки и обновить "version" в page.json.')
         raise PublishError(msg)
     line = next((l for l in reversed(res.stdout.splitlines()) if l.startswith('{')), None)
     if line is None:
         raise PublishError(f'folio не вернул JSON: {res.stdout.strip()}')
-    info = json.loads(line)
-    page.meta['folio'], page.meta['version'] = info['id'], info['version']
+    try:
+        info = json.loads(line)
+        new_id, new_version = info['id'], info['version']
+    except (ValueError, KeyError, TypeError) as e:
+        raise PublishError('Загрузка могла дойти до folio, но ответ не разобран '
+                           f'({type(e).__name__}: {e}). Ответ folio:\n{res.stdout.strip()}\n'
+                           + (f'Проверьте `folio info {fid}` и ' if fid else 'Проверьте folio и ')
+                           + f'впишите "version" в pages/{name}/page.json вручную.') from e
+    page.meta['folio'], page.meta['version'] = new_id, new_version
     (page.dir / 'page.json').write_text(json.dumps(page.meta, ensure_ascii=False, indent=2) + '\n',
                                         encoding='utf-8')
     return info
