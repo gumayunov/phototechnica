@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+"""phototechnica: сборка, проверка и публикация учебных страниц. ./pt --help"""
+import sys
+
+sys.dont_write_bytecode = True
+from phototechnica.cli import main  # noqa: E402
+
+sys.exit(main(sys.argv[1:]))
