@@ -4,8 +4,11 @@
 
 | Страница | Что внутри |
 |---|---|
-| [Основы фотографии](https://folio.fold-core.ru/a/bernhard/osnovy-fotografii-iso-f-vyderzhka-fokusn-fe0kh3se/) | диафрагма, выдержка, ISO, фокусировка, фокусное расстояние, динамический диапазон; схемы и симуляторы |
-| [Симуляции плёнки Fujifilm X-S10](https://folio.fold-core.ru/a/bernhard/simulyatsii-plenki-fujifilm-x-s10-kejiswf8/) | как выглядят симуляции, для каких сцен подходят, рецепты |
+| [Основы фотографии](https://folio.fold-core.ru/a/bernhard/osnovy-fotografii-iso-f-vyderzhka-fokusn-fe0kh3se/) | диафрагма, выдержка, ISO, режимы P/A/S/M, фокусировка, фокусное расстояние, динамический диапазон; схемы и симуляторы |
+| [Справочник Fujifilm X-S10](https://folio.fold-core.ru/a/bernhard/simulyatsii-plenki-fujifilm-x-s10-kejiswf8/) | симуляции плёнки, брекетинг, объективы для X-S10 |
+| [Как устроен объектив](https://folio.fold-core.ru/a/bernhard/kak-ustroen-obektiv-t5j4039s/) | фокус и фокусное расстояние, фокус на бесконечность, устройство объектива |
+| [Как работает автофокус](https://folio.fold-core.ru/a/bernhard/kak-rabotaet-avtofokus-pobrei3a/) | контрастный, фазовый, гибридный и активный автофокус |
+| [Перспектива и портрет](https://folio.fold-core.ru/a/bernhard/perspektiva-i-portret-g8b1voja/) | почему перспективу меняет расстояние, «сжатие» фона, портрет вплотную |
 
 Страница собирается в один `index.html` с инлайновыми SVG и JS и папкой `img/`.
 Нужен только Python 3.11+, сторонних зависимостей нет.
