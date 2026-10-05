@@ -59,10 +59,31 @@ class CheckTest(TmpRepo):
         self.write('pages/demo/img/unused.jpg', 'x')
         self.write('pages/demo/img/zoom-1.jpg', 'x')
         self.section('<p><img src="img/used.jpg" alt="u"></p>\n')
-        self.page('demo', {}, meta={'title': 'Демо', 'folio': '', 'version': 0, 'dynamic_img': ['zoom-*.jpg']})
+        cr = {'title': 't', 'page': 'p', 'license': 'CC0', 'artist': 'a', 'author': 'a'}
+        self.page('demo', {}, meta={'title': 'Демо', 'folio': '', 'version': 0, 'dynamic_img': ['zoom-*.jpg']},
+                  credits={'used.jpg': cr, 'unused.jpg': cr, 'zoom-1.jpg': cr})
         self.assertEqual(self.messages(), [])
         self.assertEqual(self.messages('warning'), ['pages/demo/img/unused.jpg: картинка нигде не используется'])
         self.assertEqual(errors(check_page('demo', self.root)), [])
+
+    CR = {'title': 't', 'page': 'p', 'license': 'CC0', 'artist': 'a', 'author': 'a'}
+
+    def test_credited_used_image_has_no_warning(self):
+        self.write('pages/demo/img/used.jpg', 'x')
+        self.section('<p><img src="img/used.jpg" alt="u"></p>\n')
+        self.page('demo', {}, credits={'used.jpg': self.CR})
+        self.assertEqual(self.messages('warning'), [])
+
+    def test_uncredited_image_warning(self):
+        self.write('pages/demo/img/used.jpg', 'x')
+        self.section('<p><img src="img/used.jpg" alt="u"></p>\n')
+        self.assertEqual(self.messages('warning'), ['pages/demo/img/used.jpg: нет атрибуции в credits.json'])
+        self.assertEqual(errors(check_page('demo', self.root)), [])
+
+    def test_hidden_files_and_dirs_in_img_are_skipped(self):
+        self.write('pages/demo/img/.DS_Store', 'x')
+        (self.root / 'pages/demo/img/sub').mkdir()
+        self.assertEqual(self.messages('warning'), [])
 
     def test_missing_page(self):
         self.assertIn('нет страницы nope', str(check_page('nope', self.root)[0]))

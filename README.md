@@ -46,15 +46,21 @@ tools/dl.py              скачать фото с Wikimedia Commons с атр�
 ./pt check [страница]          # только проверить: вложенность тегов, метки, data-folio-id, картинки
 ./pt outline <страница>        # разделы, заголовки, data-folio-id, число слов и рисунков
 ./pt text <страница> [раздел]  # чистый текст страницы или раздела (06, 06-focus, focus)
-./pt publish <страница>        # собрать и выложить новую версию на folio
+./pt publish <страница>        # собрать и выложить новую версию на folio (только folio.fold-core.ru)
 ./pt new <slug> --title "…"    # заготовка новой страницы
 python3 -m unittest discover -s tests -t .
 ```
 
+`./pt publish` выкладывает только на folio (folio.fold-core.ru) и требует CLI folio
+(скилл fc-folio). Путь к нему берётся из `PT_FOLIO`, по умолчанию
+`~/.claude/skills/fc-folio/scripts/folio`.
+
 ## Лицензии
 
-- Код (`pt`, `phototechnica/`, `tools/`, `tests/`) — [MIT](LICENSE).
-- Тексты, схемы и интерактивы страниц (`pages/`, `shared/`, кроме фотографий) —
-  [CC BY-SA 4.0](LICENSE-CONTENT.md).
+- Код (`pt`, `phototechnica/`, `tools/`, `tests/`, а также Python-файлы в `pages/`,
+  например `gen.py`) — [MIT](LICENSE).
+- Тексты, схемы и интерактивы страниц (`pages/`, `shared/`, кроме фотографий и Python-файлов) —
+  [CC BY-SA 4.0](LICENSE-CONTENT.md). Цитаты из сторонних источников (например, из
+  руководства FUJIFILM X-S10) приведены со ссылкой на источник и под CC BY-SA не подпадают.
 - Фотографии в `pages/*/img/` взяты с Wikimedia Commons и остаются под лицензиями своих
   авторов; автор, лицензия и ссылка на оригинал каждой — в `pages/*/credits.json`.

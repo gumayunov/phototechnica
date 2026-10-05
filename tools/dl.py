@@ -3,8 +3,9 @@
     python3 tools/dl.py <страница> <ширина> "File name.jpg" ["Другой файл.jpg" …]
 
 Имя в img/ строится из названия на Commons: латиница в нижнем регистре и дефисы.
-Файл можно переименовать, поменяв и ключ в credits.json. Поле author копирует Artist
-с Commons — проверить его и при необходимости сократить вручную.
+Файл можно переименовать, поменяв и ключ в credits.json. Поле author при первой записи копирует Artist
+с Commons — проверить его и при необходимости сократить вручную; при повторной загрузке
+существующий author не перезаписывается.
 """
 import json
 import re
@@ -48,6 +49,16 @@ def info(title, width):
     return page['imageinfo'][0]
 
 
+def credit_entry(title, ii, old=None):
+    """Запись credits.json по imageinfo с Commons; author уже существующей записи не трогаем."""
+    meta = ii.get('extmetadata', {})
+    artist = re.sub(r'<[^>]+>', '', meta.get('Artist', {}).get('value', '')).strip().split('\n')[0]
+    author = (old or {}).get('author', artist)
+    return {'title': title, 'page': ii['descriptionurl'],
+            'license': meta.get('LicenseShortName', {}).get('value', ''),
+            'artist': artist, 'author': author}
+
+
 def main(argv):
     if len(argv) < 3:
         raise SystemExit(__doc__)
@@ -62,13 +73,9 @@ def main(argv):
         src = ii['url'] if title.lower().endswith('.gif') else ii.get('thumburl') or ii['url']
         name = local_name(title)
         (page_dir / 'img' / name).write_bytes(fetch(src))
-        meta = ii.get('extmetadata', {})
-        artist = re.sub(r'<[^>]+>', '', meta.get('Artist', {}).get('value', '')).strip().split('\n')[0]
-        credits[name] = {'title': title, 'page': ii['descriptionurl'],
-                         'license': meta.get('LicenseShortName', {}).get('value', ''),
-                         'artist': artist, 'author': artist}
+        credits[name] = credit_entry(title, ii, credits.get(name))
         credits_path.write_text(json.dumps(credits, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
-        print(f'img/{name} — {artist}, {credits[name]["license"]}')
+        print(f'img/{name} — {credits[name]["artist"]}, {credits[name]["license"]}')
         time.sleep(1)
 
 

@@ -102,8 +102,13 @@ def check_page(name, root=ROOT):
             issues.append(Issue('error', f'{where}:{line}', f'нет файла {src}'))
     dynamic = page.meta.get('dynamic_img', [])  # картинки, чьи имена собирает JS
     for img in sorted((page.dir / 'img').glob('*')):
+        if img.name.startswith('.') or not img.is_file():
+            continue
+        where_img = f'pages/{name}/img/{img.name}'
         if img.name not in text and not any(fnmatch(img.name, p) for p in dynamic):
-            issues.append(Issue('warning', f'pages/{name}/img/{img.name}', 'картинка нигде не используется'))
+            issues.append(Issue('warning', where_img, 'картинка нигде не используется'))
+        if img.name not in page.credits:
+            issues.append(Issue('warning', where_img, 'нет атрибуции в credits.json'))
     return issues
 
 
