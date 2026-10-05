@@ -36,6 +36,12 @@
         <button type="button" data-ev="5" aria-pressed="false">🌙 Вечер</button>
       </div>
       <button class="btn" type="button" id="autoIso">Подобрать ISO автоматически</button>
+      <div class="seg" role="group" aria-label="Режим съёмки" id="modeSeg">
+        <button type="button" data-mode="P" aria-pressed="false">P</button>
+        <button type="button" data-mode="A" aria-pressed="false">A</button>
+        <button type="button" data-mode="S" aria-pressed="false">S</button>
+        <button type="button" data-mode="M" aria-pressed="true">M</button>
+      </div>
     </div>
     <div class="sim-view">
       {{svg:exposure-sim-scene}}
@@ -48,6 +54,7 @@
       <div class="verdict" id="verdict">Норма</div>
     </div>
 
+    <p id="modeHint" style="font-size:14.5px;color:var(--muted);margin:10px 0 0"></p>
     <div class="sim-grid">
       <div class="ctl f"><label for="fR">Диафрагма <output id="fO">f/5.6</output></label><input id="fR" type="range" min="0" max="8" step="1" value="4"><small id="fS"></small></div>
       <div class="ctl t"><label for="tR">Выдержка <output id="tO">1/125</output></label><input id="tR" type="range" min="0" max="12" step="1" value="5"><small id="tS"></small></div>
