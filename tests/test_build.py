@@ -60,9 +60,8 @@ class RenderTest(TmpRepo):
 
     def test_unpublished_url(self):
         self.page('other', {'layout.html': 'x\n'}, meta={'title': 'O', 'folio': '', 'version': 0})
-        self.write('pages/demo/sections/01-a.html', '{{url:other}}\n')
-        with self.assertRaisesRegex(BuildError, 'ещё не опубликована'):
-            render('demo', self.root)
+        self.write('pages/demo/sections/01-a.html', '<a href="{{url:other}}#part">o</a>\n')
+        self.assertIn('<a href="#unpublished-other#part">o</a>', render('demo', self.root))
 
     def test_recursion_limit(self):
         self.write('pages/demo/sections/01-a.html', '{{section:01-a}}\n')

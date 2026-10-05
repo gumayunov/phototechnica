@@ -5,7 +5,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from typing import NamedTuple
 
-from .build import ROOT, BuildError, Page, render
+from .build import ROOT, BuildError, Page, render, unpublished_links
 
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta',
         'source', 'track', 'wbr'}
@@ -88,6 +88,9 @@ def check_page(name, root=ROOT):
     if '{{' in text:
         line = text[:text.index('{{')].count('\n') + 1
         issues.append(Issue('error', f'{where}:{line}', 'нераспознанная метка: ' + text[text.index('{{'):][:40]))
+    for other in unpublished_links(text):
+        issues.append(Issue('warning', where, f'ссылка на неопубликованную страницу {other} — '
+                                              f'заработает после ./pt publish {other}'))
     s = scan(text)
     if not issues:
         issues += [Issue('error', f'{where}:{l}', m) for l, m in s.problems]

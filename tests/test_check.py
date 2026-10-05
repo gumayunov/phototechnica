@@ -85,5 +85,13 @@ class CheckTest(TmpRepo):
         (self.root / 'pages/demo/img/sub').mkdir()
         self.assertEqual(self.messages('warning'), [])
 
+    def test_link_to_unpublished_page_is_a_warning(self):
+        self.page('other', {'layout.html': 'x\n'}, meta={'title': 'O', 'folio': '', 'version': 0})
+        self.section('<p><a href="{{url:other}}">o</a></p>\n')
+        self.assertEqual(self.messages(), [])
+        self.assertEqual(self.messages('warning'), [
+            'pages/demo (собранная страница): ссылка на неопубликованную страницу other — '
+            'заработает после ./pt publish other'])
+
     def test_missing_page(self):
         self.assertIn('нет страницы nope', str(check_page('nope', self.root)[0]))

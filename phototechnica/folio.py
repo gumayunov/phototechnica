@@ -4,7 +4,7 @@ import os
 import subprocess
 from pathlib import Path
 
-from .build import ROOT, Page, build_page
+from .build import ROOT, Page, build_page, unpublished_links
 from .check import check_page, errors
 
 FOLIO_BIN = os.environ.get('PT_FOLIO', str(Path.home() / '.claude/skills/fc-folio/scripts/folio'))
@@ -21,6 +21,10 @@ def publish(name, root=ROOT, folio_bin=None):
     if bad:
         raise PublishError('проверка не прошла:\n' + '\n'.join(map(str, bad)))
     index = build_page(name, root)
+    pending = unpublished_links(index.read_text(encoding='utf-8'))
+    if pending:
+        raise PublishError(f'страница ссылается на неопубликованные страницы, сначала опубликуй: '
+                           f'{", ".join(pending)}')
     page = Page(name, root)
     if page.meta.get('folio'):
         cmd = [folio_bin, 'update', page.meta['folio'], str(index.parent)]

@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 FOLIO_BASE = 'https://folio.fold-core.ru/a/'
+UNPUBLISHED = '#unpublished-'  # адрес-заглушка для {{url:…}} неопубликованной страницы
 MARKER = re.compile(r'\{\{([a-z]+)(?::([^{}\s]+))?\}\}')
 # метка → (каталог страницы, расширение); содержимое таких файлов раскрывается дальше
 PAGE_FILES = {'section': ('sections', '.html'), 'svg': ('svg', '.svg'),
@@ -99,7 +100,7 @@ def resolve(page, kind, arg):
     if kind == 'url':
         other = Page(arg, page.root)
         if not other.meta.get('folio'):
-            raise BuildError(f'{page.name}: {{{{url:{arg}}}}} — страница {arg} ещё не опубликована')
+            return UNPUBLISHED + arg, False
         return folio_url(other.meta['folio']), False
     if kind == 'gen':
         values = page.gen()
@@ -118,6 +119,11 @@ def expand(text, page, depth=0):
         return expand(value, page, depth + 1) if nested else value
 
     return MARKER.sub(sub, text)
+
+
+def unpublished_links(text):
+    """Страницы, на которые собранный текст ссылается до их публикации."""
+    return sorted(set(re.findall(re.escape(UNPUBLISHED) + r'([a-z0-9-]+)', text)))
 
 
 def render(name, root=ROOT):
