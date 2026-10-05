@@ -1,0 +1,48 @@
+<!-- ============ 7. DR ============ -->
+<section id="dr" data-folio-id="dynamic-range">
+  <span class="sec-num">08</span>
+  <h2><span style="color:var(--dr)">Динамический диапазон</span> — от тени до света</h2>
+  <p>Встань у окна в солнечный день и посмотри на улицу, а потом — в тёмный угол комнаты. Глаза видят и то и другое. А камера, скорее всего, нет: либо окно будет белым пятном, либо комната чёрной ямой. Всё дело в <b>динамическом диапазоне</b> (ДД, DR) — разнице между самым тёмным и самым светлым, что матрица может записать <b>в одном кадре</b> с деталями.</p>
+  <p>ДД тоже меряют в ступенях. 10 ступеней — это когда самое яркое в 2<sup>10</sup> ≈ 1000 раз ярче самого тёмного, 14 ступеней — уже в 16 000 раз.</p>
+
+  <figure class="diagram" data-folio-id="dr-bars">
+    {{svg:dr-bars}}
+  </figure>
+
+  <h3>Что происходит, когда сцена не влезает</h3>
+  <p>Если сцена шире, чем ДД матрицы, приходится выбирать: <b>сохранить светлое</b> (тогда тени провалятся в черноту) или <b>вытянуть тёмное</b> (тогда светлое «выгорит» в чистый белый). Ниже — один и тот же вечерний вид, снятый с разной экспозицией.</p>
+  <div class="quad" data-folio-id="arch-bracket">
+    <figure><img src="img/arch-dark.jpg" alt="Очень тёмный кадр: видны только фонари" loading="lazy"><div class="lbl">−4.7 <small>· видны лишь фонари</small></div></figure>
+    <figure><img src="img/arch-mid.jpg" alt="Тёмный кадр" loading="lazy"><div class="lbl">−1.8 <small>· светлое в норме, тени чёрные</small></div></figure>
+    <figure><img src="img/arch-bright.jpg" alt="Светлый кадр" loading="lazy"><div class="lbl">+1.5 <small>· тени видно, фонари выгорели</small></div></figure>
+    <figure><img src="img/arch-brightest.jpg" alt="Очень светлый кадр" loading="lazy"><div class="lbl">+4.1 <small>· всё светлое стало белым</small></div></figure>
+  </div>
+  <figure data-folio-id="arch-hdr">
+    <img src="img/arch-hdr.jpg" alt="Склеенный HDR-снимок: видны и детали в тенях, и фонари" loading="lazy">
+    <figcaption><b style="color:var(--ink)">А это все четыре кадра, склеенные в один (HDR).</b> Из каждого взяты лучшие участки: из тёмного — фонари и купол, из светлого — деревья и здания. Ровно это делает режим HDR в телефоне, только быстро и незаметно.{{cr:arch-hdr.jpg}}</figcaption>
+  </figure>
+
+  <div class="pair" data-folio-id="park">
+    <figure><img src="img/park-original.jpg" alt="Исходный снимок парка: тени тёмные" loading="lazy"><div class="lbl">Как сняла камера</div></figure>
+    <figure><img src="img/park-processed.jpg" alt="Обработанный снимок: тени вытянуты" loading="lazy"><div class="lbl">После вытягивания теней</div></figure>
+  </div>
+  <figcaption style="margin-top:6px">Фотограф специально снял так, чтобы не выжечь небо и здания, а потом при обработке осветлил тени: в них остались детали. С выгоревшим небом такой трюк бы не прошёл.{{cr:park-processed.jpg}}</figcaption>
+
+  <h3>Гистограмма — градусник экспозиции</h3>
+  <p>В камере и в большинстве фоторедакторов можно включить гистограмму: график, который показывает, сколько в кадре тёмных, средних и светлых точек. Слева — чёрное, справа — белое. Если «гора» упирается в правый край — что-то выгорело, если в левый — что-то провалилось в черноту.</p>
+  <figure class="diagram" data-folio-id="histograms">
+    {{svg:histograms}}
+  </figure>
+
+  <div class="pair" style="align-items:center" data-folio-id="blown">
+    <figure><img src="img/blown-highlights.jpg" alt="Сверху обычный снимок, снизу выгоревшие места отмечены красным" loading="lazy" style="max-width:340px;margin:0 auto"></figure>
+    <div>
+      <p>Многие камеры умеют подсвечивать выгоревшие места мигающей «зеброй» или цветом — как красным на нижней картинке. Внутри этих пятен нет никакой информации: только белый. Восстановить их нельзя.</p>
+      <div class="rule dr" style="font-size:16px">Правило цифровой съёмки: <b>береги света</b>. Чуть тёмный снимок можно вытянуть, выгоревший — нет.</div>
+      <figcaption>{{cr:blown-highlights.jpg}}</figcaption>
+    </div>
+  </div>
+
+  <div class="note"><b>ДД и ISO</b>Самый широкий динамический диапазон у матрицы на минимальном ISO. С каждой ступенью усиления шум «съедает» нижние ступени — тени, и ДД сужается. Ещё одна причина не задирать ISO без нужды.</div>
+</section>
+

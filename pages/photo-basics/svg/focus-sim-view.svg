@@ -1,0 +1,21 @@
+<svg viewBox="0 0 360 240" aria-label="Что видит камера">
+            <defs>
+              <filter id="fsBgBlur" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur id="fsBgN" stdDeviation="0"/></filter>
+              <filter id="fsFgBlur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur id="fsFgN" stdDeviation="0"/></filter>
+            </defs>
+            <g filter="url(#fsBgBlur)">
+              <rect x="-20" y="-20" width="400" height="280" fill="url(#sky)"/>
+              <path d="M-20,150 L60,70 L100,105 L160,40 L230,120 L280,85 L380,150 L380,260 L-20,260 Z" fill="#8fa9bd"/>
+              <path d="M140,62 L160,40 L178,60 L168,56 L158,64 Z" fill="#fff"/><path d="M48,82 L60,70 L72,82 Z" fill="#fff"/>
+              <path d="M-20,170 Q90,140 200,165 T380,160 L380,260 L-20,260 Z" fill="#6aa55a"/>
+              <g fill="#3f8b45"><circle cx="250" cy="150" r="14"/><circle cx="275" cy="155" r="11"/><circle cx="60" cy="158" r="12"/></g>
+            </g>
+            <g filter="url(#fsFgBlur)">
+              <g id="fsPrevFlower">
+                <path d="M0,0 C-3,60 4,100 0,200" stroke="#3d7a2c" stroke-width="6" fill="none"/>
+                <path d="M2,90 C24,74 40,82 48,70 C32,96 16,96 2,96 Z" fill="#4c9a3a"/>
+                <g id="fsPetals" fill="#ffc21a" stroke="#e39b00" stroke-width="1.2"></g>
+                <circle r="19" fill="#6b3d14"/><circle r="13" fill="#4e2a0c"/>
+              </g>
+            </g>
+          </svg>

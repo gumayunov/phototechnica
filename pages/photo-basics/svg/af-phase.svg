@@ -1,0 +1,16 @@
+<svg viewBox="0 0 820 250" role="img" aria-label="Фазовый автофокус: две картинки от левой и правой половин объектива сдвинуты или совпадают">
+      <rect x="30" y="40" width="220" height="140" rx="10" fill="var(--soft)"/>
+      <g transform="translate(114,120)" fill="#2f6fed" fill-opacity=".6"><rect x="-5" y="10" width="10" height="40"/><circle cy="-6" r="28"/></g><g transform="translate(166,120)" fill="#e0702a" fill-opacity=".6"><rect x="-5" y="10" width="10" height="40"/><circle cy="-6" r="28"/></g>
+      <text x="140" y="28" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--ink)">Наведено слишком близко</text>
+      <text x="140" y="202" text-anchor="middle" font-size="12.5" fill="var(--muted)">картинки разъехались в одну сторону</text>
+      <rect x="300" y="40" width="220" height="140" rx="10" fill="var(--soft)"/>
+      <g transform="translate(410,120)" fill="#2f6fed" fill-opacity=".6"><rect x="-5" y="10" width="10" height="40"/><circle cy="-6" r="28"/></g><g transform="translate(410,120)" fill="#e0702a" fill-opacity=".6"><rect x="-5" y="10" width="10" height="40"/><circle cy="-6" r="28"/></g>
+      <text x="410" y="28" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--iso)">В фокусе ✓</text>
+      <text x="410" y="202" text-anchor="middle" font-size="12.5" fill="var(--muted)">картинки совпали</text>
+      <rect x="570" y="40" width="220" height="140" rx="10" fill="var(--soft)"/>
+      <g transform="translate(706,120)" fill="#2f6fed" fill-opacity=".6"><rect x="-5" y="10" width="10" height="40"/><circle cy="-6" r="28"/></g><g transform="translate(654,120)" fill="#e0702a" fill-opacity=".6"><rect x="-5" y="10" width="10" height="40"/><circle cy="-6" r="28"/></g>
+      <text x="680" y="28" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--ink)">Наведено слишком далеко</text>
+      <text x="680" y="202" text-anchor="middle" font-size="12.5" fill="var(--muted)">разъехались в другую сторону</text>
+      <g font-size="12.5"><rect x="250" y="226" width="12" height="12" fill="#2f6fed" fill-opacity=".6"/><text x="268" y="237" fill="var(--muted)">свет через левую половину объектива</text>
+      <rect x="520" y="226" width="12" height="12" fill="#e0702a" fill-opacity=".6"/><text x="538" y="237" fill="var(--muted)">через правую</text></g>
+    </svg>

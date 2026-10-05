@@ -1,0 +1,21 @@
+<section id="compare" data-folio-id="compare">
+  <span class="sec-num">02</span>
+  <h2>Одна сцена, разные плёнки</h2>
+  <p>Фотограф Ziko van Dijk снял одни и те же сцены на Fujifilm X-S20, перебирая все симуляции подряд. X-S20 — преемник X-S10 с той же матрицей, поэтому общие симуляции выглядят так же. Две из них (Reala Ace и Nostalgic Neg., отмечены ✕) появились позже и на X-S10 их нет. Нажми на симуляцию, чтобы посмотреть её. Включи «Сравнить», чтобы поставить рядом две: шторку можно двигать.</p>
+  <div class="viewer" data-folio-id="viewer">
+    <div class="sim-top">
+      <div class="seg" role="group" aria-label="Сцена" id="sceneSeg">
+        <button type="button" data-s="mill" aria-pressed="true">Мельница</button>
+        <button type="button" data-s="box" aria-pressed="false">Почтовый ящик</button>
+        <button type="button" data-s="sheep" aria-pressed="false">Овцы под деревом</button>
+      </div>
+      <label style="font-size:14px;font-weight:600;display:flex;gap:8px;align-items:center"><input type="checkbox" id="cmpOn"> Сравнить две</label>
+    </div>
+    <div class="vstage" id="vstage"><img class="a" id="imgA" alt=""><img class="b" id="imgB" alt="" hidden><div class="split" id="split" hidden></div><span class="tagA" id="tagA"></span><span class="tagB" id="tagB" hidden></span></div>
+    <div class="cmp-row" id="cmpRow" hidden><span>Шторка</span><input type="range" id="splitR" min="0" max="100" value="50" aria-label="Положение шторки"><span class="muted">Левая — <b id="lblA"></b>, правая — <b id="lblB"></b>. Обычный клик выбирает левую, клик с Shift или долгое нажатие — правую.</span></div>
+    <div class="simbtns" id="simBtns"></div>
+    <div class="vinfo"><div class="box"><b class="h">Описание Fujifilm</b><span id="vManual"></span><div class="muted" id="vFilm" style="font-size:13px;margin-top:6px"></div></div><div class="box"><b class="h">Подходит для</b><span id="vGood"></span><div class="muted" id="vTip" style="font-size:13px;margin-top:6px"></div></div></div>
+    <figcaption id="vCredit" style="margin-top:10px"></figcaption>
+  </div>
+</section>
+

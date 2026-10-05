@@ -1,0 +1,19 @@
+<svg viewBox="0 0 820 170" role="img" aria-label="Шкала ISO от 100 до 12800 с нарастающим шумом">
+      <defs>
+        <filter id="nz" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="1" seed="4"/>
+          <feColorMatrix type="matrix" values="2.2 0 0 0 -0.6  0 2.2 0 0 -0.6  0 0 2.2 0 -0.6  0 0 0 0 1"/>
+        </filter>
+      </defs>
+      <g font-size="15" text-anchor="middle" font-weight="700" fill="var(--iso)">
+        <g transform="translate(20,20)"><rect width="80" height="80" rx="8" fill="#4a5b6e"/><rect width="80" height="80" rx="8" filter="url(#nz)" opacity="0"/><text x="40" y="104">100</text></g>
+        <g transform="translate(120,20)"><rect width="80" height="80" rx="8" fill="#4a5b6e"/><rect width="80" height="80" rx="8" filter="url(#nz)" opacity=".1"/><text x="40" y="104">200</text></g>
+        <g transform="translate(220,20)"><rect width="80" height="80" rx="8" fill="#4a5b6e"/><rect width="80" height="80" rx="8" filter="url(#nz)" opacity=".2"/><text x="40" y="104">400</text></g>
+        <g transform="translate(320,20)"><rect width="80" height="80" rx="8" fill="#4a5b6e"/><rect width="80" height="80" rx="8" filter="url(#nz)" opacity=".3"/><text x="40" y="104">800</text></g>
+        <g transform="translate(420,20)"><rect width="80" height="80" rx="8" fill="#4a5b6e"/><rect width="80" height="80" rx="8" filter="url(#nz)" opacity=".42"/><text x="40" y="104">1600</text></g>
+        <g transform="translate(520,20)"><rect width="80" height="80" rx="8" fill="#4a5b6e"/><rect width="80" height="80" rx="8" filter="url(#nz)" opacity=".55"/><text x="40" y="104">3200</text></g>
+        <g transform="translate(620,20)"><rect width="80" height="80" rx="8" fill="#4a5b6e"/><rect width="80" height="80" rx="8" filter="url(#nz)" opacity=".7"/><text x="40" y="104">6400</text></g>
+        <g transform="translate(720,20)"><rect width="80" height="80" rx="8" fill="#4a5b6e"/><rect width="80" height="80" rx="8" filter="url(#nz)" opacity=".85"/><text x="40" y="104">12800</text></g>
+      </g>
+      <text x="410" y="158" text-anchor="middle" font-size="13" fill="var(--muted)">Схематично: чем выше ISO, тем заметнее шум. Насколько именно — зависит от камеры: у больших матриц шума меньше.</text>
+    </svg>

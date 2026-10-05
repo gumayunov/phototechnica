@@ -1,0 +1,36 @@
+.backlink{display:inline-flex;gap:8px;align-items:center;font-size:14px;font-weight:600;text-decoration:none;color:var(--muted);margin-top:28px}
+.backlink:hover{color:var(--ink)}
+.viewer{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px;margin:22px 0}
+.vstage{position:relative;border-radius:12px;overflow:hidden;background:#111;aspect-ratio:3/2}
+.vstage img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+.vstage .b{clip-path:inset(0 0 0 50%)}
+.vstage .split{position:absolute;top:0;bottom:0;width:2px;background:#fff;left:50%;box-shadow:0 0 0 1px rgba(0,0,0,.3);pointer-events:none}
+.vstage .tagA,.vstage .tagB{position:absolute;top:10px;padding:4px 10px;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font-size:13px;font-weight:600}
+.vstage .tagA{left:10px} .vstage .tagB{right:10px}
+.simbtns{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.simbtns button{border:1px solid var(--line);background:var(--paper);color:var(--ink);font:600 13px "Golos Text";padding:6px 11px;border-radius:999px;cursor:pointer}
+.simbtns button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.simbtns button.b-on{box-shadow:0 0 0 2px var(--t)}
+.simbtns button.na{opacity:.55}
+.simbtns button.na::after{content:" ✕";font-weight:400}
+.vinfo{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.vinfo .box{background:var(--soft);border-radius:10px;padding:12px 14px;font-size:14.5px}
+.vinfo .box b.h{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.cmp-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px;font-size:14px}
+.cmp-row input[type=range]{flex:1;min-width:160px;accent-color:var(--t)}
+.simgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:20px 0}
+.simcard{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.simcard img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.simcard-b{padding:14px 16px 16px;font-size:14.5px}
+.simcard h3{margin:0 0 4px;font-size:16px}
+.simcard p{margin:0 0 8px}
+.simcard .film{color:var(--muted);font-size:13.5px}
+.simcard .quote{font-style:italic}
+.simcard .tip{color:var(--muted);font-size:13.5px;margin:0}
+.meters{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;align-items:center;font-size:12.5px;color:var(--muted);margin:6px 0 10px}
+.bars{display:inline-flex;gap:3px} .bars i{width:18px;height:7px;border-radius:2px;display:inline-block}
+.muted{color:var(--muted)}
+.recipe{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.recipe table td:first-child{color:var(--muted);white-space:nowrap}
+@media (min-width:1180px){main{margin-left:auto;margin-right:auto}}
+@media (max-width:640px){.simgrid,.vinfo,.recipe{grid-template-columns:1fr}}

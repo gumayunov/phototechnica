@@ -1,0 +1,17 @@
+<svg viewBox="0 0 820 190" role="img" aria-label="Шкала выдержек от 1/4000 до 30 секунд">
+      <defs><linearGradient id="tg" x1="0" x2="1"><stop offset="0" stop-color="var(--t-soft)"/><stop offset="1" stop-color="var(--t)"/></linearGradient></defs>
+      <rect x="30" y="70" width="760" height="14" rx="7" fill="url(#tg)"/>
+      <g font-size="14" text-anchor="middle" font-weight="700" fill="var(--ink)">
+        <text x="40" y="60">1/4000</text><text x="175" y="60">1/1000</text><text x="310" y="60">1/250</text><text x="445" y="60">1/60</text><text x="580" y="60">1/15</text><text x="690" y="60">1 с</text><text x="775" y="60">30 с</text>
+      </g>
+      <g font-size="12.5" text-anchor="middle" fill="var(--muted)">
+        <text x="70" y="110">птица в полёте,</text><text x="70" y="126">брызги</text>
+        <text x="200" y="110">спорт, бег,</text><text x="200" y="126">прыжки</text>
+        <text x="330" y="110">люди, прогулка</text>
+        <text x="450" y="110">с рук ещё можно,</text><text x="450" y="126">но аккуратно</text>
+        <text x="585" y="110">нужен штатив</text><text x="585" y="126">или стенка</text>
+        <text x="735" y="110">ночь, звёзды,</text><text x="735" y="126">следы фар</text>
+      </g>
+      <text x="40" y="160" font-size="13" fill="var(--t)" font-weight="600">← замораживает движение</text>
+      <text x="780" y="160" font-size="13" fill="var(--t)" font-weight="600" text-anchor="end">смазывает движение →</text>
+    </svg>

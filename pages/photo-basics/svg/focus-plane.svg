@@ -1,0 +1,15 @@
+<svg viewBox="0 0 820 230" role="img" aria-label="Плоскость резкости: камера наведена на средний предмет, ближний и дальний размыты">
+      <defs><linearGradient id="dofz" x1="0" x2="1"><stop offset="0" stop-color="var(--f)" stop-opacity="0"/><stop offset=".5" stop-color="var(--f)" stop-opacity=".22"/><stop offset="1" stop-color="var(--f)" stop-opacity="0"/></linearGradient>
+      <filter id="bl1"><feGaussianBlur stdDeviation="3"/></filter><filter id="bl2"><feGaussianBlur stdDeviation="5"/></filter></defs>
+      <g transform="translate(40,118)"><rect x="-6" y="-16" width="44" height="30" rx="5" fill="var(--ink)"/><rect x="38" y="-10" width="16" height="18" rx="2" fill="var(--ink)"/><circle cx="16" cy="-1" r="8" fill="var(--paper)"/></g>
+      <rect x="360" y="30" width="200" height="170" fill="url(#dofz)"/>
+      <line x1="460" y1="24" x2="460" y2="206" stroke="var(--f)" stroke-width="2.5" stroke-dasharray="7 5"/>
+      <text x="460" y="18" text-anchor="middle" font-size="13" font-weight="700" fill="var(--f)">плоскость резкости: 3 м</text>
+      <text x="460" y="224" text-anchor="middle" font-size="12" fill="var(--muted)">голубая зона — глубина резкости (ГРИП)</text>
+      <g filter="url(#bl1)" transform="translate(200,118)"><circle r="20" fill="#e94f6a"/><rect x="-3" y="18" width="6" height="40" fill="#3d7a2c"/></g>
+      <text x="200" y="76" text-anchor="middle" font-size="12.5" fill="var(--muted)">1 м — размыто</text>
+      <g transform="translate(460,118)"><circle r="22" fill="#ffc21a" stroke="#e39b00" stroke-width="2"/><circle r="9" fill="#6b3d14"/><rect x="-3" y="20" width="6" height="40" fill="#3d7a2c"/></g>
+      <text x="520" y="80" font-size="12.5" font-weight="700" fill="var(--iso)">резко ✓</text>
+      <g filter="url(#bl2)" transform="translate(720,110)"><rect x="-30" y="-20" width="60" height="50" fill="#f1e3c6"/><path d="M-38,-18 L0,-48 L38,-18 Z" fill="#c4553a"/></g>
+      <text x="720" y="176" text-anchor="middle" font-size="12.5" fill="var(--muted)">10 м — размыто</text>
+    </svg>

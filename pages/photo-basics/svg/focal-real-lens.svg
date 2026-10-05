@@ -1,0 +1,21 @@
+<svg viewBox="0 0 820 300" role="img" aria-label="В настоящем объективе фокусное расстояние меряют от воображаемой эквивалентной линзы">
+      <text x="20" y="28" font-size="14" font-weight="700" fill="var(--ink)">Телеобъектив, 300 мм</text>
+      <text x="20" y="46" font-size="12.5" fill="var(--muted)">сам объектив короче своего фокусного</text>
+      <rect x="430" y="52" width="200" height="72" rx="8" fill="none" stroke="var(--muted)" stroke-width="2"/>
+      <ellipse cx="455" cy="88" rx="7" ry="30" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="1.8"/><ellipse cx="480" cy="88" rx="6" ry="27" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="1.8"/><ellipse cx="590" cy="88" rx="5" ry="20" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="1.8"/><ellipse cx="610" cy="88" rx="5" ry="20" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="1.8"/>
+      <line x1="330" y1="48" x2="330" y2="128" stroke="var(--fl)" stroke-width="2.5" stroke-dasharray="6 4"/>
+      <text x="338" y="72" font-size="12" fill="var(--fl)">эквивалентная</text><text x="338" y="86" font-size="12" fill="var(--fl)">линза</text>
+      <rect x="700" y="66" width="10" height="44" rx="2" fill="var(--iso-soft)" stroke="var(--iso)" stroke-width="2"/>
+      <g stroke="var(--fl)" stroke-width="2"><line x1="330" y1="140" x2="700" y2="140"/><line x1="330" y1="133" x2="330" y2="147"/><line x1="700" y1="133" x2="700" y2="147"/></g>
+      <text x="515" y="160" text-anchor="middle" font-size="13" font-weight="700" fill="var(--fl)">f = 300 мм</text>
+
+      <line x1="20" y1="180" x2="800" y2="180" stroke="var(--line)"/>
+      <text x="20" y="208" font-size="14" font-weight="700" fill="var(--ink)">Широкоугольный, 16 мм</text>
+      <text x="20" y="226" font-size="12.5" fill="var(--muted)">«точка отсчёта» — за последней линзой</text>
+      <rect x="470" y="212" width="150" height="64" rx="8" fill="none" stroke="var(--muted)" stroke-width="2"/>
+      <ellipse cx="492" cy="244" rx="8" ry="28" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="1.8"/><ellipse cx="520" cy="244" rx="5" ry="20" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="1.8"/><ellipse cx="575" cy="244" rx="5" ry="18" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="1.8"/><ellipse cx="600" cy="244" rx="5" ry="18" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="1.8"/>
+      <line x1="684" y1="206" x2="684" y2="282" stroke="var(--fl)" stroke-width="2.5" stroke-dasharray="6 4"/>
+      <rect x="700" y="222" width="10" height="44" rx="2" fill="var(--iso-soft)" stroke="var(--iso)" stroke-width="2"/>
+      <text x="650" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="var(--fl)">f = 16 мм</text>
+      <g stroke="var(--fl)" stroke-width="2"><line x1="684" y1="282" x2="700" y2="282"/></g>
+    </svg>

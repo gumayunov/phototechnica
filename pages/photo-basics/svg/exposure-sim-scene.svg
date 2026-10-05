@@ -1,0 +1,45 @@
+<svg id="simSvg" viewBox="0 0 640 380" aria-label="Сцена симулятора">
+        <defs>
+          <filter id="bgBlur" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur id="bgBlurN" stdDeviation="3"/></filter>
+          <filter id="motion" x="-50%" y="-20%" width="200%" height="140%"><feGaussianBlur id="motionN" stdDeviation="2 0"/></filter>
+          <filter id="noiseF" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="1" seed="7" id="turb"/>
+            <feColorMatrix type="matrix" values="1.4 0 0 0 -0.2  0 1.4 0 0 -0.2  0 0 1.4 0 -0.2  0 0 0 0 1"/>
+          </filter>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb6ec"/><stop offset="1" stop-color="#cfe6f7"/></linearGradient>
+          <radialGradient id="ball" cx=".35" cy=".35"><stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#ffd23f"/><stop offset="1" stop-color="#e08a00"/></radialGradient>
+        </defs>
+        <g filter="url(#bgBlur)">
+          <rect x="-20" y="-20" width="680" height="420" fill="url(#sky)"/>
+          <circle cx="545" cy="70" r="30" fill="#fff6c8"/>
+          <ellipse cx="160" cy="70" rx="60" ry="18" fill="#fff" opacity=".9"/><ellipse cx="200" cy="60" rx="40" ry="16" fill="#fff" opacity=".9"/>
+          <path d="M-20,230 Q120,150 260,210 T560,190 T680,210 L680,400 L-20,400 Z" fill="#8fbf7a"/>
+          <path d="M-20,260 Q180,220 340,250 T680,240 L680,400 L-20,400 Z" fill="#6aa55a"/>
+          <g transform="translate(380,170)">
+            <rect x="0" y="20" width="80" height="55" fill="#f1e3c6"/><path d="M-8,22 L40,-12 L88,22 Z" fill="#c4553a"/>
+            <rect x="12" y="34" width="16" height="16" fill="#6aa0d4"/><rect x="50" y="40" width="16" height="35" fill="#7b4f2c"/>
+          </g>
+          <g><rect x="83" y="180" width="10" height="60" fill="#6b4a2b"/><circle cx="88" cy="165" r="34" fill="#3f8b45"/><circle cx="70" cy="180" r="22" fill="#4a9a50"/></g>
+          <g><rect x="262" y="185" width="8" height="50" fill="#6b4a2b"/><circle cx="266" cy="172" r="27" fill="#3a8240"/></g>
+          <g><rect x="560" y="175" width="10" height="70" fill="#6b4a2b"/><circle cx="565" cy="160" r="38" fill="#36773b"/><circle cx="588" cy="176" r="22" fill="#448a48"/></g>
+          <g fill="#e94f6a"><circle cx="330" cy="268" r="5"/><circle cx="470" cy="282" r="5"/><circle cx="520" cy="262" r="4"/></g>
+          <g fill="#fff"><circle cx="360" cy="285" r="4"/><circle cx="420" cy="270" r="4"/><circle cx="600" cy="290" r="5"/></g>
+        </g>
+        <!-- moving ball -->
+        <g filter="url(#motion)">
+          <circle cx="430" cy="120" r="22" fill="url(#ball)"/>
+          <path d="M412,112 Q430,120 448,112 M414,132 Q430,124 446,132" stroke="#b86200" stroke-width="2" fill="none"/>
+        </g>
+        <!-- sharp foreground -->
+        <path d="M-20,340 Q200,310 400,330 T680,320 L680,400 L-20,400 Z" fill="#4b8a3c"/>
+        <g transform="translate(160,170)">
+          <path d="M0,40 C-4,100 6,140 0,210" stroke="#3d7a2c" stroke-width="7" fill="none"/>
+          <path d="M2,120 C30,100 50,110 60,96 C40,128 20,128 2,128 Z" fill="#4c9a3a"/>
+          <path d="M0,150 C-30,135 -48,140 -58,128 C-40,162 -18,160 0,158 Z" fill="#4c9a3a"/>
+          <g id="petals" fill="#ffc21a" stroke="#e39b00" stroke-width="1.5"></g>
+          <circle cx="0" cy="0" r="24" fill="#6b3d14"/>
+          <circle cx="0" cy="0" r="17" fill="#4e2a0c"/>
+          <g fill="#8a5a24"><circle cx="-7" cy="-6" r="2"/><circle cx="6" cy="-8" r="2"/><circle cx="8" cy="5" r="2"/><circle cx="-5" cy="8" r="2"/><circle cx="0" cy="0" r="2"/></g>
+        </g>
+        <rect id="noiseRect" x="0" y="0" width="640" height="380" filter="url(#noiseF)" opacity="0" style="mix-blend-mode:overlay"/>
+      </svg>

@@ -1,0 +1,36 @@
+<svg viewBox="0 0 820 470" role="img" aria-label="Карта связей настроек и их эффектов">
+      <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/></marker></defs>
+      <g font-size="15" font-weight="700" text-anchor="middle">
+        <g transform="translate(110,60)"><rect x="-90" y="-24" width="180" height="48" rx="12" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="2"/><text y="6" fill="var(--fl)">Фокусное</text></g>
+        <g transform="translate(110,160)"><rect x="-90" y="-24" width="180" height="48" rx="12" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2"/><text y="6" fill="var(--f)">Диафрагма F</text></g>
+        <g transform="translate(110,260)"><rect x="-90" y="-24" width="180" height="48" rx="12" fill="var(--t-soft)" stroke="var(--t)" stroke-width="2"/><text y="6" fill="var(--t)">Выдержка</text></g>
+        <g transform="translate(110,360)"><rect x="-90" y="-24" width="180" height="48" rx="12" fill="var(--iso-soft)" stroke="var(--iso)" stroke-width="2"/><text y="6" fill="var(--iso)">ISO</text></g>
+      </g>
+      <g font-size="14.5" font-weight="600" text-anchor="middle" fill="var(--ink)">
+        <g transform="translate(680,40)"><rect x="-120" y="-22" width="240" height="44" rx="10" fill="var(--paper)" stroke="var(--line)" stroke-width="2"/><text y="5">Угол обзора, «зум»</text></g>
+        <g transform="translate(680,110)"><rect x="-120" y="-22" width="240" height="44" rx="10" fill="var(--paper)" stroke="var(--line)" stroke-width="2"/><text y="5">Размытие фона (ГРИП)</text></g>
+        <g transform="translate(680,180)"><rect x="-120" y="-22" width="240" height="44" rx="10" fill="var(--paper)" stroke="var(--line)" stroke-width="2"/><text y="5">Шевелёнка от рук</text></g>
+        <g transform="translate(680,250)"><rect x="-120" y="-22" width="240" height="44" rx="10" fill="var(--ink)" stroke="var(--ink)" stroke-width="2"/><text y="5" fill="var(--bg)">ЯРКОСТЬ (экспозиция)</text></g>
+        <g transform="translate(680,320)"><rect x="-120" y="-22" width="240" height="44" rx="10" fill="var(--paper)" stroke="var(--line)" stroke-width="2"/><text y="5">Смаз движения</text></g>
+        <g transform="translate(680,390)"><rect x="-120" y="-22" width="240" height="44" rx="10" fill="var(--paper)" stroke="var(--line)" stroke-width="2"/><text y="5">Шум</text></g>
+        <g transform="translate(680,450)"><rect x="-120" y="-20" width="240" height="40" rx="10" fill="var(--dr-soft)" stroke="var(--dr)" stroke-width="2"/><text y="5" fill="var(--dr)">Динамический диапазон</text></g>
+      </g>
+      <g fill="none" stroke-width="2.2">
+        <!-- focal -->
+        <path d="M200,60 C380,60 400,40 556,40" stroke="var(--fl)" marker-end="url(#ar2)"/>
+        <path d="M200,60 C380,70 400,110 556,110" stroke="var(--fl)" marker-end="url(#ar2)" stroke-dasharray="6 4"/>
+        <path d="M200,60 C380,80 400,180 556,180" stroke="var(--fl)" marker-end="url(#ar2)" stroke-dasharray="6 4"/>
+        <!-- aperture -->
+        <path d="M200,160 C380,160 400,110 556,110" stroke="var(--f)" marker-end="url(#ar2)"/>
+        <path d="M200,160 C380,170 400,250 556,250" stroke="var(--f)" marker-end="url(#ar2)"/>
+        <!-- shutter -->
+        <path d="M200,260 C380,260 400,250 556,250" stroke="var(--t)" marker-end="url(#ar2)"/>
+        <path d="M200,260 C380,265 400,320 556,320" stroke="var(--t)" marker-end="url(#ar2)"/>
+        <path d="M200,260 C380,250 400,190 556,186" stroke="var(--t)" marker-end="url(#ar2)"/>
+        <!-- iso -->
+        <path d="M200,360 C380,360 400,256 556,256" stroke="var(--iso)" marker-end="url(#ar2)"/>
+        <path d="M200,360 C380,365 400,390 556,390" stroke="var(--iso)" marker-end="url(#ar2)"/>
+        <path d="M200,360 C380,375 400,450 556,450" stroke="var(--iso)" marker-end="url(#ar2)"/>
+      </g>
+      <text x="20" y="440" font-size="12.5" fill="var(--muted)">пунктир — косвенная связь</text>
+    </svg>

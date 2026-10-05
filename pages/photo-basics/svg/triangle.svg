@@ -1,0 +1,33 @@
+<svg viewBox="0 0 820 470" role="img" aria-label="Треугольник экспозиции: диафрагма, выдержка, ISO и их побочные эффекты">
+      <path d="M410,60 L150,380 L670,380 Z" fill="var(--soft)" stroke="var(--line)" stroke-width="3"/>
+      <text x="410" y="270" text-anchor="middle" font-family="Unbounded" font-size="20" font-weight="700" fill="var(--ink)">ЭКСПОЗИЦИЯ</text>
+      <text x="410" y="294" text-anchor="middle" font-size="14" fill="var(--muted)">яркость снимка</text>
+      <!-- top: aperture -->
+      <g transform="translate(410,60)">
+        <circle r="46" fill="var(--f-soft)" stroke="var(--f)" stroke-width="3"/>
+        <text y="-4" text-anchor="middle" font-size="16" font-weight="700" fill="var(--f)">F</text>
+        <text y="16" text-anchor="middle" font-size="12" fill="var(--f)">диафрагма</text>
+      </g>
+      <text x="470" y="40" font-size="13.5" fill="var(--ink)"><tspan font-weight="700">f/1.4</tspan> размытый фон · <tspan font-weight="700">f/16</tspan> всё резкое</text>
+      <text x="470" y="60" font-size="13" fill="var(--muted)">побочный эффект: глубина резкости</text>
+      <!-- left: shutter -->
+      <g transform="translate(150,380)">
+        <circle r="46" fill="var(--t-soft)" stroke="var(--t)" stroke-width="3"/>
+        <text y="-4" text-anchor="middle" font-size="16" font-weight="700" fill="var(--t)">1/250</text>
+        <text y="16" text-anchor="middle" font-size="12" fill="var(--t)">выдержка</text>
+      </g>
+      <text x="40" y="300" font-size="13.5" fill="var(--ink)"><tspan font-weight="700">1/1000</tspan> заморозка</text>
+      <text x="40" y="318" font-size="13.5" fill="var(--ink)"><tspan font-weight="700">1/15</tspan> смаз движения</text>
+      <text x="40" y="276" font-size="13" fill="var(--muted)">побочный эффект: движение</text>
+      <!-- right: ISO -->
+      <g transform="translate(670,380)">
+        <circle r="46" fill="var(--iso-soft)" stroke="var(--iso)" stroke-width="3"/>
+        <text y="-4" text-anchor="middle" font-size="16" font-weight="700" fill="var(--iso)">ISO</text>
+        <text y="16" text-anchor="middle" font-size="12" fill="var(--iso)">усиление</text>
+      </g>
+      <text x="640" y="276" font-size="13" fill="var(--muted)">побочный эффект: шум</text>
+      <text x="640" y="300" font-size="13.5" fill="var(--ink)"><tspan font-weight="700">100</tspan> чисто</text>
+      <text x="640" y="318" font-size="13.5" fill="var(--ink)"><tspan font-weight="700">6400</tspan> зерно</text>
+      <!-- arrows: more light -->
+      <text x="410" y="458" text-anchor="middle" font-size="13" fill="var(--muted)">Больше света: шире диафрагма (меньше число F) · длиннее выдержка · выше ISO</text>
+    </svg>

@@ -1,0 +1,53 @@
+<svg viewBox="0 0 820 300" role="img" aria-label="Схема: предмет, объектив, диафрагма, затвор, матрица">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/></marker>
+      </defs>
+      <g transform="translate(20,70)">
+        <rect x="26" y="80" width="12" height="50" fill="#8a5a33"/>
+        <circle cx="32" cy="60" r="38" fill="#3fa65b"/>
+        <circle cx="16" cy="50" r="20" fill="#4fba6a"/>
+        <text x="32" y="160" text-anchor="middle" font-size="14" fill="var(--muted)">предмет</text>
+      </g>
+      <g stroke="#f2b632" stroke-width="2" fill="none" opacity=".9">
+        <path d="M70,95 L210,108 L630,198"/>
+        <path d="M70,192 L210,182 L630,96"/>
+      </g>
+      <g>
+        <ellipse cx="210" cy="145" rx="20" ry="80" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="3"/>
+        <text x="210" y="44" text-anchor="middle" font-size="15" font-weight="700" fill="var(--fl)">Объектив</text>
+        <text x="210" y="262" text-anchor="middle" font-size="13" fill="var(--fl)">фокусное расстояние</text>
+        <text x="210" y="280" text-anchor="middle" font-size="13" fill="var(--fl)">= «зум»</text>
+      </g>
+      <g>
+        <rect x="344" y="60" width="12" height="70" fill="var(--f)"/>
+        <rect x="344" y="162" width="12" height="70" fill="var(--f)"/>
+        <text x="350" y="44" text-anchor="middle" font-size="15" font-weight="700" fill="var(--f)">Диафрагма F</text>
+        <text x="350" y="262" text-anchor="middle" font-size="13" fill="var(--f)">размер дырки</text>
+        <text x="350" y="280" text-anchor="middle" font-size="13" fill="var(--f)">= сколько света сразу</text>
+      </g>
+      <g>
+        <rect x="486" y="60" width="8" height="74" rx="2" fill="var(--t)" opacity=".85"/>
+        <rect x="486" y="158" width="8" height="74" rx="2" fill="var(--t)" opacity=".85"/>
+        <text x="490" y="44" text-anchor="middle" font-size="15" font-weight="700" fill="var(--t)">Затвор</text>
+        <text x="490" y="262" text-anchor="middle" font-size="13" fill="var(--t)">выдержка</text>
+        <text x="490" y="280" text-anchor="middle" font-size="13" fill="var(--t)">= как долго открыт</text>
+      </g>
+      <g>
+        <rect x="630" y="70" width="22" height="152" rx="3" fill="var(--iso-soft)" stroke="var(--iso)" stroke-width="3"/>
+        <g stroke="var(--iso)" stroke-width="1" opacity=".55">
+          <line x1="630" y1="90" x2="652" y2="90"/><line x1="630" y1="110" x2="652" y2="110"/><line x1="630" y1="130" x2="652" y2="130"/><line x1="630" y1="150" x2="652" y2="150"/><line x1="630" y1="170" x2="652" y2="170"/><line x1="630" y1="190" x2="652" y2="190"/><line x1="630" y1="210" x2="652" y2="210"/>
+        </g>
+        <text x="641" y="44" text-anchor="middle" font-size="15" font-weight="700" fill="var(--iso)">Матрица</text>
+        <text x="641" y="262" text-anchor="middle" font-size="13" fill="var(--iso)">ISO = усиление</text>
+        <text x="641" y="280" text-anchor="middle" font-size="13" fill="var(--dr)">ДД = от тени до света</text>
+      </g>
+      <g transform="translate(705,95)">
+        <rect x="0" y="0" width="100" height="100" rx="8" fill="var(--soft)" stroke="var(--line)"/>
+        <g transform="translate(50,50) rotate(180) translate(-50,-50)">
+          <rect x="47" y="58" width="6" height="26" fill="#8a5a33"/>
+          <circle cx="50" cy="44" r="22" fill="#3fa65b"/>
+        </g>
+        <text x="50" y="122" text-anchor="middle" font-size="12" fill="var(--muted)">изображение</text>
+        <text x="50" y="138" text-anchor="middle" font-size="12" fill="var(--muted)">(перевёрнуто!)</text>
+      </g>
+    </svg>

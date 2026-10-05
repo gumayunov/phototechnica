@@ -1,0 +1,16 @@
+<svg viewBox="0 0 820 268" role="img" aria-label="Диагональ полнокадровой матрицы 43 мм и APS-C 28 мм">
+      <g transform="translate(70,40)">
+        <rect width="288" height="192" rx="4" fill="var(--soft)" stroke="var(--ink)" stroke-width="2"/>
+        <line x1="0" y1="192" x2="288" y2="0" stroke="var(--fl)" stroke-width="3"/>
+        <text x="150" y="88" font-size="15" font-weight="700" fill="var(--fl)" transform="rotate(-33.7 150 88)">диагональ 43 мм</text>
+        <text x="144" y="-10" text-anchor="middle" font-size="13" fill="var(--muted)">полный кадр 36×24 мм</text>
+        <text x="144" y="212" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">нормальный: 40–55 мм (классика — 50)</text>
+      </g>
+      <g transform="translate(500,82)">
+        <rect width="188" height="125" rx="4" fill="var(--soft)" stroke="var(--ink)" stroke-width="2"/>
+        <line x1="0" y1="125" x2="188" y2="0" stroke="var(--fl)" stroke-width="3"/>
+        <text x="95" y="56" font-size="14" font-weight="700" fill="var(--fl)" transform="rotate(-33.6 95 56)">28 мм</text>
+        <text x="94" y="-10" text-anchor="middle" font-size="13" fill="var(--muted)">APS-C Fujifilm X-S10, 23,5×15,6 мм</text>
+        <text x="94" y="145" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">нормальный: ≈ 27–35 мм</text>
+      </g>
+    </svg>

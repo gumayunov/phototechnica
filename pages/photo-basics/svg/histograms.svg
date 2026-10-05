@@ -1,0 +1,26 @@
+<svg viewBox="0 0 820 200" role="img" aria-label="Три гистограммы: недодержка, норма, передержка">
+      <defs><linearGradient id="hg" x1="0" x2="1"><stop offset="0" stop-color="#000"/><stop offset="1" stop-color="#fff"/></linearGradient></defs>
+      <g transform="translate(20,20)">
+        <rect width="240" height="120" rx="6" fill="var(--soft)"/>
+        <path d="M0,120 L0,8 C20,10 40,30 60,60 C90,95 130,112 240,119 L240,120 Z" fill="var(--ink)" opacity=".75"/>
+        <rect x="0" y="0" width="4" height="120" fill="#e5484d"/>
+        <rect y="126" width="240" height="8" rx="2" fill="url(#hg)"/>
+        <text x="120" y="158" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">Недодержка</text>
+        <text x="120" y="176" text-anchor="middle" font-size="12" fill="var(--muted)">тени «обрезаны» слева</text>
+      </g>
+      <g transform="translate(290,20)">
+        <rect width="240" height="120" rx="6" fill="var(--soft)"/>
+        <path d="M0,120 C30,118 50,100 80,70 C100,48 120,30 140,40 C170,55 190,95 240,118 L240,120 Z" fill="var(--ink)" opacity=".75"/>
+        <rect y="126" width="240" height="8" rx="2" fill="url(#hg)"/>
+        <text x="120" y="158" text-anchor="middle" font-size="14" font-weight="700" fill="var(--iso)">Норма</text>
+        <text x="120" y="176" text-anchor="middle" font-size="12" fill="var(--muted)">гора помещается целиком</text>
+      </g>
+      <g transform="translate(560,20)">
+        <rect width="240" height="120" rx="6" fill="var(--soft)"/>
+        <path d="M0,120 L0,119 C110,112 150,95 180,60 C200,30 220,12 240,6 L240,120 Z" fill="var(--ink)" opacity=".75"/>
+        <rect x="236" y="0" width="4" height="120" fill="#e5484d"/>
+        <rect y="126" width="240" height="8" rx="2" fill="url(#hg)"/>
+        <text x="120" y="158" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">Передержка</text>
+        <text x="120" y="176" text-anchor="middle" font-size="12" fill="var(--muted)">света «обрезаны» справа</text>
+      </g>
+    </svg>

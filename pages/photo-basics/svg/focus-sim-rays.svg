@@ -1,0 +1,27 @@
+<svg id="fsSvg" viewBox="0 0 820 300" role="img" aria-label="Ход лучей от далёких гор и близкого цветка через объектив на матрицу">
+        <line x1="10" y1="150" x2="800" y2="150" stroke="var(--line)" stroke-width="1.5"/>
+        <g id="fsMount" transform="translate(14,150)">
+          <path d="M0,-12 L22,-52 L34,-34 L48,-62 L74,-12 Z" fill="#9db7c9"/><path d="M42,-50 L48,-62 L54,-50 Z" fill="#fff"/>
+          <text x="37" y="-72" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--fl)">горы, ∞</text>
+        </g>
+        <g id="fsRaysInf" stroke="var(--fl)" stroke-width="2" fill="none"></g>
+        <g id="fsRaysNear" stroke="var(--t)" stroke-width="2" fill="none"></g>
+        <g id="fsFlower">
+          <line x1="0" y1="0" x2="0" y2="46" stroke="#3d7a2c" stroke-width="3"/>
+          <g fill="#ffc21a"><circle cx="0" cy="-9" r="6"/><circle cx="0" cy="9" r="6"/><circle cx="-9" cy="0" r="6"/><circle cx="9" cy="0" r="6"/></g>
+          <circle r="5" fill="#6b3d14"/>
+          <text y="-22" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--t)">цветок</text>
+        </g>
+        <g id="fsLens">
+          <rect x="-6" y="-84" width="12" height="168" rx="3" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <ellipse rx="9" ry="66" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="2.5" fill-opacity=".7"/>
+          <text y="-92" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--fl)">объектив</text>
+        </g>
+        <g id="fsF"><line y1="-6" y2="6" stroke="var(--fl)" stroke-width="2"/><text y="22" text-anchor="middle" font-size="11.5" fill="var(--fl)">F′</text></g>
+        <rect x="770" y="80" width="10" height="140" rx="2" fill="var(--iso-soft)" stroke="var(--iso)" stroke-width="2"/>
+        <text x="775" y="72" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--iso)">матрица</text>
+        <rect id="fsSpotInf" x="782" width="6" rx="2" fill="var(--fl)"/>
+        <rect id="fsSpotNear" x="790" width="6" rx="2" fill="var(--t)"/>
+        <g id="fsDim" stroke="var(--ink)" stroke-width="1.5"><line id="fsDimL" y1="262" y2="262" x2="770"/><line id="fsDimA" y1="255" y2="269"/><line x1="770" x2="770" y1="255" y2="269"/></g>
+        <text id="fsDimT" y="284" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ink)"></text>
+      </svg>

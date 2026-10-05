@@ -1,0 +1,42 @@
+<!-- ============ 2. APERTURE ============ -->
+<section id="aperture" data-folio-id="aperture">
+  <span class="sec-num">02</span>
+  <h2><span style="color:var(--f)">Диафрагма F</span> — размер отверстия</h2>
+  <p>Внутри объектива есть шторки-лепестки, которые сходятся и расходятся, как зрачок глаза. Отверстие между ними называется диафрагмой. Её размер записывают странно: <b>f/1.4, f/2, f/2.8, f/4, f/5.6, f/8, f/11, f/16, f/22</b>.</p>
+
+  <figure data-folio-id="aperture-lenses-photo">
+    <img src="img/aperture-lenses.jpg" alt="Один и тот же объектив 50 мм при диафрагмах от f/1.4 до f/8" loading="lazy">
+    <figcaption>Один и тот же объектив 50 мм с разной диафрагмой. Чем больше число — тем меньше дырка.{{cr:aperture-lenses.jpg}}</figcaption>
+  </figure>
+
+  <div class="rule f">Число F — это дробь: f/4 означает «диаметр отверстия = фокусное расстояние, делённое на 4». Поэтому <b>больше число → меньше дырка → меньше света</b>.</div>
+  <p>Например, у объектива 50 мм при f/2 отверстие 25 мм, а при f/8 — всего 6 мм. Странные числа (1.4, 2, 2.8, 4…) выбраны так, чтобы <b>каждый следующий шаг пропускал ровно вдвое меньше света</b>: площадь круга уменьшается в 2 раза, а диаметр — примерно в 1,4 раза (это √2).</p>
+
+  <figure class="diagram" data-folio-id="aperture-scale">
+    {{svg:aperture-scale}}
+  </figure>
+
+  <h3>Побочный эффект: глубина резкости</h3>
+  <p>Диафрагма меняет не только яркость. Она решает, <b>какая часть сцены будет резкой</b> по глубине — от ближнего до дальнего. Эта зона называется <b>глубиной резкости</b> (ГРИП). Открытая диафрагма (f/1.4–f/2.8) даёт тонкую полоску резкости и размытый фон — так снимают портреты. Закрытая (f/11–f/22) делает резким почти всё — так снимают пейзажи.</p>
+
+  <div class="card" data-folio-id="dof-blocks">
+    <div class="seg" role="group" aria-label="Диафрагма" id="dofSeg">
+      <button type="button" data-src="img/dof-f1-4.jpg" aria-pressed="true">f/1.4</button>
+      <button type="button" data-src="img/dof-f4.jpg" aria-pressed="false">f/4</button>
+      <button type="button" data-src="img/dof-f22.jpg" aria-pressed="false">f/22</button>
+    </div>
+    <figure style="margin-top:14px">
+      <img id="dofImg" src="img/dof-f1-4.jpg" alt="Кубики с буквами при разной диафрагме" width="960" height="640">
+      <figcaption id="dofCap">f/1.4: резкость только на первом кубике, остальные тают в размытии.{{cr:dof-f1-4.jpg}}</figcaption>
+    </figure>
+  </div>
+
+  <div class="pair" data-folio-id="jonquils">
+    <figure><img src="img/jonquil-f5.jpg" alt="Нарциссы при f/5, фон размыт" loading="lazy"><div class="lbl">f/5 <small>· фон мягкий, цветы выделяются</small></div></figure>
+    <figure><img src="img/jonquil-f32.jpg" alt="Нарциссы при f/32, фон резкий" loading="lazy"><div class="lbl">f/32 <small>· фон резкий и отвлекает</small></div></figure>
+  </div>
+  <figcaption style="margin-top:6px">Одни и те же нарциссы, снятые с одного места.{{cr:jonquil-f5.jpg}}</figcaption>
+
+  <div class="note"><b>Почему телефон так не умеет?</b>У телефона крошечная матрица и короткий объектив, поэтому у него почти всё всегда резкое. «Портретный режим» размывает фон программно — угадывает, где человек, и рисует размытие сам.</div>
+</section>
+

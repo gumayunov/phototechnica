@@ -1,0 +1,30 @@
+<svg viewBox="0 0 820 360" role="img" aria-label="Одна и та же матрица: при коротком фокусном угол широкий, при длинном — узкий">
+      <g clip-path="url(#clip1)">
+        <path d="M700,120 L40,-127.5 L40,307.5 L700,60 Z" fill="var(--fl)" fill-opacity=".12"/>
+        <path d="M700,120 L40,-127.5 M700,60 L40,307.5" stroke="var(--fl)" stroke-width="1.6" stroke-dasharray="5 4" fill="none"/>
+      </g>
+      <clipPath id="clip1"><rect x="0" y="8" width="820" height="164"/></clipPath>
+      <circle cx="300" cy="30" r="11" fill="#3fa65b" fill-opacity="1" stroke="#2c7a42" stroke-width="1.5"/><circle cx="300" cy="60" r="11" fill="#3fa65b" fill-opacity="1" stroke="#2c7a42" stroke-width="1.5"/><circle cx="300" cy="90" r="11" fill="#3fa65b" fill-opacity="1" stroke="#2c7a42" stroke-width="1.5"/><circle cx="300" cy="120" r="11" fill="#3fa65b" fill-opacity="1" stroke="#2c7a42" stroke-width="1.5"/><circle cx="300" cy="150" r="11" fill="#3fa65b" fill-opacity="1" stroke="#2c7a42" stroke-width="1.5"/>
+      <ellipse cx="620" cy="90" rx="7" ry="40" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="2.5"/>
+      <rect x="700" y="60" width="10" height="60" rx="2" fill="var(--iso-soft)" stroke="var(--iso)" stroke-width="2"/>
+      <g stroke="var(--fl)" stroke-width="2"><line x1="620" y1="142" x2="700" y2="142"/><line x1="620" y1="135" x2="620" y2="149"/><line x1="700" y1="135" x2="700" y2="149"/></g>
+      <text x="660.0" y="164" text-anchor="middle" font-size="13" font-weight="700" fill="var(--fl)">f</text>
+      <text x="722" y="84" font-size="13.5" font-weight="700" fill="var(--ink)">Короткое f</text>
+      <text x="722" y="102" font-size="12.5" fill="var(--muted)">широкий угол</text>
+      <text x="722" y="120" font-size="12.5" fill="var(--muted)">в кадре: 5 из 5</text>
+      <line x1="20" y1="180" x2="800" y2="180" stroke="var(--line)"/>
+      <g clip-path="url(#clip2)">
+        <path d="M700,300 L40,176.2 L40,363.8 L700,240 Z" fill="var(--fl)" fill-opacity=".12"/>
+        <path d="M700,300 L40,176.2 M700,240 L40,363.8" stroke="var(--fl)" stroke-width="1.6" stroke-dasharray="5 4" fill="none"/>
+      </g>
+      <clipPath id="clip2"><rect x="0" y="188" width="820" height="164"/></clipPath>
+      <circle cx="300" cy="210" r="11" fill="#3fa65b" fill-opacity="0.35" stroke="#2c7a42" stroke-width="1.5"/><circle cx="300" cy="240" r="11" fill="#3fa65b" fill-opacity="1" stroke="#2c7a42" stroke-width="1.5"/><circle cx="300" cy="270" r="11" fill="#3fa65b" fill-opacity="1" stroke="#2c7a42" stroke-width="1.5"/><circle cx="300" cy="300" r="11" fill="#3fa65b" fill-opacity="1" stroke="#2c7a42" stroke-width="1.5"/><circle cx="300" cy="330" r="11" fill="#3fa65b" fill-opacity="0.35" stroke="#2c7a42" stroke-width="1.5"/>
+      <ellipse cx="540" cy="270" rx="7" ry="40" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="2.5"/>
+      <rect x="700" y="240" width="10" height="60" rx="2" fill="var(--iso-soft)" stroke="var(--iso)" stroke-width="2"/>
+      <g stroke="var(--fl)" stroke-width="2"><line x1="540" y1="322" x2="700" y2="322"/><line x1="540" y1="315" x2="540" y2="329"/><line x1="700" y1="315" x2="700" y2="329"/></g>
+      <text x="620.0" y="344" text-anchor="middle" font-size="13" font-weight="700" fill="var(--fl)">f</text>
+      <text x="722" y="264" font-size="13.5" font-weight="700" fill="var(--ink)">Длинное f ×2</text>
+      <text x="722" y="282" font-size="12.5" fill="var(--muted)">узкий угол</text>
+      <text x="722" y="300" font-size="12.5" fill="var(--muted)">в кадре: 3 из 5</text>
+      <text x="300" y="350" text-anchor="middle" font-size="12.5" fill="var(--muted)">деревья (вид сверху)</text>
+    </svg>

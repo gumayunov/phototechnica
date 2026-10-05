@@ -1,0 +1,19 @@
+<svg viewBox="0 0 820 210" role="img" aria-label="Шкала диафрагм: от f/1.4 до f/22, каждый шаг вдвое меньше света">
+      <g font-size="15" text-anchor="middle">
+        <!-- radius proportional to 1/N, r = 70/N*1.4 -->
+        <g transform="translate(60,90)"><circle r="56" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2.5"/><text y="94" font-weight="700" fill="var(--f)">f/1.4</text></g>
+        <g transform="translate(170,90)"><circle r="39.2" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2.5"/><text y="94" font-weight="700" fill="var(--f)">f/2</text></g>
+        <g transform="translate(260,90)"><circle r="28" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2.5"/><text y="94" font-weight="700" fill="var(--f)">f/2.8</text></g>
+        <g transform="translate(340,90)"><circle r="19.6" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2.5"/><text y="94" font-weight="700" fill="var(--f)">f/4</text></g>
+        <g transform="translate(415,90)"><circle r="14" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2.5"/><text y="94" font-weight="700" fill="var(--f)">f/5.6</text></g>
+        <g transform="translate(490,90)"><circle r="9.8" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2.5"/><text y="94" font-weight="700" fill="var(--f)">f/8</text></g>
+        <g transform="translate(565,90)"><circle r="7.1" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2.5"/><text y="94" font-weight="700" fill="var(--f)">f/11</text></g>
+        <g transform="translate(640,90)"><circle r="4.9" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2.5"/><text y="94" font-weight="700" fill="var(--f)">f/16</text></g>
+        <g transform="translate(715,90)"><circle r="3.5" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2"/><text y="94" font-weight="700" fill="var(--f)">f/22</text></g>
+      </g>
+      <g font-size="12" fill="var(--muted)" text-anchor="middle">
+        <text x="60" y="20">много света</text><text x="715" y="20">мало света</text>
+      </g>
+      <path d="M115,20 L660,20" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ar)"/>
+      <text x="410" y="205" text-anchor="middle" font-size="13" fill="var(--muted)">Каждый шаг вправо — вдвое меньше света. От f/1.4 до f/22 — восемь ступеней, то есть в 256 раз.</text>
+    </svg>

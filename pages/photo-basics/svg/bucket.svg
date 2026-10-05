@@ -1,0 +1,31 @@
+<svg viewBox="0 0 820 275" role="img" aria-label="Аналогия с ведром: широкая воронка и короткое время против узкой воронки и долгого времени">
+      <g id="rain" stroke="#7aa6e8" stroke-width="2" stroke-linecap="round" opacity=".8">
+        <line x1="40" y1="20" x2="36" y2="34"/><line x1="70" y1="10" x2="66" y2="24"/><line x1="100" y1="24" x2="96" y2="38"/><line x1="130" y1="12" x2="126" y2="26"/><line x1="160" y1="22" x2="156" y2="36"/><line x1="190" y1="8" x2="186" y2="22"/><line x1="220" y1="20" x2="216" y2="34"/>
+      </g>
+      <!-- left: wide funnel short time -->
+      <g transform="translate(40,40)">
+        <path d="M0,20 L180,20 L105,85 L75,85 Z" fill="var(--f-soft)" stroke="var(--f)" stroke-width="3"/>
+        <rect x="80" y="85" width="20" height="20" fill="var(--f-soft)" stroke="var(--f)" stroke-width="3"/>
+        <path d="M45,115 L135,115 L125,195 L55,195 Z" fill="none" stroke="var(--ink)" stroke-width="3"/>
+        <path d="M51,150 L129,150 L125,195 L55,195 Z" fill="#7aa6e8" opacity=".7"/>
+        <line x1="40" y1="150" x2="140" y2="150" stroke="var(--t)" stroke-dasharray="4 3" stroke-width="2"/>
+        <text x="90" y="12" text-anchor="middle" font-size="14" font-weight="600" fill="var(--f)">широкая воронка (f/2)</text>
+        <text x="195" y="160" font-size="14" fill="var(--t)" font-weight="600">⏱ 1 секунда</text>
+      </g>
+      <text x="410" y="140" text-anchor="middle" font-size="28" fill="var(--muted)">=</text>
+      <g transform="translate(440,0)">
+        <g stroke="#7aa6e8" stroke-width="2" stroke-linecap="round" opacity=".8">
+          <line x1="140" y1="20" x2="136" y2="34"/><line x1="170" y1="10" x2="166" y2="24"/><line x1="200" y1="24" x2="196" y2="38"/><line x1="230" y1="12" x2="226" y2="26"/>
+        </g>
+        <g transform="translate(100,40)">
+          <path d="M45,20 L135,20 L100,85 L80,85 Z" fill="var(--f-soft)" stroke="var(--f)" stroke-width="3"/>
+          <rect x="82" y="85" width="16" height="20" fill="var(--f-soft)" stroke="var(--f)" stroke-width="3"/>
+          <path d="M45,115 L135,115 L125,195 L55,195 Z" fill="none" stroke="var(--ink)" stroke-width="3"/>
+          <path d="M51,150 L129,150 L125,195 L55,195 Z" fill="#7aa6e8" opacity=".7"/>
+          <line x1="40" y1="150" x2="140" y2="150" stroke="var(--t)" stroke-dasharray="4 3" stroke-width="2"/>
+          <text x="90" y="12" text-anchor="middle" font-size="14" font-weight="600" fill="var(--f)">узкая воронка (f/4)</text>
+          <text x="-95" y="160" font-size="14" fill="var(--t)" font-weight="600">⏱ 4 секунды</text>
+        </g>
+      </g>
+      <text x="410" y="266" text-anchor="middle" font-size="14" fill="var(--muted)">Воды в ведре одинаково — значит, и яркость снимка одинаковая. Отличаются только «побочные эффекты».</text>
+    </svg>

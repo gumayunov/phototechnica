@@ -1,0 +1,22 @@
+<svg viewBox="0 0 820 310" role="img" aria-label="Лупа сводит параллельные лучи Солнца в точку — фокус; расстояние от линзы до фокуса и есть фокусное расстояние">
+      <defs><radialGradient id="glow"><stop offset="0" stop-color="#fff7c2"/><stop offset=".35" stop-color="#ffcf3a"/><stop offset="1" stop-color="#ffcf3a" stop-opacity="0"/></radialGradient></defs>
+      <g transform="translate(48,150)">
+        <g stroke="#f2b632" stroke-width="3" stroke-linecap="round"><line x1="0" y1="-44" x2="0" y2="-36"/><line x1="0" y1="44" x2="0" y2="36"/><line x1="-44" y1="0" x2="-36" y2="0"/><line x1="31" y1="31" x2="25" y2="25"/><line x1="-31" y1="-31" x2="-25" y2="-25"/><line x1="31" y1="-31" x2="25" y2="-25"/><line x1="-31" y1="31" x2="-25" y2="25"/></g>
+        <circle r="26" fill="#ffcf3a"/>
+      </g>
+      <g stroke="#f2b632" stroke-width="2.2" fill="none"><path d="M95,78 L330,78 L600,150"/><path d="M95,108 L330,108 L600,150"/><path d="M95,138 L330,138 L600,150"/><path d="M95,162 L330,162 L600,150"/><path d="M95,192 L330,192 L600,150"/><path d="M95,222 L330,222 L600,150"/></g>
+      <ellipse cx="330" cy="150" rx="16" ry="96" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="3"/>
+      <rect x="600" y="52" width="6" height="196" rx="2" fill="var(--soft)" stroke="var(--line)"/>
+      <circle cx="602" cy="150" r="22" fill="url(#glow)"/>
+      <circle cx="602" cy="150" r="4" fill="#e0702a"/>
+      <g font-size="13.5" fill="var(--muted)">
+        <text x="100" y="50">Солнце далеко, поэтому</text><text x="100" y="67">лучи почти параллельны</text>
+        <text x="330" y="40" text-anchor="middle" font-weight="700" fill="var(--fl)">линза (лупа)</text>
+        <text x="618" y="128" font-weight="700" fill="var(--t)">фокус</text>
+        <text x="618" y="146">точка, где лучи</text><text x="618" y="163">сходятся, — тут</text><text x="618" y="180">бумага начинает тлеть</text>
+        <text x="604" y="44" text-anchor="middle">лист бумаги</text>
+      </g>
+      <g stroke="var(--fl)" stroke-width="2"><line x1="330" y1="262" x2="602" y2="262"/><line x1="330" y1="254" x2="330" y2="270"/><line x1="602" y1="254" x2="602" y2="270"/></g>
+      <path d="M340,257 L330,262 L340,267 M592,257 L602,262 L592,267" stroke="var(--fl)" stroke-width="2" fill="none"/>
+      <text x="466" y="290" text-anchor="middle" font-size="15" font-weight="700" fill="var(--fl)">фокусное расстояние f</text>
+    </svg>
