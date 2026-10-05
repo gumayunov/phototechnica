@@ -384,13 +384,6 @@
   "artist": "Alex1ruff",
   "author": "Alex1ruff"
  },
- "wb-girl-cold.jpg": {
-  "title": "Wb girl cold.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Wb_girl_cold.jpg",
-  "license": "CC BY-SA 4.0",
-  "artist": "Alex1ruff",
-  "author": "Alex1ruff"
- },
  "focus-fly-1.jpg": {
   "title": "Focus stacking Tachinid fly.jpg",
   "page": "https://commons.wikimedia.org/wiki/File:Focus_stacking_Tachinid_fly.jpg",
@@ -411,5 +404,12 @@
   "license": "CC BY-SA 3.0",
   "artist": "Muhammad Mahdi Karim",
   "author": "Muhammad Mahdi Karim"
+ },
+ "wb-girl-cloudy.jpg": {
+  "title": "Wb girl cloudy.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Wb_girl_cloudy.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Alex1ruff",
+  "author": "Alex1ruff"
  }
 }
