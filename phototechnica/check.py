@@ -88,12 +88,12 @@ def check_page(name, root=ROOT):
     if '{{' in text:
         line = text[:text.index('{{')].count('\n') + 1
         issues.append(Issue('error', f'{where}:{line}', 'нераспознанная метка: ' + text[text.index('{{'):][:40]))
-    for other in unpublished_links(text):
-        issues.append(Issue('warning', where, f'ссылка на неопубликованную страницу {other} — '
-                                              f'заработает после ./pt publish {other}'))
     s = scan(text)
     if not issues:
         issues += [Issue('error', f'{where}:{l}', m) for l, m in s.problems]
+    for other in unpublished_links(text):
+        issues.append(Issue('warning', where, f'ссылка на неопубликованную страницу {other} — '
+                                              f'заработает после ./pt publish {other}'))
     for fid, n in Counter(i for i, _ in s.ids).items():
         if n > 1:
             issues.append(Issue('error', where, f'data-folio-id="{fid}" встречается {n} раза'))

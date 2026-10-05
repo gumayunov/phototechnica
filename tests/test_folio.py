@@ -58,6 +58,16 @@ class PublishTest(TmpRepo):
             publish('demo', self.root, folio)
         self.assertFalse(self.log.exists())
 
+    def test_unpublished_links_listed_sorted(self):
+        for n in ('b-page', 'a-page'):
+            self.page(n, {'layout.html': 'x\n'}, meta={'title': 'O', 'folio': '', 'version': 0})
+        self.write('pages/demo/sections/01-a.html',
+                   '<p><a href="{{url:b-page}}">b</a><a href="{{url:a-page}}">a</a></p>\n')
+        folio = self.fake('exit 0')
+        with self.assertRaisesRegex(PublishError, 'сначала опубликуй: a-page, b-page'):
+            publish('demo', self.root, folio)
+        self.assertFalse(self.log.exists())
+
     ORIG = {'title': 'Демо', 'folio': 'me/demo-x1', 'version': 2}
 
     def test_no_json_line(self):

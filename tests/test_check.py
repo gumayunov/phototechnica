@@ -35,6 +35,13 @@ class CheckTest(TmpRepo):
         self.write('pages/demo/layout.html', '{{shared:head.html}}\n</head>\n<body>\n<main>\n{{section:01-a}}\n</body>\n</html>\n')
         self.assertEqual(self.messages(), ['pages/demo (собранная страница):8: <main> не закрыт до </body> в строке 13'])
 
+    def test_unpublished_link_warning_does_not_hide_layout_problem(self):
+        self.page('other', {'layout.html': 'x\n'}, meta={'title': 'O', 'folio': '', 'version': 0})
+        self.write('pages/demo/layout.html', '{{shared:head.html}}\n</head>\n<body>\n<main>\n{{section:01-a}}\n</body>\n</html>\n')
+        self.section('<p><a href="{{url:other}}">o</a></p>\n')
+        self.assertEqual(self.messages(), ['pages/demo (собранная страница):8: <main> не закрыт до </body> в строке 10'])
+        self.assertTrue(any('ссылка на неопубликованную страницу other' in m for m in self.messages('warning')))
+
     def test_build_error_is_reported(self):
         self.section('<p>{{svg:nope}}</p>\n')
         self.assertEqual(self.messages(), ['demo: demo: {{svg:nope}} — нет файла pages/demo/svg/nope.svg'])
