@@ -30,7 +30,7 @@ tools/dl.py              скачать фото с Wikimedia Commons с атр�
 
 | Метка | Чем заменяется |
 |---|---|
-| `{{section:06-focus}}` | `sections/06-focus.html` |
+| `{{section:07-focus}}` | `sections/07-focus.html` |
 | `{{svg:имя}}`, `{{js:имя}}`, `{{css:имя}}` | файл страницы из `svg/`, `js/`, `css/` |
 | `{{shared:base.css}}` | файл из `shared/` |
 | `{{cr:фото.jpg}}` | подпись «Фото: автор, лицензия, Wikimedia Commons» из `credits.json` |
@@ -45,7 +45,7 @@ tools/dl.py              скачать фото с Wikimedia Commons с атр�
 ./pt build [страница]          # проверить и собрать в dist/
 ./pt check [страница]          # только проверить: вложенность тегов, метки, data-folio-id, картинки
 ./pt outline <страница>        # разделы, заголовки, data-folio-id, число слов и рисунков
-./pt text <страница> [раздел]  # чистый текст страницы или раздела (06, 06-focus, focus)
+./pt text <страница> [раздел]  # чистый текст страницы или раздела (07, 07-focus, focus)
 ./pt publish <страница>        # собрать и выложить новую версию на folio (только folio.fold-core.ru)
 ./pt new <slug> --title "…"    # заготовка новой страницы
 python3 -m unittest discover -s tests -t .
