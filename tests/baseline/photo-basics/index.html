@@ -1,0 +1,1574 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Основы фотографии</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf8f4; --paper:#ffffff; --ink:#1d1c1a; --muted:#6b675f; --line:#e6e1d8; --soft:#f2eee6;
+  --f:#2f6fed; --t:#e0702a; --iso:#21965f; --fl:#8a4fd8; --dr:#c99712;
+  --f-soft:#e6eefe; --t-soft:#fcece1; --iso-soft:#e2f4ea; --fl-soft:#f0e8fb; --dr-soft:#faf1d6;
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#151513; --paper:#1e1d1b; --ink:#ece9e2; --muted:#a29d93; --line:#34322e; --soft:#262522;
+    --f:#6c9bff; --t:#ff9a55; --iso:#4cc98a; --fl:#b48bff; --dr:#f0c445;
+    --f-soft:#1d2a45; --t-soft:#3a2617; --iso-soft:#16301f; --fl-soft:#2c2140; --dr-soft:#3a3013;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.62 "Golos Text",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:860px;margin:0 auto;padding:0 20px 80px}
+h1,h2,h3{font-family:"Unbounded","Golos Text",sans-serif;line-height:1.2;letter-spacing:-.01em}
+h1{font-size:clamp(30px,6vw,52px);margin:0 0 14px}
+h2{font-size:clamp(23px,4vw,32px);margin:0 0 6px}
+h3{font-size:19px;margin:28px 0 8px}
+p{margin:0 0 14px}
+a{color:inherit;text-decoration-color:var(--muted);text-underline-offset:3px}
+.lead{font-size:19px;color:var(--muted);max-width:680px}
+.hero{padding:56px 0 26px}
+.kicker{font:600 13px/1 "Golos Text";letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:14px;text-decoration:none;font-weight:500}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+section{padding:46px 0 10px;border-top:1px solid var(--line);margin-top:30px}
+.sec-num{font:700 13px/1 "Unbounded";color:var(--muted);margin-bottom:10px;display:block}
+.tag{display:inline-block;font-weight:600;padding:1px 8px;border-radius:6px;font-size:.92em;white-space:nowrap}
+.tag.f{background:var(--f-soft);color:var(--f)} .tag.t{background:var(--t-soft);color:var(--t)}
+.tag.iso{background:var(--iso-soft);color:var(--iso)} .tag.fl{background:var(--fl-soft);color:var(--fl)}
+.tag.dr{background:var(--dr-soft);color:var(--dr)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin:20px 0}
+.note{background:var(--soft);border-radius:var(--radius);padding:16px 20px;margin:18px 0;font-size:16px}
+.note b:first-child{display:block;margin-bottom:4px}
+.rule{border-left:4px solid var(--ink);padding:4px 0 4px 16px;margin:20px 0;font-size:18px;font-weight:500}
+.rule.f{border-color:var(--f)} .rule.t{border-color:var(--t)} .rule.iso{border-color:var(--iso)} .rule.fl{border-color:var(--fl)} .rule.dr{border-color:var(--dr)}
+figure{margin:22px 0}
+figure img{display:block;width:100%;height:auto;border-radius:10px;background:var(--soft)}
+figcaption{font-size:14px;color:var(--muted);margin-top:8px;line-height:1.45}
+figcaption .cr{display:block;font-size:12px;opacity:.85;margin-top:2px}
+figcaption .cr a{color:inherit}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.quad{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.pair figure,.trio figure,.quad figure{margin:0}
+.lbl{font-weight:600;color:var(--ink);font-size:14px;margin-top:6px}
+.lbl small{font-weight:400;color:var(--muted)}
+svg{display:block;max-width:100%;height:auto}
+svg text{font-family:"Golos Text",system-ui,sans-serif}
+.diagram{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.tbl-wrap{overflow-x:auto;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:4px 10px}
+.mono{font-variant-numeric:tabular-nums}
+/* side TOC */
+.toc{display:none}
+@media (min-width:1180px){
+  main{margin-left:max(268px, calc(50% - 430px));margin-right:auto}
+  .toc{display:block;position:fixed;top:28px;left:max(20px, calc(50% - 430px - 248px));width:224px;max-height:calc(100vh - 56px);overflow-y:auto;font-size:14px;line-height:1.35;padding:4px 8px 12px 0;scrollbar-width:thin}
+  .toc .toc-title{font:600 12px/1 "Golos Text";letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px 12px}
+  .toc ol{list-style:none;margin:0;padding:0}
+  .toc > ol > li{margin:1px 0}
+  .toc a{display:flex;gap:8px;align-items:baseline;padding:6px 10px;border-radius:8px;text-decoration:none;color:var(--muted)}
+  .toc a:hover{background:var(--soft);color:var(--ink)}
+  .toc .n{font:700 11px "Unbounded";opacity:.7;min-width:18px}
+  .toc li.active > a{background:var(--paper);color:var(--ink);font-weight:600;box-shadow:0 0 0 1px var(--line)}
+  .toc li.active > a .n{color:var(--acc,var(--ink));opacity:1}
+  .toc ol ol{display:none;margin:2px 0 6px 28px;border-left:2px solid var(--line)}
+  .toc li.active ol{display:block}
+  .toc ol ol a{padding:4px 10px;font-size:13px;border-radius:0 6px 6px 0}
+  .toc ol ol li.cur > a{color:var(--ink);font-weight:600;box-shadow:inset 2px 0 0 var(--acc,var(--ink));margin-left:-2px}
+}
+.trio.fit figure img{aspect-ratio:3/4;object-fit:cover}
+.trio.tall figure img{aspect-ratio:3/5;object-fit:cover;object-position:center 60%}
+.xlink{display:block;margin-top:22px;padding:16px 20px;border-radius:14px;background:linear-gradient(120deg,var(--fl-soft),var(--t-soft));border:1px solid var(--line);text-decoration:none;color:var(--ink);max-width:640px}
+.xlink:hover{box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.xlink-k{display:block;font:600 11.5px "Golos Text";letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.xlink-t{display:block;font:700 18px "Unbounded";margin:4px 0}
+.xlink-d{display:block;font-size:14.5px;color:var(--muted)}
+/* tabs */
+.seg{display:inline-flex;background:var(--soft);border-radius:10px;padding:4px;gap:4px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--ink);font:600 15px "Golos Text";padding:7px 14px;border-radius:7px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--paper);box-shadow:0 1px 3px rgba(0,0,0,.12);color:var(--f)}
+/* simulator */
+.sim{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px;margin:24px 0}
+.sim-view{position:relative;border-radius:12px;overflow:hidden;background:#000}
+.sim-view svg{width:100%;transition:filter .15s}
+.sim-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:16px}
+.ctl label{display:flex;justify-content:space-between;align-items:baseline;font-weight:600;font-size:14px;margin-bottom:4px}
+.ctl output{font:700 18px "Unbounded";}
+.ctl.f output{color:var(--f)} .ctl.t output{color:var(--t)} .ctl.iso output{color:var(--iso)}
+.ctl small{display:block;color:var(--muted);font-size:12.5px;line-height:1.35;margin-top:4px;min-height:34px}
+input[type=range]{width:100%;accent-color:var(--ink)}
+.ctl.f input{accent-color:var(--f)} .ctl.t input{accent-color:var(--t)} .ctl.iso input{accent-color:var(--iso)}
+.sim-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.sim-top .seg button[aria-pressed="true"]{color:var(--ink)}
+.meter{margin:14px 0 30px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.meter-bar{position:relative;flex:1;min-width:220px;height:30px;border-radius:8px;background:linear-gradient(90deg,#111 0%,#555 30%,#9a9a9a 50%,#ddd 70%,#fff 100%);border:1px solid var(--line)}
+.meter-bar i{position:absolute;top:-6px;width:4px;height:40px;background:var(--t);border-radius:2px;transform:translateX(-2px);transition:left .15s}
+.meter-bar span{position:absolute;top:34px;font-size:11px;color:var(--muted);transform:translateX(-50%)}
+.verdict{font-weight:700;min-width:170px}
+.btn{border:1px solid var(--line);background:var(--soft);color:var(--ink);font:600 14px "Golos Text";padding:8px 14px;border-radius:9px;cursor:pointer}
+.effects{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px;font-size:14px}
+.effects div{background:var(--soft);border-radius:10px;padding:10px 12px}
+.effects b{display:block;font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+/* focal */
+.focal-box{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px;margin:24px 0}
+.focal-img{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:1024/683;background:var(--soft)}
+.focal-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.focal-row{display:grid;grid-template-columns:1fr 150px;gap:18px;align-items:center;margin-top:14px}
+.focal-read{font:700 26px "Unbounded";color:var(--fl)}
+.focal-read small{display:block;font:500 14px "Golos Text";color:var(--muted);margin-top:4px}
+.ticks{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:2px}
+ol.tasks{padding-left:22px} ol.tasks li{margin-bottom:12px}
+.credits{font-size:13px;color:var(--muted)} .credits li{margin-bottom:4px}
+footer{margin-top:40px;color:var(--muted);font-size:13px}
+@media (max-width:640px){
+  .face-grid{grid-template-columns:1fr !important}
+  .fs-grid{grid-template-columns:1fr !important}
+  body{font-size:16px}
+  main{padding:0 16px 60px}
+  .pair,.trio{grid-template-columns:1fr}
+  .quad{grid-template-columns:1fr 1fr}
+  .sim-grid,.effects{grid-template-columns:1fr}
+  .focal-row{grid-template-columns:1fr}
+  .ctl small{min-height:0}
+}
+</style>
+</head>
+<body>
+<nav class="toc" id="toc" aria-label="Содержание"><div class="toc-title">Содержание</div><ol id="tocList"></ol></nav>
+<main>
+
+<header class="hero" data-folio-id="intro">
+  <div class="kicker">Фотография с нуля</div>
+  <h1>Как камера ловит свет</h1>
+  <p class="lead">Любая фотография — это порция света, которую камера успела поймать. Пять понятий объясняют почти всё, что происходит, когда ты нажимаешь на кнопку: диафрагма&nbsp;F, выдержка, ISO, фокусное расстояние и динамический диапазон. Разберём каждое по отдельности, а потом сложим вместе.</p>
+  <nav class="chips" aria-label="Разделы">
+    <a class="chip" href="#path"><span class="dot" style="background:var(--muted)"></span>Путь света</a>
+    <a class="chip" href="#aperture"><span class="dot" style="background:var(--f)"></span>Диафрагма F</a>
+    <a class="chip" href="#shutter"><span class="dot" style="background:var(--t)"></span>Выдержка</a>
+    <a class="chip" href="#iso"><span class="dot" style="background:var(--iso)"></span>ISO</a>
+    <a class="chip" href="#triangle"><span class="dot" style="background:var(--ink)"></span>Треугольник + симулятор</a>
+    <a class="chip" href="#focus"><span class="dot" style="background:var(--muted)"></span>Фокусировка</a>
+    <a class="chip" href="#focal"><span class="dot" style="background:var(--fl)"></span>Фокусное расстояние</a>
+    <a class="chip" href="#dr"><span class="dot" style="background:var(--dr)"></span>Динамический диапазон</a>
+    <a class="chip" href="#links"><span class="dot" style="background:var(--ink)"></span>Как всё связано</a>
+    <a class="chip" href="#practice"><span class="dot" style="background:var(--ink)"></span>Шпаргалка и задания</a>
+  </nav>
+  <a class="xlink" href="https://folio.fold-core.ru/a/bernhard/simulyatsii-plenki-fujifilm-x-s10-kejiswf8/" data-folio-id="link-film-sims">
+    <span class="xlink-k">Отдельная страница</span>
+    <span class="xlink-t">Симуляции плёнки Fujifilm X-S10 →</span>
+    <span class="xlink-d">Velvia, Classic Chrome, Acros и ещё 15: как выглядят, для каких сцен подходят и как их настроить на камере</span>
+  </a>
+</header>
+
+<!-- ============ 1. PATH ============ -->
+<section id="path" data-folio-id="light-path">
+  <span class="sec-num">01</span>
+  <h2>Путь света через камеру</h2>
+  <p>Свет от предмета проходит через объектив, протискивается в отверстие диафрагмы, ждёт, пока откроется затвор, и попадает на матрицу — светочувствительную пластинку из миллионов крошечных «ведёрок» (пикселей). Каждый этап отвечает за свою настройку.</p>
+
+  <figure class="diagram" data-folio-id="light-path-diagram">
+    <svg viewBox="0 0 820 300" role="img" aria-label="Схема: предмет, объектив, диафрагма, затвор, матрица">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/></marker>
+      </defs>
+      <g transform="translate(20,70)">
+        <rect x="26" y="80" width="12" height="50" fill="#8a5a33"/>
+        <circle cx="32" cy="60" r="38" fill="#3fa65b"/>
+        <circle cx="16" cy="50" r="20" fill="#4fba6a"/>
+        <text x="32" y="160" text-anchor="middle" font-size="14" fill="var(--muted)">предмет</text>
+      </g>
+      <g stroke="#f2b632" stroke-width="2" fill="none" opacity=".9">
+        <path d="M70,95 L210,108 L630,198"/>
+        <path d="M70,192 L210,182 L630,96"/>
+      </g>
+      <g>
+        <ellipse cx="210" cy="145" rx="20" ry="80" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="3"/>
+        <text x="210" y="44" text-anchor="middle" font-size="15" font-weight="700" fill="var(--fl)">Объектив</text>
+        <text x="210" y="262" text-anchor="middle" font-size="13" fill="var(--fl)">фокусное расстояние</text>
+        <text x="210" y="280" text-anchor="middle" font-size="13" fill="var(--fl)">= «зум»</text>
+      </g>
+      <g>
+        <rect x="344" y="60" width="12" height="70" fill="var(--f)"/>
+        <rect x="344" y="162" width="12" height="70" fill="var(--f)"/>
+        <text x="350" y="44" text-anchor="middle" font-size="15" font-weight="700" fill="var(--f)">Диафрагма F</text>
+        <text x="350" y="262" text-anchor="middle" font-size="13" fill="var(--f)">размер дырки</text>
+        <text x="350" y="280" text-anchor="middle" font-size="13" fill="var(--f)">= сколько света сразу</text>
+      </g>
+      <g>
+        <rect x="486" y="60" width="8" height="74" rx="2" fill="var(--t)" opacity=".85"/>
+        <rect x="486" y="158" width="8" height="74" rx="2" fill="var(--t)" opacity=".85"/>
+        <text x="490" y="44" text-anchor="middle" font-size="15" font-weight="700" fill="var(--t)">Затвор</text>
+        <text x="490" y="262" text-anchor="middle" font-size="13" fill="var(--t)">выдержка</text>
+        <text x="490" y="280" text-anchor="middle" font-size="13" fill="var(--t)">= как долго открыт</text>
+      </g>
+      <g>
+        <rect x="630" y="70" width="22" height="152" rx="3" fill="var(--iso-soft)" stroke="var(--iso)" stroke-width="3"/>
+        <g stroke="var(--iso)" stroke-width="1" opacity=".55">
+          <line x1="630" y1="90" x2="652" y2="90"/><line x1="630" y1="110" x2="652" y2="110"/><line x1="630" y1="130" x2="652" y2="130"/><line x1="630" y1="150" x2="652" y2="150"/><line x1="630" y1="170" x2="652" y2="170"/><line x1="630" y1="190" x2="652" y2="190"/><line x1="630" y1="210" x2="652" y2="210"/>
+        </g>
+        <text x="641" y="44" text-anchor="middle" font-size="15" font-weight="700" fill="var(--iso)">Матрица</text>
+        <text x="641" y="262" text-anchor="middle" font-size="13" fill="var(--iso)">ISO = усиление</text>
+        <text x="641" y="280" text-anchor="middle" font-size="13" fill="var(--dr)">ДД = от тени до света</text>
+      </g>
+      <g transform="translate(705,95)">
+        <rect x="0" y="0" width="100" height="100" rx="8" fill="var(--soft)" stroke="var(--line)"/>
+        <g transform="translate(50,50) rotate(180) translate(-50,-50)">
+          <rect x="47" y="58" width="6" height="26" fill="#8a5a33"/>
+          <circle cx="50" cy="44" r="22" fill="#3fa65b"/>
+        </g>
+        <text x="50" y="122" text-anchor="middle" font-size="12" fill="var(--muted)">изображение</text>
+        <text x="50" y="138" text-anchor="middle" font-size="12" fill="var(--muted)">(перевёрнуто!)</text>
+      </g>
+    </svg>
+    <figcaption>Объектив переворачивает картинку вверх ногами — так же, как хрусталик глаза. Камера потом просто переворачивает её обратно.</figcaption>
+  </figure>
+
+  <h3>Аналогия: ведро под дождём</h3>
+  <p>Представь, что свет — это дождь, а каждый пиксель матрицы — ведро. Чтобы снимок получился «правильным», ведро должно наполниться до нужной отметки. Наполнить его можно двумя способами: поставить <b>воронку пошире</b> (это <span class="tag f">диафрагма</span>) или <b>держать ведро под дождём подольше</b> (это <span class="tag t">выдержка</span>). А <span class="tag iso">ISO</span> — это как громкость на усилителе: если воды набралось мало, можно «выкрутить звук» и сделать вид, что ведро полное. Но вместе с полезным сигналом усилится и шипение — шум.</p>
+
+  <figure class="diagram" data-folio-id="bucket-analogy">
+    <svg viewBox="0 0 820 275" role="img" aria-label="Аналогия с ведром: широкая воронка и короткое время против узкой воронки и долгого времени">
+      <g id="rain" stroke="#7aa6e8" stroke-width="2" stroke-linecap="round" opacity=".8">
+        <line x1="40" y1="20" x2="36" y2="34"/><line x1="70" y1="10" x2="66" y2="24"/><line x1="100" y1="24" x2="96" y2="38"/><line x1="130" y1="12" x2="126" y2="26"/><line x1="160" y1="22" x2="156" y2="36"/><line x1="190" y1="8" x2="186" y2="22"/><line x1="220" y1="20" x2="216" y2="34"/>
+      </g>
+      <!-- left: wide funnel short time -->
+      <g transform="translate(40,40)">
+        <path d="M0,20 L180,20 L105,85 L75,85 Z" fill="var(--f-soft)" stroke="var(--f)" stroke-width="3"/>
+        <rect x="80" y="85" width="20" height="20" fill="var(--f-soft)" stroke="var(--f)" stroke-width="3"/>
+        <path d="M45,115 L135,115 L125,195 L55,195 Z" fill="none" stroke="var(--ink)" stroke-width="3"/>
+        <path d="M51,150 L129,150 L125,195 L55,195 Z" fill="#7aa6e8" opacity=".7"/>
+        <line x1="40" y1="150" x2="140" y2="150" stroke="var(--t)" stroke-dasharray="4 3" stroke-width="2"/>
+        <text x="90" y="12" text-anchor="middle" font-size="14" font-weight="600" fill="var(--f)">широкая воронка (f/2)</text>
+        <text x="195" y="160" font-size="14" fill="var(--t)" font-weight="600">⏱ 1 секунда</text>
+      </g>
+      <text x="410" y="140" text-anchor="middle" font-size="28" fill="var(--muted)">=</text>
+      <g transform="translate(440,0)">
+        <g stroke="#7aa6e8" stroke-width="2" stroke-linecap="round" opacity=".8">
+          <line x1="140" y1="20" x2="136" y2="34"/><line x1="170" y1="10" x2="166" y2="24"/><line x1="200" y1="24" x2="196" y2="38"/><line x1="230" y1="12" x2="226" y2="26"/>
+        </g>
+        <g transform="translate(100,40)">
+          <path d="M45,20 L135,20 L100,85 L80,85 Z" fill="var(--f-soft)" stroke="var(--f)" stroke-width="3"/>
+          <rect x="82" y="85" width="16" height="20" fill="var(--f-soft)" stroke="var(--f)" stroke-width="3"/>
+          <path d="M45,115 L135,115 L125,195 L55,195 Z" fill="none" stroke="var(--ink)" stroke-width="3"/>
+          <path d="M51,150 L129,150 L125,195 L55,195 Z" fill="#7aa6e8" opacity=".7"/>
+          <line x1="40" y1="150" x2="140" y2="150" stroke="var(--t)" stroke-dasharray="4 3" stroke-width="2"/>
+          <text x="90" y="12" text-anchor="middle" font-size="14" font-weight="600" fill="var(--f)">узкая воронка (f/4)</text>
+          <text x="-95" y="160" font-size="14" fill="var(--t)" font-weight="600">⏱ 4 секунды</text>
+        </g>
+      </g>
+      <text x="410" y="266" text-anchor="middle" font-size="14" fill="var(--muted)">Воды в ведре одинаково — значит, и яркость снимка одинаковая. Отличаются только «побочные эффекты».</text>
+    </svg>
+  </figure>
+
+  <h3>Главная единица: «ступень»</h3>
+  <p>Фотографы считают свет <b>ступенями</b> (их ещё называют «стопами» или EV). Одна ступень — это <b>в два раза больше или меньше света</b>. Удобно, потому что все три настройки шагают одинаково: прикрыл диафрагму на одну ступень — потерял половину света; удвоил выдержку — вернул его обратно. Запомни это, дальше всё на этом держится.</p>
+</section>
+
+<!-- ============ 2. APERTURE ============ -->
+<section id="aperture" data-folio-id="aperture">
+  <span class="sec-num">02</span>
+  <h2><span style="color:var(--f)">Диафрагма F</span> — размер отверстия</h2>
+  <p>Внутри объектива есть шторки-лепестки, которые сходятся и расходятся, как зрачок глаза. Отверстие между ними называется диафрагмой. Её размер записывают странно: <b>f/1.4, f/2, f/2.8, f/4, f/5.6, f/8, f/11, f/16, f/22</b>.</p>
+
+  <figure data-folio-id="aperture-lenses-photo">
+    <img src="img/aperture-lenses.jpg" alt="Один и тот же объектив 50 мм при диафрагмах от f/1.4 до f/8" loading="lazy">
+    <figcaption>Один и тот же объектив 50 мм с разной диафрагмой. Чем больше число — тем меньше дырка.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Lenses_with_different_apertures.jpg" target="_blank" rel="noopener">KoeppiK</a>, CC BY-SA 4.0, Wikimedia Commons</span></figcaption>
+  </figure>
+
+  <div class="rule f">Число F — это дробь: f/4 означает «диаметр отверстия = фокусное расстояние, делённое на 4». Поэтому <b>больше число → меньше дырка → меньше света</b>.</div>
+  <p>Например, у объектива 50 мм при f/2 отверстие 25 мм, а при f/8 — всего 6 мм. Странные числа (1.4, 2, 2.8, 4…) выбраны так, чтобы <b>каждый следующий шаг пропускал ровно вдвое меньше света</b>: площадь круга уменьшается в 2 раза, а диаметр — примерно в 1,4 раза (это √2).</p>
+
+  <figure class="diagram" data-folio-id="aperture-scale">
+    <svg viewBox="0 0 820 210" role="img" aria-label="Шкала диафрагм: от f/1.4 до f/22, каждый шаг вдвое меньше света">
+      <g font-size="15" text-anchor="middle">
+        <!-- radius proportional to 1/N, r = 70/N*1.4 -->
+        <g transform="translate(60,90)"><circle r="56" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2.5"/><text y="94" font-weight="700" fill="var(--f)">f/1.4</text></g>
+        <g transform="translate(170,90)"><circle r="39.2" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2.5"/><text y="94" font-weight="700" fill="var(--f)">f/2</text></g>
+        <g transform="translate(260,90)"><circle r="28" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2.5"/><text y="94" font-weight="700" fill="var(--f)">f/2.8</text></g>
+        <g transform="translate(340,90)"><circle r="19.6" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2.5"/><text y="94" font-weight="700" fill="var(--f)">f/4</text></g>
+        <g transform="translate(415,90)"><circle r="14" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2.5"/><text y="94" font-weight="700" fill="var(--f)">f/5.6</text></g>
+        <g transform="translate(490,90)"><circle r="9.8" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2.5"/><text y="94" font-weight="700" fill="var(--f)">f/8</text></g>
+        <g transform="translate(565,90)"><circle r="7.1" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2.5"/><text y="94" font-weight="700" fill="var(--f)">f/11</text></g>
+        <g transform="translate(640,90)"><circle r="4.9" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2.5"/><text y="94" font-weight="700" fill="var(--f)">f/16</text></g>
+        <g transform="translate(715,90)"><circle r="3.5" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2"/><text y="94" font-weight="700" fill="var(--f)">f/22</text></g>
+      </g>
+      <g font-size="12" fill="var(--muted)" text-anchor="middle">
+        <text x="60" y="20">много света</text><text x="715" y="20">мало света</text>
+      </g>
+      <path d="M115,20 L660,20" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ar)"/>
+      <text x="410" y="205" text-anchor="middle" font-size="13" fill="var(--muted)">Каждый шаг вправо — вдвое меньше света. От f/1.4 до f/22 — восемь ступеней, то есть в 256 раз.</text>
+    </svg>
+  </figure>
+
+  <h3>Побочный эффект: глубина резкости</h3>
+  <p>Диафрагма меняет не только яркость. Она решает, <b>какая часть сцены будет резкой</b> по глубине — от ближнего до дальнего. Эта зона называется <b>глубиной резкости</b> (ГРИП). Открытая диафрагма (f/1.4–f/2.8) даёт тонкую полоску резкости и размытый фон — так снимают портреты. Закрытая (f/11–f/22) делает резким почти всё — так снимают пейзажи.</p>
+
+  <div class="card" data-folio-id="dof-blocks">
+    <div class="seg" role="group" aria-label="Диафрагма" id="dofSeg">
+      <button type="button" data-src="img/dof-f1-4.jpg" aria-pressed="true">f/1.4</button>
+      <button type="button" data-src="img/dof-f4.jpg" aria-pressed="false">f/4</button>
+      <button type="button" data-src="img/dof-f22.jpg" aria-pressed="false">f/22</button>
+    </div>
+    <figure style="margin-top:14px">
+      <img id="dofImg" src="img/dof-f1-4.jpg" alt="Кубики с буквами при разной диафрагме" width="960" height="640">
+      <figcaption id="dofCap">f/1.4: резкость только на первом кубике, остальные тают в размытии.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Dof_blocks_f1_4.jpg" target="_blank" rel="noopener">Alex1ruff</a>, CC BY-SA 4.0, Wikimedia Commons</span></figcaption>
+    </figure>
+  </div>
+
+  <div class="pair" data-folio-id="jonquils">
+    <figure><img src="img/jonquil-f5.jpg" alt="Нарциссы при f/5, фон размыт" loading="lazy"><div class="lbl">f/5 <small>· фон мягкий, цветы выделяются</small></div></figure>
+    <figure><img src="img/jonquil-f32.jpg" alt="Нарциссы при f/32, фон резкий" loading="lazy"><div class="lbl">f/32 <small>· фон резкий и отвлекает</small></div></figure>
+  </div>
+  <figcaption style="margin-top:6px">Одни и те же нарциссы, снятые с одного места.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Jonquil_flowers_at_f5.jpg" target="_blank" rel="noopener">fir0002 (flagstaffotos)</a>, GFDL 1.2, Wikimedia Commons</span></figcaption>
+
+  <div class="note"><b>Почему телефон так не умеет?</b>У телефона крошечная матрица и короткий объектив, поэтому у него почти всё всегда резкое. «Портретный режим» размывает фон программно — угадывает, где человек, и рисует размытие сам.</div>
+</section>
+
+<!-- ============ 3. SHUTTER ============ -->
+<section id="shutter" data-folio-id="shutter">
+  <span class="sec-num">03</span>
+  <h2><span style="color:var(--t)">Выдержка</span> — как долго открыт затвор</h2>
+  <p>Затвор — это шторка перед матрицей. Выдержка — время, на которое она открывается. Обычно это доли секунды: <b>1/1000</b> (одна тысячная), <b>1/250</b>, <b>1/60</b>, <b>1/15</b>… Каждый раз, когда время удваивается, света попадает вдвое больше — та же ступень.</p>
+
+  <figure class="diagram" data-folio-id="shutter-scale">
+    <svg viewBox="0 0 820 190" role="img" aria-label="Шкала выдержек от 1/4000 до 30 секунд">
+      <defs><linearGradient id="tg" x1="0" x2="1"><stop offset="0" stop-color="var(--t-soft)"/><stop offset="1" stop-color="var(--t)"/></linearGradient></defs>
+      <rect x="30" y="70" width="760" height="14" rx="7" fill="url(#tg)"/>
+      <g font-size="14" text-anchor="middle" font-weight="700" fill="var(--ink)">
+        <text x="40" y="60">1/4000</text><text x="175" y="60">1/1000</text><text x="310" y="60">1/250</text><text x="445" y="60">1/60</text><text x="580" y="60">1/15</text><text x="690" y="60">1 с</text><text x="775" y="60">30 с</text>
+      </g>
+      <g font-size="12.5" text-anchor="middle" fill="var(--muted)">
+        <text x="70" y="110">птица в полёте,</text><text x="70" y="126">брызги</text>
+        <text x="200" y="110">спорт, бег,</text><text x="200" y="126">прыжки</text>
+        <text x="330" y="110">люди, прогулка</text>
+        <text x="450" y="110">с рук ещё можно,</text><text x="450" y="126">но аккуратно</text>
+        <text x="585" y="110">нужен штатив</text><text x="585" y="126">или стенка</text>
+        <text x="735" y="110">ночь, звёзды,</text><text x="735" y="126">следы фар</text>
+      </g>
+      <text x="40" y="160" font-size="13" fill="var(--t)" font-weight="600">← замораживает движение</text>
+      <text x="780" y="160" font-size="13" fill="var(--t)" font-weight="600" text-anchor="end">смазывает движение →</text>
+    </svg>
+  </figure>
+
+  <h3>Побочный эффект: движение</h3>
+  <p>Пока затвор открыт, всё, что движется, успевает сдвинуться — и оставляет на снимке след. Короткая выдержка «замораживает» момент, длинная превращает движение в шлейф.</p>
+
+  <div class="pair" data-folio-id="fountain">
+    <figure><img src="img/fountain-fast.jpg" alt="Фонтан, выдержка 1/320 секунды: капли застыли" loading="lazy"><div class="lbl">1/320 с <small>· капли застыли в воздухе</small></div></figure>
+    <figure><img src="img/fountain-slow.jpg" alt="Фонтан, выдержка 1/30 секунды: струи гладкие" loading="lazy"><div class="lbl">1/30 с <small>· струи стали гладкими нитями</small></div></figure>
+  </div>
+  <figcaption style="margin-top:6px">Один фонтан, разница в выдержке — около трёх ступеней.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Kew_fountain_(short_exposure).jpg" target="_blank" rel="noopener">Stephen B Streater</a>, CC BY-SA 3.0, Wikimedia Commons</span></figcaption>
+
+  <div class="pair" style="margin-top:22px" data-folio-id="motion-examples">
+    <figure><img src="img/truck-panning.jpg" alt="Грузовик резкий, фон смазан — проводка" loading="lazy"><figcaption><b style="color:var(--ink)">Проводка.</b> Фотограф вёл камерой за грузовиком на длинной выдержке: машина резкая, фон размазан — чувствуется скорость.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Truck_with_motion_blur.jpg" target="_blank" rel="noopener">fir0002 (flagstaffotos)</a>, GFDL 1.2, Wikimedia Commons</span></figcaption></figure>
+    <figure><img src="img/sparklers.jpg" alt="Рисунок бенгальскими огнями на длинной выдержке" loading="lazy"><figcaption><b style="color:var(--ink)">Рисование светом.</b> Выдержка несколько секунд: бенгальские огни оставили светящиеся петли.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Sparklers_with_a_slow_shutter_speed.JPG" target="_blank" rel="noopener">Adam.J.W.C.</a>, CC BY 3.0, Wikimedia Commons</span></figcaption></figure>
+  </div>
+
+  <div class="note"><b>Шевелёнка</b>Даже если сцена неподвижна, дрожат руки. Правило: снимая с рук, держи выдержку не длиннее, чем 1 / фокусное расстояние. Для 50 мм — 1/50 или короче, для 200 мм — 1/200. Стабилизатор в камере или телефоне даёт запас в несколько ступеней.</div>
+</section>
+
+<!-- ============ 4. ISO ============ -->
+<section id="iso" data-folio-id="iso">
+  <span class="sec-num">04</span>
+  <h2><span style="color:var(--iso)">ISO</span> — усиление сигнала</h2>
+  <p>Диафрагма и выдержка решают, <b>сколько света</b> попадёт на матрицу. ISO ничего не добавляет к свету — оно решает, <b>насколько сильно камера усилит</b> то, что уже поймала. ISO 100 — без усиления, ISO 200 — вдвое ярче, ISO 400 — вчетверо, и так далее. Опять ступени!</p>
+  <p>Подвох в том, что в каждом снимке есть немного «мусора» — случайные колебания сигнала. Пока света много, мусор незаметен. Когда света мало и мы выкручиваем усиление, мусор усиливается вместе с картинкой и превращается в <b>шум</b>: зернистость и цветные точки, особенно в тенях.</p>
+
+  <figure class="diagram" data-folio-id="iso-scale">
+    <svg viewBox="0 0 820 170" role="img" aria-label="Шкала ISO от 100 до 12800 с нарастающим шумом">
+      <defs>
+        <filter id="nz" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="1" seed="4"/>
+          <feColorMatrix type="matrix" values="2.2 0 0 0 -0.6  0 2.2 0 0 -0.6  0 0 2.2 0 -0.6  0 0 0 0 1"/>
+        </filter>
+      </defs>
+      <g font-size="15" text-anchor="middle" font-weight="700" fill="var(--iso)">
+        <g transform="translate(20,20)"><rect width="80" height="80" rx="8" fill="#4a5b6e"/><rect width="80" height="80" rx="8" filter="url(#nz)" opacity="0"/><text x="40" y="104">100</text></g>
+        <g transform="translate(120,20)"><rect width="80" height="80" rx="8" fill="#4a5b6e"/><rect width="80" height="80" rx="8" filter="url(#nz)" opacity=".1"/><text x="40" y="104">200</text></g>
+        <g transform="translate(220,20)"><rect width="80" height="80" rx="8" fill="#4a5b6e"/><rect width="80" height="80" rx="8" filter="url(#nz)" opacity=".2"/><text x="40" y="104">400</text></g>
+        <g transform="translate(320,20)"><rect width="80" height="80" rx="8" fill="#4a5b6e"/><rect width="80" height="80" rx="8" filter="url(#nz)" opacity=".3"/><text x="40" y="104">800</text></g>
+        <g transform="translate(420,20)"><rect width="80" height="80" rx="8" fill="#4a5b6e"/><rect width="80" height="80" rx="8" filter="url(#nz)" opacity=".42"/><text x="40" y="104">1600</text></g>
+        <g transform="translate(520,20)"><rect width="80" height="80" rx="8" fill="#4a5b6e"/><rect width="80" height="80" rx="8" filter="url(#nz)" opacity=".55"/><text x="40" y="104">3200</text></g>
+        <g transform="translate(620,20)"><rect width="80" height="80" rx="8" fill="#4a5b6e"/><rect width="80" height="80" rx="8" filter="url(#nz)" opacity=".7"/><text x="40" y="104">6400</text></g>
+        <g transform="translate(720,20)"><rect width="80" height="80" rx="8" fill="#4a5b6e"/><rect width="80" height="80" rx="8" filter="url(#nz)" opacity=".85"/><text x="40" y="104">12800</text></g>
+      </g>
+      <text x="410" y="158" text-anchor="middle" font-size="13" fill="var(--muted)">Схематично: чем выше ISO, тем заметнее шум. Насколько именно — зависит от камеры: у больших матриц шума меньше.</text>
+    </svg>
+  </figure>
+
+  <div class="pair" data-folio-id="iso-crops">
+    <figure><img src="img/iso-crop-100.jpg" alt="Фрагмент цветка при ISO 100: гладкий фон" loading="lazy"><div class="lbl">ISO 100 <small>· фон гладкий</small></div></figure>
+    <figure><img src="img/iso-crop-1600.jpg" alt="Фрагмент цветка при ISO 1600: зернистый фон" loading="lazy"><div class="lbl">ISO 1600 <small>· фон зернистый, лепестки «в песке»</small></div></figure>
+  </div>
+  <figcaption style="margin-top:6px">Увеличенный кусочек одного и того же снимка цветка (каждый пиксель стал больше в полтора раза). Посмотри на тёмный фон слева вверху.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Flower_at_100_ISO_for_comparison.JPG" target="_blank" rel="noopener">Andrew Hutton</a>, CC BY-SA 3.0, Wikimedia Commons</span></figcaption>
+
+  <div class="rule iso">ISO — это «последнее средство». Сначала выжми всё из диафрагмы и выдержки, а когда их не хватает (темно, а снимать надо с рук) — поднимай ISO. Немного шума лучше, чем смазанный снимок.</div>
+</section>
+
+<!-- ============ 5. TRIANGLE ============ -->
+<section id="triangle" data-folio-id="triangle">
+  <span class="sec-num">05</span>
+  <h2>Треугольник экспозиции</h2>
+  <p><b>Экспозиция</b> — это итоговая яркость снимка. Её задают три настройки, и у каждой своя цена. Это и есть знаменитый «треугольник экспозиции»: двигаешь одну вершину — чтобы яркость не поменялась, приходится сдвинуть другую в обратную сторону.</p>
+
+  <figure class="diagram" data-folio-id="triangle-diagram">
+    <svg viewBox="0 0 820 470" role="img" aria-label="Треугольник экспозиции: диафрагма, выдержка, ISO и их побочные эффекты">
+      <path d="M410,60 L150,380 L670,380 Z" fill="var(--soft)" stroke="var(--line)" stroke-width="3"/>
+      <text x="410" y="270" text-anchor="middle" font-family="Unbounded" font-size="20" font-weight="700" fill="var(--ink)">ЭКСПОЗИЦИЯ</text>
+      <text x="410" y="294" text-anchor="middle" font-size="14" fill="var(--muted)">яркость снимка</text>
+      <!-- top: aperture -->
+      <g transform="translate(410,60)">
+        <circle r="46" fill="var(--f-soft)" stroke="var(--f)" stroke-width="3"/>
+        <text y="-4" text-anchor="middle" font-size="16" font-weight="700" fill="var(--f)">F</text>
+        <text y="16" text-anchor="middle" font-size="12" fill="var(--f)">диафрагма</text>
+      </g>
+      <text x="470" y="40" font-size="13.5" fill="var(--ink)"><tspan font-weight="700">f/1.4</tspan> размытый фон · <tspan font-weight="700">f/16</tspan> всё резкое</text>
+      <text x="470" y="60" font-size="13" fill="var(--muted)">побочный эффект: глубина резкости</text>
+      <!-- left: shutter -->
+      <g transform="translate(150,380)">
+        <circle r="46" fill="var(--t-soft)" stroke="var(--t)" stroke-width="3"/>
+        <text y="-4" text-anchor="middle" font-size="16" font-weight="700" fill="var(--t)">1/250</text>
+        <text y="16" text-anchor="middle" font-size="12" fill="var(--t)">выдержка</text>
+      </g>
+      <text x="40" y="300" font-size="13.5" fill="var(--ink)"><tspan font-weight="700">1/1000</tspan> заморозка</text>
+      <text x="40" y="318" font-size="13.5" fill="var(--ink)"><tspan font-weight="700">1/15</tspan> смаз движения</text>
+      <text x="40" y="276" font-size="13" fill="var(--muted)">побочный эффект: движение</text>
+      <!-- right: ISO -->
+      <g transform="translate(670,380)">
+        <circle r="46" fill="var(--iso-soft)" stroke="var(--iso)" stroke-width="3"/>
+        <text y="-4" text-anchor="middle" font-size="16" font-weight="700" fill="var(--iso)">ISO</text>
+        <text y="16" text-anchor="middle" font-size="12" fill="var(--iso)">усиление</text>
+      </g>
+      <text x="640" y="276" font-size="13" fill="var(--muted)">побочный эффект: шум</text>
+      <text x="640" y="300" font-size="13.5" fill="var(--ink)"><tspan font-weight="700">100</tspan> чисто</text>
+      <text x="640" y="318" font-size="13.5" fill="var(--ink)"><tspan font-weight="700">6400</tspan> зерно</text>
+      <!-- arrows: more light -->
+      <text x="410" y="458" text-anchor="middle" font-size="13" fill="var(--muted)">Больше света: шире диафрагма (меньше число F) · длиннее выдержка · выше ISO</text>
+    </svg>
+  </figure>
+
+  <h3>Одна и та же яркость — разные снимки</h3>
+  <p>Все строки этой таблицы дают <b>одинаково светлый снимок</b>. На каждой строке диафрагма прикрывается на ступень, а выдержка удлиняется на ступень — одно компенсирует другое.</p>
+  <div class="tbl-wrap" data-folio-id="equivalent-exposures">
+    <table class="mono">
+      <thead><tr><th>Диафрагма</th><th>Выдержка</th><th>ISO</th><th>Что получится</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag f">f/2</span></td><td><span class="tag t">1/2000</span></td><td><span class="tag iso">100</span></td><td>Портрет: фон в мягкой каше, любое движение заморожено</td></tr>
+        <tr><td><span class="tag f">f/2.8</span></td><td><span class="tag t">1/1000</span></td><td><span class="tag iso">100</span></td><td>Спорт: бегущий человек резкий, фон слегка размыт</td></tr>
+        <tr><td><span class="tag f">f/5.6</span></td><td><span class="tag t">1/250</span></td><td><span class="tag iso">100</span></td><td>«Золотая середина» для прогулки</td></tr>
+        <tr><td><span class="tag f">f/11</span></td><td><span class="tag t">1/60</span></td><td><span class="tag iso">100</span></td><td>Пейзаж: резко от травинки до гор</td></tr>
+        <tr><td><span class="tag f">f/16</span></td><td><span class="tag t">1/30</span></td><td><span class="tag iso">100</span></td><td>Река становится гладкой, нужен упор</td></tr>
+        <tr><td><span class="tag f">f/16</span></td><td><span class="tag t">1/250</span></td><td><span class="tag iso">800</span></td><td>То же, что выше, но с рук — платим шумом</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Симулятор: покрути сам</h3>
+  <p>Ниже — нарисованная сцена: подсолнух вблизи (на него наведена резкость), мяч летит по воздуху, вдали деревья и дом. Выбери освещение и подбирай настройки так, чтобы стрелка экспонометра встала в середину. Смотри, что при этом происходит с фоном, мячом и шумом. Эффекты специально немного преувеличены.</p>
+
+  <div class="sim" data-folio-id="simulator">
+    <div class="sim-top">
+      <div class="seg" role="group" aria-label="Освещение" id="sceneSeg">
+        <button type="button" data-ev="15" aria-pressed="false">☀️ Солнце</button>
+        <button type="button" data-ev="12" aria-pressed="true">☁️ Пасмурно</button>
+        <button type="button" data-ev="8" aria-pressed="false">🏠 В комнате</button>
+        <button type="button" data-ev="5" aria-pressed="false">🌙 Вечер</button>
+      </div>
+      <button class="btn" type="button" id="autoIso">Подобрать ISO автоматически</button>
+    </div>
+    <div class="sim-view">
+      <svg id="simSvg" viewBox="0 0 640 380" aria-label="Сцена симулятора">
+        <defs>
+          <filter id="bgBlur" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur id="bgBlurN" stdDeviation="3"/></filter>
+          <filter id="motion" x="-50%" y="-20%" width="200%" height="140%"><feGaussianBlur id="motionN" stdDeviation="2 0"/></filter>
+          <filter id="noiseF" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="1" seed="7" id="turb"/>
+            <feColorMatrix type="matrix" values="1.4 0 0 0 -0.2  0 1.4 0 0 -0.2  0 0 1.4 0 -0.2  0 0 0 0 1"/>
+          </filter>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb6ec"/><stop offset="1" stop-color="#cfe6f7"/></linearGradient>
+          <radialGradient id="ball" cx=".35" cy=".35"><stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#ffd23f"/><stop offset="1" stop-color="#e08a00"/></radialGradient>
+        </defs>
+        <g filter="url(#bgBlur)">
+          <rect x="-20" y="-20" width="680" height="420" fill="url(#sky)"/>
+          <circle cx="545" cy="70" r="30" fill="#fff6c8"/>
+          <ellipse cx="160" cy="70" rx="60" ry="18" fill="#fff" opacity=".9"/><ellipse cx="200" cy="60" rx="40" ry="16" fill="#fff" opacity=".9"/>
+          <path d="M-20,230 Q120,150 260,210 T560,190 T680,210 L680,400 L-20,400 Z" fill="#8fbf7a"/>
+          <path d="M-20,260 Q180,220 340,250 T680,240 L680,400 L-20,400 Z" fill="#6aa55a"/>
+          <g transform="translate(380,170)">
+            <rect x="0" y="20" width="80" height="55" fill="#f1e3c6"/><path d="M-8,22 L40,-12 L88,22 Z" fill="#c4553a"/>
+            <rect x="12" y="34" width="16" height="16" fill="#6aa0d4"/><rect x="50" y="40" width="16" height="35" fill="#7b4f2c"/>
+          </g>
+          <g><rect x="83" y="180" width="10" height="60" fill="#6b4a2b"/><circle cx="88" cy="165" r="34" fill="#3f8b45"/><circle cx="70" cy="180" r="22" fill="#4a9a50"/></g>
+          <g><rect x="262" y="185" width="8" height="50" fill="#6b4a2b"/><circle cx="266" cy="172" r="27" fill="#3a8240"/></g>
+          <g><rect x="560" y="175" width="10" height="70" fill="#6b4a2b"/><circle cx="565" cy="160" r="38" fill="#36773b"/><circle cx="588" cy="176" r="22" fill="#448a48"/></g>
+          <g fill="#e94f6a"><circle cx="330" cy="268" r="5"/><circle cx="470" cy="282" r="5"/><circle cx="520" cy="262" r="4"/></g>
+          <g fill="#fff"><circle cx="360" cy="285" r="4"/><circle cx="420" cy="270" r="4"/><circle cx="600" cy="290" r="5"/></g>
+        </g>
+        <!-- moving ball -->
+        <g filter="url(#motion)">
+          <circle cx="430" cy="120" r="22" fill="url(#ball)"/>
+          <path d="M412,112 Q430,120 448,112 M414,132 Q430,124 446,132" stroke="#b86200" stroke-width="2" fill="none"/>
+        </g>
+        <!-- sharp foreground -->
+        <path d="M-20,340 Q200,310 400,330 T680,320 L680,400 L-20,400 Z" fill="#4b8a3c"/>
+        <g transform="translate(160,170)">
+          <path d="M0,40 C-4,100 6,140 0,210" stroke="#3d7a2c" stroke-width="7" fill="none"/>
+          <path d="M2,120 C30,100 50,110 60,96 C40,128 20,128 2,128 Z" fill="#4c9a3a"/>
+          <path d="M0,150 C-30,135 -48,140 -58,128 C-40,162 -18,160 0,158 Z" fill="#4c9a3a"/>
+          <g id="petals" fill="#ffc21a" stroke="#e39b00" stroke-width="1.5"></g>
+          <circle cx="0" cy="0" r="24" fill="#6b3d14"/>
+          <circle cx="0" cy="0" r="17" fill="#4e2a0c"/>
+          <g fill="#8a5a24"><circle cx="-7" cy="-6" r="2"/><circle cx="6" cy="-8" r="2"/><circle cx="8" cy="5" r="2"/><circle cx="-5" cy="8" r="2"/><circle cx="0" cy="0" r="2"/></g>
+        </g>
+        <rect id="noiseRect" x="0" y="0" width="640" height="380" filter="url(#noiseF)" opacity="0" style="mix-blend-mode:overlay"/>
+      </svg>
+    </div>
+
+    <div class="meter">
+      <div class="meter-bar" aria-hidden="true"><i id="needle" style="left:50%"></i>
+        <span style="left:0%">−3</span><span style="left:16.6%">−2</span><span style="left:33.3%">−1</span><span style="left:50%">0</span><span style="left:66.6%">+1</span><span style="left:83.3%">+2</span><span style="left:100%">+3</span>
+      </div>
+      <div class="verdict" id="verdict">Норма</div>
+    </div>
+
+    <div class="sim-grid">
+      <div class="ctl f"><label for="fR">Диафрагма <output id="fO">f/5.6</output></label><input id="fR" type="range" min="0" max="8" step="1" value="4"><small id="fS"></small></div>
+      <div class="ctl t"><label for="tR">Выдержка <output id="tO">1/125</output></label><input id="tR" type="range" min="0" max="12" step="1" value="5"><small id="tS"></small></div>
+      <div class="ctl iso"><label for="iR">ISO <output id="iO">100</output></label><input id="iR" type="range" min="0" max="7" step="1" value="0"><small id="iS"></small></div>
+    </div>
+    <div class="effects">
+      <div><b>Фон</b><span id="eBg"></span></div>
+      <div><b>Мяч</b><span id="eBall"></span></div>
+      <div><b>Шум</b><span id="eNoise"></span></div>
+    </div>
+  </div>
+  <p style="font-size:15px;color:var(--muted)">Попробуй: в пасмурный день сделай мяч совсем резким (1/2000), не потеряв яркость. Подсказка: придётся открыть диафрагму и поднять ISO. А вечером попробуй снять без шума — получится, только если смириться со смазанным мячом.</p>
+</section>
+
+<!-- ============ 6. FOCUS ============ -->
+<section id="focus" data-folio-id="focus">
+  <span class="sec-num">06</span>
+  <h2>Фокусировка — что будет резким</h2>
+  <p>Объектив не может сделать резким всё сразу. В каждый момент он «наведён» на одно расстояние, например на 3 метра. Всё, что стоит ровно там, получается чётким, а то, что ближе или дальше, постепенно расплывается. <b>Фокусировка</b> — это выбор расстояния, на котором будет резкость. Насколько широкой окажется резкая зона вокруг него, решает диафрагма (помнишь <a href="#aperture">глубину резкости</a>).</p>
+  <figure class="diagram" data-folio-id="focus-plane">
+    <svg viewBox="0 0 820 230" role="img" aria-label="Плоскость резкости: камера наведена на средний предмет, ближний и дальний размыты">
+      <defs><linearGradient id="dofz" x1="0" x2="1"><stop offset="0" stop-color="var(--f)" stop-opacity="0"/><stop offset=".5" stop-color="var(--f)" stop-opacity=".22"/><stop offset="1" stop-color="var(--f)" stop-opacity="0"/></linearGradient>
+      <filter id="bl1"><feGaussianBlur stdDeviation="3"/></filter><filter id="bl2"><feGaussianBlur stdDeviation="5"/></filter></defs>
+      <g transform="translate(40,118)"><rect x="-6" y="-16" width="44" height="30" rx="5" fill="var(--ink)"/><rect x="38" y="-10" width="16" height="18" rx="2" fill="var(--ink)"/><circle cx="16" cy="-1" r="8" fill="var(--paper)"/></g>
+      <rect x="360" y="30" width="200" height="170" fill="url(#dofz)"/>
+      <line x1="460" y1="24" x2="460" y2="206" stroke="var(--f)" stroke-width="2.5" stroke-dasharray="7 5"/>
+      <text x="460" y="18" text-anchor="middle" font-size="13" font-weight="700" fill="var(--f)">плоскость резкости: 3 м</text>
+      <text x="460" y="224" text-anchor="middle" font-size="12" fill="var(--muted)">голубая зона — глубина резкости (ГРИП)</text>
+      <g filter="url(#bl1)" transform="translate(200,118)"><circle r="20" fill="#e94f6a"/><rect x="-3" y="18" width="6" height="40" fill="#3d7a2c"/></g>
+      <text x="200" y="76" text-anchor="middle" font-size="12.5" fill="var(--muted)">1 м — размыто</text>
+      <g transform="translate(460,118)"><circle r="22" fill="#ffc21a" stroke="#e39b00" stroke-width="2"/><circle r="9" fill="#6b3d14"/><rect x="-3" y="20" width="6" height="40" fill="#3d7a2c"/></g>
+      <text x="520" y="80" font-size="12.5" font-weight="700" fill="var(--iso)">резко ✓</text>
+      <g filter="url(#bl2)" transform="translate(720,110)"><rect x="-30" y="-20" width="60" height="50" fill="#f1e3c6"/><path d="M-38,-18 L0,-48 L38,-18 Z" fill="#c4553a"/></g>
+      <text x="720" y="176" text-anchor="middle" font-size="12.5" fill="var(--muted)">10 м — размыто</text>
+    </svg>
+    <figcaption>Объектив делает идеально резким только одно расстояние. Всё, что ближе или дальше, постепенно расплывается.</figcaption>
+  </figure>
+  <figure data-folio-id="focus-near-far-photo">
+    <img src="img/focus-near-far.jpg" alt="Бамбуковая крыша: слева резкость на ближних трубках, справа на дальних" loading="lazy">
+    <figcaption>Один и тот же кадр, разная фокусировка. Слева резкие ближние бамбуковые трубки, справа дальние.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:FocusDemonstration-BambooRooftop.jpg" target="_blank" rel="noopener">SoHome Jacaranda Lilau</a>, CC BY-SA 4.0, Wikimedia Commons</span></figcaption>
+  </figure>
+
+  <h3>Что происходит внутри: фокус на бесконечность и на близкий предмет</h3>
+  <p>Лучи от далёкой горы, звезды или облака приходят в объектив почти параллельно, как от Солнца у лупы. Линза сводит их в точку на определённом расстоянии за собой. У объектива с надписью «50 мм» это ровно 50 мм (почему так, разберём в следующем разделе). Если матрица стоит именно там, всё далёкое получается резким. Это и есть <b>фокус на бесконечность</b>. «Бесконечность» здесь не настоящая: для объектива 50 мм всё, что дальше нескольких десятков метров, уже почти бесконечно далеко.</p>
+  <p>Лучи от <b>близкого</b> предмета приходят расходящимся веером, и линза сводит их в точку <b>дальше</b> фокуса. Чтобы снова получить резкий снимок, расстояние между линзой и матрицей надо увеличить, то есть немного выдвинуть объектив вперёд. Это и делает кольцо фокусировки или моторчик автофокуса. Если не выдвинуть, лучи упрутся в матрицу раньше, чем сойдутся, и вместо точки нарисуют пятнышко. Так выглядит размытие.</p>
+
+  <figure data-folio-id="focus-scale-photo" style="max-width:560px">
+    <img src="img/focus-scale.jpg" alt="Шкала расстояний на объективе: ∞, 2, 1, 0.7 метра" loading="lazy">
+    <figcaption>Шкала дистанций на кольце фокусировки. Знак ∞ — фокус на бесконечность, дальше идут 2 м, 1 м и 0,7 м. Чем ближе предмет, тем дальше от матрицы выдвигается объектив.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:DOF_scale_detail.png" target="_blank" rel="noopener">dicklyon</a>, Public domain, Wikimedia Commons</span></figcaption>
+  </figure>
+
+  <div class="sim" data-folio-id="focus-sim">
+    <div class="sim-top">
+      <div style="font-weight:600">Покрути фокус: объектив 50 мм, f/2</div>
+      <div class="seg" role="group" aria-label="Быстрая фокусировка">
+        <button type="button" id="fsInf">Фокус на ∞</button>
+        <button type="button" id="fsNear">Фокус на цветок</button>
+      </div>
+    </div>
+    <div class="diagram" style="padding:8px">
+      <svg id="fsSvg" viewBox="0 0 820 300" role="img" aria-label="Ход лучей от далёких гор и близкого цветка через объектив на матрицу">
+        <line x1="10" y1="150" x2="800" y2="150" stroke="var(--line)" stroke-width="1.5"/>
+        <g id="fsMount" transform="translate(14,150)">
+          <path d="M0,-12 L22,-52 L34,-34 L48,-62 L74,-12 Z" fill="#9db7c9"/><path d="M42,-50 L48,-62 L54,-50 Z" fill="#fff"/>
+          <text x="37" y="-72" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--fl)">горы, ∞</text>
+        </g>
+        <g id="fsRaysInf" stroke="var(--fl)" stroke-width="2" fill="none"></g>
+        <g id="fsRaysNear" stroke="var(--t)" stroke-width="2" fill="none"></g>
+        <g id="fsFlower">
+          <line x1="0" y1="0" x2="0" y2="46" stroke="#3d7a2c" stroke-width="3"/>
+          <g fill="#ffc21a"><circle cx="0" cy="-9" r="6"/><circle cx="0" cy="9" r="6"/><circle cx="-9" cy="0" r="6"/><circle cx="9" cy="0" r="6"/></g>
+          <circle r="5" fill="#6b3d14"/>
+          <text y="-22" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--t)">цветок</text>
+        </g>
+        <g id="fsLens">
+          <rect x="-6" y="-84" width="12" height="168" rx="3" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <ellipse rx="9" ry="66" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="2.5" fill-opacity=".7"/>
+          <text y="-92" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--fl)">объектив</text>
+        </g>
+        <g id="fsF"><line y1="-6" y2="6" stroke="var(--fl)" stroke-width="2"/><text y="22" text-anchor="middle" font-size="11.5" fill="var(--fl)">F′</text></g>
+        <rect x="770" y="80" width="10" height="140" rx="2" fill="var(--iso-soft)" stroke="var(--iso)" stroke-width="2"/>
+        <text x="775" y="72" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--iso)">матрица</text>
+        <rect id="fsSpotInf" x="782" width="6" rx="2" fill="var(--fl)"/>
+        <rect id="fsSpotNear" x="790" width="6" rx="2" fill="var(--t)"/>
+        <g id="fsDim" stroke="var(--ink)" stroke-width="1.5"><line id="fsDimL" y1="262" y2="262" x2="770"/><line id="fsDimA" y1="255" y2="269"/><line x1="770" x2="770" y1="255" y2="269"/></g>
+        <text id="fsDimT" y="284" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ink)"></text>
+      </svg>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px;margin-top:14px;align-items:start" class="fs-grid">
+      <div>
+        <div class="ctl" style="margin-bottom:14px"><label for="fsFocus">Кольцо фокусировки <output id="fsFocusO" style="color:var(--fl)">∞</output></label><input id="fsFocus" type="range" min="0" max="10000" step="1" value="0" style="accent-color:var(--fl)"><small id="fsExt" style="min-height:0"></small></div>
+        <div class="ctl"><label for="fsDist">Где стоит цветок <output id="fsDistO" style="color:var(--t)">1 м</output></label><input id="fsDist" type="range" min="0" max="1000" step="1" value="500" style="accent-color:var(--t)"><small id="fsV" style="min-height:0"></small></div>
+        <div class="effects" style="grid-template-columns:1fr 1fr;margin-top:14px">
+          <div><b style="color:var(--fl)">Горы</b><span id="fsVerInf"></span></div>
+          <div><b style="color:var(--t)">Цветок</b><span id="fsVerNear"></span></div>
+        </div>
+      </div>
+      <div>
+        <div class="sim-view" style="border-radius:10px">
+          <svg viewBox="0 0 360 240" aria-label="Что видит камера">
+            <defs>
+              <filter id="fsBgBlur" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur id="fsBgN" stdDeviation="0"/></filter>
+              <filter id="fsFgBlur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur id="fsFgN" stdDeviation="0"/></filter>
+            </defs>
+            <g filter="url(#fsBgBlur)">
+              <rect x="-20" y="-20" width="400" height="280" fill="url(#sky)"/>
+              <path d="M-20,150 L60,70 L100,105 L160,40 L230,120 L280,85 L380,150 L380,260 L-20,260 Z" fill="#8fa9bd"/>
+              <path d="M140,62 L160,40 L178,60 L168,56 L158,64 Z" fill="#fff"/><path d="M48,82 L60,70 L72,82 Z" fill="#fff"/>
+              <path d="M-20,170 Q90,140 200,165 T380,160 L380,260 L-20,260 Z" fill="#6aa55a"/>
+              <g fill="#3f8b45"><circle cx="250" cy="150" r="14"/><circle cx="275" cy="155" r="11"/><circle cx="60" cy="158" r="12"/></g>
+            </g>
+            <g filter="url(#fsFgBlur)">
+              <g id="fsPrevFlower">
+                <path d="M0,0 C-3,60 4,100 0,200" stroke="#3d7a2c" stroke-width="6" fill="none"/>
+                <path d="M2,90 C24,74 40,82 48,70 C32,96 16,96 2,96 Z" fill="#4c9a3a"/>
+                <g id="fsPetals" fill="#ffc21a" stroke="#e39b00" stroke-width="1.2"></g>
+                <circle r="19" fill="#6b3d14"/><circle r="13" fill="#4e2a0c"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <figcaption style="margin-top:6px">Что видит камера. Размытие посчитано по оптике объектива 50 мм f/2 на полном кадре, на маленькой картинке оно немного усилено.</figcaption>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:15px;color:var(--muted)" data-folio-id="focus-sim-hint">Попробуй поставить цветок на 0,5 м и навести фокус на горы: цветок превратится в пятно. Теперь нажми «Фокус на цветок»: объектив выдвинется почти на 6 мм, а горы расплывутся. Отодвинь цветок на 20 м: для фокусировки на нём объектив выдвигается всего на 0,1 мм, поэтому и цветок, и горы резкие почти одновременно. Это и есть «почти бесконечность».</p>
+  <div class="note"><b>А телефон?</b>У камеры телефона фокусное расстояние всего 5–7 мм. Объектив выдвигается на сотые доли миллиметра, а «бесконечность» начинается уже в паре метров. Поэтому телефон почти всегда снимает всё резким, а размытый фон рисует программно.</div>
+
+
+  <h3>Ручная фокусировка</h3>
+  <p>Можно крутить кольцо фокусировки самому, это режим <b>MF</b> (manual focus). Так делают, когда автоматика не справляется: в темноте, при съёмке через стекло или сетку, в макро. Беззеркальные камеры, в том числе Fujifilm X-S10, помогают: умеют увеличивать кусочек кадра в видоискателе и подсвечивать резкие края цветом. Эта подсветка называется <b>фокус-пикинг</b> (focus peaking).</p>
+  <figure data-folio-id="focus-peaking-photo" style="max-width:640px">
+    <img src="img/focus-peaking.jpg" alt="Фокус-пикинг: резкие края веточки подсвечены красным" loading="lazy">
+    <figcaption>Фокус-пикинг: камера обвела красным края, которые сейчас в фокусе.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Fokus-Peaking.jpg" target="_blank" rel="noopener">Bautsch</a>, CC0, Wikimedia Commons</span></figcaption>
+  </figure>
+
+  <h3>Автофокус: как камера понимает, что резко</h3>
+  <p>При автофокусе объектив крутит маленький моторчик, а камера решает, куда его вести. Способов «увидеть» резкость несколько.</p>
+
+  <div class="card" data-folio-id="af-types">
+    <h3 style="margin-top:0">1. Контрастный</h3>
+    <p>Камера знает простое правило: в резкой картинке соседние точки сильно отличаются по яркости (контрастные края), а в размытой всё плавно перетекает. Она сдвигает объектив, смотрит, вырос ли контраст, и сдвигает дальше, пока резкость не начнёт падать.</p>
+    <figure class="diagram" data-folio-id="af-contrast">
+    <svg viewBox="0 0 820 250" role="img" aria-label="Контрастный автофокус: камера двигает объектив и ищет максимум резкости">
+      <line x1="70" y1="200" x2="800" y2="200" stroke="var(--muted)" stroke-width="1.5"/><line x1="70" y1="200" x2="70" y2="24" stroke="var(--muted)" stroke-width="1.5"/>
+      <text x="76" y="22" font-size="12.5" fill="var(--muted)">резкость (контраст)</text>
+      <text x="800" y="222" text-anchor="end" font-size="12.5" fill="var(--muted)">положение объектива →</text>
+      <polyline points="80,190.0 90,190.0 100,190.0 110,190.0 120,190.0 130,190.0 140,190.0 150,190.0 160,190.0 170,190.0 180,189.9 190,189.9 200,189.7 210,189.6 220,189.3 230,188.9 240,188.2 250,187.3 260,185.9 270,183.9 280,181.2 290,177.6 300,172.9 310,166.9 320,159.6 330,150.8 340,140.5 350,128.9 360,116.2 370,102.8 380,89.3 390,76.3 400,64.4 410,54.2 420,46.5 430,41.7 440,40.0 450,41.7 460,46.5 470,54.2 480,64.4 490,76.3 500,89.3 510,102.8 520,116.2 530,128.9 540,140.5 550,150.8 560,159.6 570,166.9 580,172.9 590,177.6 600,181.2 610,183.9 620,185.9 630,187.3 640,188.2 650,188.9 660,189.3 670,189.6 680,189.7 690,189.9 700,189.9 710,190.0 720,190.0 730,190.0 740,190.0 750,190.0 760,190.0 770,190.0 780,190.0 790,190.0 800,190.0" fill="none" stroke="var(--line)" stroke-width="3"/>
+      <circle cx="150" cy="190.0" r="13" fill="var(--t)"/><text x="150" y="194.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">1</text><circle cx="260" cy="185.9" r="13" fill="var(--t)"/><text x="260" y="190.4" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">2</text><circle cx="370" cy="102.8" r="13" fill="var(--t)"/><text x="370" y="107.3" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">3</text><circle cx="500" cy="89.3" r="13" fill="var(--t)"/><text x="500" y="93.8" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">4</text><circle cx="440" cy="40.0" r="13" fill="var(--iso)"/><text x="440" y="44.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">5</text>
+      <text x="440" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="var(--iso)">максимум = резко</text>
+      <text x="560" y="75" font-size="12.5" fill="var(--muted)">4: стало хуже — проскочил,</text>
+      <text x="560" y="92" font-size="12.5" fill="var(--muted)">значит, надо назад</text>
+      <text x="80" y="242" font-size="12.5" fill="var(--muted)">1→2→3: резкость растёт, камера крутит дальше</text>
+    </svg>
+    <figcaption>Контрастный автофокус пробует разные положения и сравнивает: стало чётче или хуже. Как ты сама подстраиваешь бинокль, покручивая колёсико туда-сюда.</figcaption>
+  </figure>
+    <p><b>Плюсы:</b> очень точный, работает на любой матрице. <b>Минусы:</b> медленный, а в темноте и на однотонной стене «рыщет»: объектив ездит туда-сюда и не может найти максимум.</p>
+
+    <h3>2. Фазовый</h3>
+    <p>Камера сравнивает две картинки предмета, полученные через левый и правый край объектива. Это похоже на то, как предмет «прыгает», если смотреть на него то одним, то другим глазом.</p>
+    <figure class="diagram" data-folio-id="af-phase">
+    <svg viewBox="0 0 820 250" role="img" aria-label="Фазовый автофокус: две картинки от левой и правой половин объектива сдвинуты или совпадают">
+      <rect x="30" y="40" width="220" height="140" rx="10" fill="var(--soft)"/>
+      <g transform="translate(114,120)" fill="#2f6fed" fill-opacity=".6"><rect x="-5" y="10" width="10" height="40"/><circle cy="-6" r="28"/></g><g transform="translate(166,120)" fill="#e0702a" fill-opacity=".6"><rect x="-5" y="10" width="10" height="40"/><circle cy="-6" r="28"/></g>
+      <text x="140" y="28" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--ink)">Наведено слишком близко</text>
+      <text x="140" y="202" text-anchor="middle" font-size="12.5" fill="var(--muted)">картинки разъехались в одну сторону</text>
+      <rect x="300" y="40" width="220" height="140" rx="10" fill="var(--soft)"/>
+      <g transform="translate(410,120)" fill="#2f6fed" fill-opacity=".6"><rect x="-5" y="10" width="10" height="40"/><circle cy="-6" r="28"/></g><g transform="translate(410,120)" fill="#e0702a" fill-opacity=".6"><rect x="-5" y="10" width="10" height="40"/><circle cy="-6" r="28"/></g>
+      <text x="410" y="28" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--iso)">В фокусе ✓</text>
+      <text x="410" y="202" text-anchor="middle" font-size="12.5" fill="var(--muted)">картинки совпали</text>
+      <rect x="570" y="40" width="220" height="140" rx="10" fill="var(--soft)"/>
+      <g transform="translate(706,120)" fill="#2f6fed" fill-opacity=".6"><rect x="-5" y="10" width="10" height="40"/><circle cy="-6" r="28"/></g><g transform="translate(654,120)" fill="#e0702a" fill-opacity=".6"><rect x="-5" y="10" width="10" height="40"/><circle cy="-6" r="28"/></g>
+      <text x="680" y="28" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--ink)">Наведено слишком далеко</text>
+      <text x="680" y="202" text-anchor="middle" font-size="12.5" fill="var(--muted)">разъехались в другую сторону</text>
+      <g font-size="12.5"><rect x="250" y="226" width="12" height="12" fill="#2f6fed" fill-opacity=".6"/><text x="268" y="237" fill="var(--muted)">свет через левую половину объектива</text>
+      <rect x="520" y="226" width="12" height="12" fill="#e0702a" fill-opacity=".6"/><text x="538" y="237" fill="var(--muted)">через правую</text></g>
+    </svg>
+    <figcaption>Фазовый автофокус смотрит на предмет «двумя глазами»: отдельно через левый и правый край объектива. Если картинки не совпадают, по направлению и величине сдвига сразу понятно, куда и насколько крутить. Пробовать не нужно, поэтому это быстро.</figcaption>
+  </figure>
+    <p><b>Плюсы:</b> быстрый, сразу знает направление, поэтому хорошо следит за движущимися объектами. Раньше для него в зеркальных камерах стоял отдельный датчик под зеркалом. Сейчас у беззеркалок и телефонов «фазовые» пиксели встроены прямо в матрицу.</p>
+
+    <h3>3. Гибридный</h3>
+    <p>Сочетание двух предыдущих: фазовый быстро подводит объектив почти к цели, контрастный точно доводит. Так работает большинство современных камер. У Fujifilm X-S10 гибридный автофокус, а фазовые точки покрывают почти весь кадр.</p>
+
+    <h3>4. Активный (в телефонах)</h3>
+    <p>Многие телефоны посылают невидимый инфракрасный или лазерный луч и измеряют, за сколько он вернётся. Так они узнают расстояние до предмета, даже когда темно и контраста нет. У фотоаппаратов в темноте иногда загорается похожая лампочка подсветки автофокуса.</p>
+  </div>
+
+  <h3>Режимы автофокуса</h3>
+  <div class="tbl-wrap" data-folio-id="af-modes">
+    <table>
+      <thead><tr><th>Режим</th><th>Как работает</th><th>Когда нужен</th></tr></thead>
+      <tbody>
+        <tr><td><b>AF-S</b> (на Fujifilm — S)<br><small style="color:var(--muted)">однократный</small></td><td>Полунажал кнопку, камера навела фокус и «замерла». Пока держишь кнопку, фокус не меняется.</td><td>То, что не движется: портрет, пейзаж, натюрморт</td></tr>
+        <tr><td><b>AF-C</b> (C)<br><small style="color:var(--muted)">следящий</small></td><td>Пока кнопка нажата наполовину, камера всё время подстраивает фокус.</td><td>Бегущие дети и собаки, спорт, птицы</td></tr>
+        <tr><td><b>MF</b> (M)<br><small style="color:var(--muted)">ручной</small></td><td>Фокус крутишь кольцом сама.</td><td>Темнота, макро, съёмка через стекло, ночное небо</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note"><b>Полунажатие</b>У кнопки спуска два положения. Нажала наполовину — камера навела фокус и замерила свет (обычно пикает или показывает зелёную рамку). Дожала до конца — снимок. Удобный приём: навести фокус на глаз, держать кнопку наполовину, сдвинуть кадр как нравится и дожать. В телефоне то же самое делает касание пальцем по экрану, а долгое касание фиксирует фокус.</div>
+
+  <h3>Куда смотреть: точки и зоны фокусировки</h3>
+  <p>Камера должна знать, <b>на что</b> наводить. Можно выбрать одну маленькую точку и поставить её на нужное место. Можно дать камере зону или весь кадр, тогда она сама выберет, обычно самое близкое и контрастное. Современные камеры умеют находить лица и глаза.</p>
+  <div class="pair" data-folio-id="af-points">
+    <figure><img src="img/af-single.jpg" alt="Экран камеры: выбрана одна точка фокусировки на подушке" loading="lazy"><div class="lbl">Одна точка <small>· фокус ровно там, куда указала</small></div></figure>
+    <figure><img src="img/af-multi.jpg" alt="Экран камеры: несколько точек фокусировки выбраны автоматически" loading="lazy"><div class="lbl">Автовыбор <small>· камера сама решила, что важно</small></div></figure>
+  </div>
+  <figcaption style="margin-top:6px">Зелёные рамки — места, по которым камера навела фокус.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:One_selected_green_focus_point_using_pinpoint_autofocus.jpg" target="_blank" rel="noopener">W.carter</a>, CC0, Wikimedia Commons</span></figcaption>
+
+  <figure data-folio-id="af-heron" style="margin-top:22px">
+    <img src="img/af-zone-heron.jpg" alt="Цапля среди веток, красная рамка точки фокусировки на птице" loading="lazy">
+    <figcaption>Здесь без ручного выбора точки не обойтись. В автоматическом режиме камера, скорее всего, навелась бы на ближние ветки, а не на цаплю.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Zone_autofocus_WP.jpg" target="_blank" rel="noopener">JPRoche</a>, CC BY-SA 3.0, Wikimedia Commons</span></figcaption>
+  </figure>
+
+  <div class="pair" data-folio-id="af-miss-hit">
+    <figure><img src="img/af-miss.jpg" alt="Девочка у дерева: лицо чуть нерезкое" loading="lazy"><div class="lbl">Промах <small>· «ne zcela ostré» — не совсем резко</small></div></figure>
+    <figure><img src="img/af-hit.jpg" alt="Девочка у дерева: лицо резкое" loading="lazy"><div class="lbl">Попадание <small>· «dokonale ostré» — идеально резко</small></div></figure>
+  </div>
+  <figcaption style="margin-top:6px">Портрет на f/2.8. Слева выбранная точка фокусировки попала не на лицо, и оно получилось мягким. Справа фокус на глазах. В левом верхнем углу каждого снимка видна сетка точек автофокуса.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:AF_failed.jpg" target="_blank" rel="noopener">Photolis</a>, CC BY-SA 4.0, Wikimedia Commons</span></figcaption>
+
+  <div class="rule" style="border-color:var(--f)">В портрете фокусируйся на ближний к камере глаз. Если глаз резкий, снимок воспринимается резким, даже когда кончик носа или уши слегка расплылись.</div>
+
+  <div class="note" data-folio-id="af-fails"><b>Почему автофокус промахивается</b>
+  <span style="display:block">• Навёлся на фон или на ближнюю ветку: выбери одну точку и поставь её на главное.</span>
+  <span style="display:block">• Предмет слишком близко: у каждого объектива есть <i>минимальная дистанция фокусировки</i>, ближе он резко не покажет.</span>
+  <span style="display:block">• Темно или однотонно (белая стена, чистое небо): автофокусу не за что зацепиться. Наведись на контрастный край на том же расстоянии.</span>
+  <span style="display:block">• Предмет двигался, а стоял режим AF-S: для движения нужен AF-C.</span></div>
+</section>
+
+<!-- ============ 7. FOCAL ============ -->
+<section id="focal" data-folio-id="focal">
+  <span class="sec-num">07</span>
+  <h2><span style="color:var(--fl)">Фокусное расстояние</span> — насколько «приближает»</h2>
+  <p>Фокусное расстояние пишут на каждом объективе в миллиметрах: 16 мм, 50 мм, 18–55 мм. От него зависит, <b>насколько широкий кусок мира попадёт в кадр</b>. Короткое (10–35 мм) даёт широкий угол, в кадр влезает много. Длинное (85–600 мм) даёт узкий угол, и далёкие предметы становятся большими, как в бинокле. Но сначала разберёмся, почему это именно <i>расстояние</i> и от чего до чего его меряют.</p>
+
+  <h3>От чего до чего это расстояние</h3>
+  <p>Проще всего понять на одной линзе — обычной лупе. Выйди в солнечный день и подержи лупу над листом бумаги. Если подобрать высоту, солнечный свет соберётся в маленькую яркую точку. Солнце так далеко, что его лучи приходят почти параллельно, а линза сводит их в одну точку. Эта точка называется <b>фокус</b>, а <b>расстояние от линзы до фокуса и есть фокусное расстояние</b>. Это самое обычное расстояние, его можно измерить линейкой.</p>
+<figure class="diagram" data-folio-id="focal-length-magnifier">
+    <svg viewBox="0 0 820 310" role="img" aria-label="Лупа сводит параллельные лучи Солнца в точку — фокус; расстояние от линзы до фокуса и есть фокусное расстояние">
+      <defs><radialGradient id="glow"><stop offset="0" stop-color="#fff7c2"/><stop offset=".35" stop-color="#ffcf3a"/><stop offset="1" stop-color="#ffcf3a" stop-opacity="0"/></radialGradient></defs>
+      <g transform="translate(48,150)">
+        <g stroke="#f2b632" stroke-width="3" stroke-linecap="round"><line x1="0" y1="-44" x2="0" y2="-36"/><line x1="0" y1="44" x2="0" y2="36"/><line x1="-44" y1="0" x2="-36" y2="0"/><line x1="31" y1="31" x2="25" y2="25"/><line x1="-31" y1="-31" x2="-25" y2="-25"/><line x1="31" y1="-31" x2="25" y2="-25"/><line x1="-31" y1="31" x2="-25" y2="25"/></g>
+        <circle r="26" fill="#ffcf3a"/>
+      </g>
+      <g stroke="#f2b632" stroke-width="2.2" fill="none"><path d="M95,78 L330,78 L600,150"/><path d="M95,108 L330,108 L600,150"/><path d="M95,138 L330,138 L600,150"/><path d="M95,162 L330,162 L600,150"/><path d="M95,192 L330,192 L600,150"/><path d="M95,222 L330,222 L600,150"/></g>
+      <ellipse cx="330" cy="150" rx="16" ry="96" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="3"/>
+      <rect x="600" y="52" width="6" height="196" rx="2" fill="var(--soft)" stroke="var(--line)"/>
+      <circle cx="602" cy="150" r="22" fill="url(#glow)"/>
+      <circle cx="602" cy="150" r="4" fill="#e0702a"/>
+      <g font-size="13.5" fill="var(--muted)">
+        <text x="100" y="50">Солнце далеко, поэтому</text><text x="100" y="67">лучи почти параллельны</text>
+        <text x="330" y="40" text-anchor="middle" font-weight="700" fill="var(--fl)">линза (лупа)</text>
+        <text x="618" y="128" font-weight="700" fill="var(--t)">фокус</text>
+        <text x="618" y="146">точка, где лучи</text><text x="618" y="163">сходятся, — тут</text><text x="618" y="180">бумага начинает тлеть</text>
+        <text x="604" y="44" text-anchor="middle">лист бумаги</text>
+      </g>
+      <g stroke="var(--fl)" stroke-width="2"><line x1="330" y1="262" x2="602" y2="262"/><line x1="330" y1="254" x2="330" y2="270"/><line x1="602" y1="254" x2="602" y2="270"/></g>
+      <path d="M340,257 L330,262 L340,267 M592,257 L602,262 L592,267" stroke="var(--fl)" stroke-width="2" fill="none"/>
+      <text x="466" y="290" text-anchor="middle" font-size="15" font-weight="700" fill="var(--fl)">фокусное расстояние f</text>
+    </svg>
+    <figcaption>Расстояние от линзы до точки, где сходятся параллельные лучи. Его буквально можно измерить линейкой.</figcaption>
+  </figure>
+  <div class="pair" style="align-items:center" data-folio-id="focal-length-magnifier-photo">
+    <figure><img src="img/magnifier.jpg" alt="Девочка держит лупу над листком бумаги, свет собран в точку" loading="lazy"></figure>
+    <div>
+      <p style="font-size:16px">Слово «фокус» придумал астроном Иоганн Кеплер около 400 лет назад. По-латыни <i>focus</i> — «очаг», место, где горит огонь. В этой точке лупа и правда может поджечь бумагу.</p>
+      <figcaption>Опыт с лупой делай только со взрослым: не смотри долго на яркую точку и не наводи её на кожу, людей и животных.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Lupa_zapaluje.jpg" target="_blank" rel="noopener">Pastorius</a>, CC BY-SA 3.0, Wikimedia Commons</span></figcaption>
+    </div>
+  </div>
+
+  <div class="note"><b>Безопасный опыт: фотоаппарат из лупы</b>В комнате с окном возьми лупу и белый лист бумаги. Встань у стены напротив окна и медленно отодвигай лупу от листа. На каком-то расстоянии на бумаге появится чёткая картинка окна, маленькая и перевёрнутая. Это и есть фотография, только без матрицы. Расстояние от лупы до листа в этот момент почти равно её фокусному расстоянию. Измерь его линейкой: у обычной лупы получится 10–25 см, то есть 100–250 мм.</div>
+
+  <h3>А в фотоаппарате?</h3>
+  <p>В камере вместо листа бумаги стоит матрица. Когда объектив наведён на что-то далёкое (фотографы говорят «на бесконечность»), матрица находится ровно в фокусе, то есть на фокусном расстоянии от линзы. Для близких предметов объектив чуть-чуть выдвигается вперёд, это ты видела в симуляторе фокусировки. Поэтому фокусное расстояние договорились мерить именно «на бесконечность».</p>
+  <p>Вернёмся к углу обзора. Почему длинный объектив «приближает»? Матрица у камеры одного размера. Если отнести линзу от неё подальше, на ту же матрицу попадёт более узкий конус лучей. Угол обзора сузится, а всё, что в него попало, растянется на всю матрицу и станет крупнее.</p>
+<figure class="diagram" data-folio-id="focal-length-angle">
+    <svg viewBox="0 0 820 360" role="img" aria-label="Одна и та же матрица: при коротком фокусном угол широкий, при длинном — узкий">
+      <g clip-path="url(#clip1)">
+        <path d="M700,120 L40,-127.5 L40,307.5 L700,60 Z" fill="var(--fl)" fill-opacity=".12"/>
+        <path d="M700,120 L40,-127.5 M700,60 L40,307.5" stroke="var(--fl)" stroke-width="1.6" stroke-dasharray="5 4" fill="none"/>
+      </g>
+      <clipPath id="clip1"><rect x="0" y="8" width="820" height="164"/></clipPath>
+      <circle cx="300" cy="30" r="11" fill="#3fa65b" fill-opacity="1" stroke="#2c7a42" stroke-width="1.5"/><circle cx="300" cy="60" r="11" fill="#3fa65b" fill-opacity="1" stroke="#2c7a42" stroke-width="1.5"/><circle cx="300" cy="90" r="11" fill="#3fa65b" fill-opacity="1" stroke="#2c7a42" stroke-width="1.5"/><circle cx="300" cy="120" r="11" fill="#3fa65b" fill-opacity="1" stroke="#2c7a42" stroke-width="1.5"/><circle cx="300" cy="150" r="11" fill="#3fa65b" fill-opacity="1" stroke="#2c7a42" stroke-width="1.5"/>
+      <ellipse cx="620" cy="90" rx="7" ry="40" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="2.5"/>
+      <rect x="700" y="60" width="10" height="60" rx="2" fill="var(--iso-soft)" stroke="var(--iso)" stroke-width="2"/>
+      <g stroke="var(--fl)" stroke-width="2"><line x1="620" y1="142" x2="700" y2="142"/><line x1="620" y1="135" x2="620" y2="149"/><line x1="700" y1="135" x2="700" y2="149"/></g>
+      <text x="660.0" y="164" text-anchor="middle" font-size="13" font-weight="700" fill="var(--fl)">f</text>
+      <text x="722" y="84" font-size="13.5" font-weight="700" fill="var(--ink)">Короткое f</text>
+      <text x="722" y="102" font-size="12.5" fill="var(--muted)">широкий угол</text>
+      <text x="722" y="120" font-size="12.5" fill="var(--muted)">в кадре: 5 из 5</text>
+      <line x1="20" y1="180" x2="800" y2="180" stroke="var(--line)"/>
+      <g clip-path="url(#clip2)">
+        <path d="M700,300 L40,176.2 L40,363.8 L700,240 Z" fill="var(--fl)" fill-opacity=".12"/>
+        <path d="M700,300 L40,176.2 M700,240 L40,363.8" stroke="var(--fl)" stroke-width="1.6" stroke-dasharray="5 4" fill="none"/>
+      </g>
+      <clipPath id="clip2"><rect x="0" y="188" width="820" height="164"/></clipPath>
+      <circle cx="300" cy="210" r="11" fill="#3fa65b" fill-opacity="0.35" stroke="#2c7a42" stroke-width="1.5"/><circle cx="300" cy="240" r="11" fill="#3fa65b" fill-opacity="1" stroke="#2c7a42" stroke-width="1.5"/><circle cx="300" cy="270" r="11" fill="#3fa65b" fill-opacity="1" stroke="#2c7a42" stroke-width="1.5"/><circle cx="300" cy="300" r="11" fill="#3fa65b" fill-opacity="1" stroke="#2c7a42" stroke-width="1.5"/><circle cx="300" cy="330" r="11" fill="#3fa65b" fill-opacity="0.35" stroke="#2c7a42" stroke-width="1.5"/>
+      <ellipse cx="540" cy="270" rx="7" ry="40" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="2.5"/>
+      <rect x="700" y="240" width="10" height="60" rx="2" fill="var(--iso-soft)" stroke="var(--iso)" stroke-width="2"/>
+      <g stroke="var(--fl)" stroke-width="2"><line x1="540" y1="322" x2="700" y2="322"/><line x1="540" y1="315" x2="540" y2="329"/><line x1="700" y1="315" x2="700" y2="329"/></g>
+      <text x="620.0" y="344" text-anchor="middle" font-size="13" font-weight="700" fill="var(--fl)">f</text>
+      <text x="722" y="264" font-size="13.5" font-weight="700" fill="var(--ink)">Длинное f ×2</text>
+      <text x="722" y="282" font-size="12.5" fill="var(--muted)">узкий угол</text>
+      <text x="722" y="300" font-size="12.5" fill="var(--muted)">в кадре: 3 из 5</text>
+      <text x="300" y="350" text-anchor="middle" font-size="12.5" fill="var(--muted)">деревья (вид сверху)</text>
+    </svg>
+    <figcaption>Вид сверху. Матрица одна и та же, отличается только расстояние до линзы. Пунктир — крайние лучи, которые ещё попадают на края матрицы. Отодвинь линзу вдвое дальше, и угол сузится, а каждое дерево на снимке станет вдвое крупнее.</figcaption>
+  </figure>
+  <div class="rule fl">Размер предмета на матрице растёт ровно пропорционально фокусному расстоянию: удвоил фокусное — предмет на снимке вдвое больше.</div>
+  <p>Пример: дерево высотой 10 м стоит в 100 м от тебя. При 50 мм его изображение на матрице будет высотой 10 м × 50 мм / 100 м = 5 мм. При 200 мм уже 20 мм, и оно не поместится в кадр: высота матрицы APS-C всего около 16 мм.</p>
+
+  <h3>Почему 50-миллиметровый объектив не длиной 50 мм</h3>
+  <p>В настоящем объективе не одна линза, а пять, десять, иногда двадцать. Они исправляют искажения, цветные каёмки и размытие по краям. Фокусное расстояние такого объектива меряют от воображаемой точки: там стояла бы одна линза, которая давала бы такую же картинку. Хитрые конструкции переносят эту точку куда нужно. У телеобъективов она вынесена вперёд, поэтому 300-миллиметровый объектив заметно короче 30 см. У широкоугольников для зеркальных камер точка, наоборот, оказывается позади последней линзы: иначе объектив упёрся бы в зеркало внутри камеры.</p>
+<figure class="diagram" data-folio-id="focal-length-real-lens">
+    <svg viewBox="0 0 820 300" role="img" aria-label="В настоящем объективе фокусное расстояние меряют от воображаемой эквивалентной линзы">
+      <text x="20" y="28" font-size="14" font-weight="700" fill="var(--ink)">Телеобъектив, 300 мм</text>
+      <text x="20" y="46" font-size="12.5" fill="var(--muted)">сам объектив короче своего фокусного</text>
+      <rect x="430" y="52" width="200" height="72" rx="8" fill="none" stroke="var(--muted)" stroke-width="2"/>
+      <ellipse cx="455" cy="88" rx="7" ry="30" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="1.8"/><ellipse cx="480" cy="88" rx="6" ry="27" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="1.8"/><ellipse cx="590" cy="88" rx="5" ry="20" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="1.8"/><ellipse cx="610" cy="88" rx="5" ry="20" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="1.8"/>
+      <line x1="330" y1="48" x2="330" y2="128" stroke="var(--fl)" stroke-width="2.5" stroke-dasharray="6 4"/>
+      <text x="338" y="72" font-size="12" fill="var(--fl)">эквивалентная</text><text x="338" y="86" font-size="12" fill="var(--fl)">линза</text>
+      <rect x="700" y="66" width="10" height="44" rx="2" fill="var(--iso-soft)" stroke="var(--iso)" stroke-width="2"/>
+      <g stroke="var(--fl)" stroke-width="2"><line x1="330" y1="140" x2="700" y2="140"/><line x1="330" y1="133" x2="330" y2="147"/><line x1="700" y1="133" x2="700" y2="147"/></g>
+      <text x="515" y="160" text-anchor="middle" font-size="13" font-weight="700" fill="var(--fl)">f = 300 мм</text>
+
+      <line x1="20" y1="180" x2="800" y2="180" stroke="var(--line)"/>
+      <text x="20" y="208" font-size="14" font-weight="700" fill="var(--ink)">Широкоугольный, 16 мм</text>
+      <text x="20" y="226" font-size="12.5" fill="var(--muted)">«точка отсчёта» — за последней линзой</text>
+      <rect x="470" y="212" width="150" height="64" rx="8" fill="none" stroke="var(--muted)" stroke-width="2"/>
+      <ellipse cx="492" cy="244" rx="8" ry="28" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="1.8"/><ellipse cx="520" cy="244" rx="5" ry="20" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="1.8"/><ellipse cx="575" cy="244" rx="5" ry="18" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="1.8"/><ellipse cx="600" cy="244" rx="5" ry="18" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="1.8"/>
+      <line x1="684" y1="206" x2="684" y2="282" stroke="var(--fl)" stroke-width="2.5" stroke-dasharray="6 4"/>
+      <rect x="700" y="222" width="10" height="44" rx="2" fill="var(--iso-soft)" stroke="var(--iso)" stroke-width="2"/>
+      <text x="650" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="var(--fl)">f = 16 мм</text>
+      <g stroke="var(--fl)" stroke-width="2"><line x1="684" y1="282" x2="700" y2="282"/></g>
+    </svg>
+    <figcaption>Схема не в масштабе. Пунктир — место, где стояла бы одна-единственная линза, дающая такую же картинку. От неё и отсчитывают фокусное расстояние.</figcaption>
+  </figure>
+  <figure data-folio-id="lens-cutaway-photo">
+    <img src="img/lens-cutaway.jpg" alt="Зеркальная камера Nikon и объектив в разрезе: внутри видно много линз" loading="lazy">
+    <figcaption>Камера и объектив в разрезе: внутри объектива целый набор линз.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Nikon_SLR_Camera_cutaway.jpg" target="_blank" rel="noopener">Martin Vorel</a>, CC BY-SA 4.0, Wikimedia Commons</span></figcaption>
+  </figure>
+
+  <h3>Фокусное расстояние и угол обзора</h3>
+  <p>На практике запоминать стоит одно: <b>чем больше миллиметров, тем уже угол и тем сильнее «приближение»</b>. Вот как это выглядит для трёх популярных фокусных.</p>
+
+  <figure class="diagram" data-folio-id="focal-diagram">
+    <svg viewBox="0 0 820 270" role="img" aria-label="Угол обзора при 16, 50 и 200 мм: вид сверху">
+      <path d="M410,250 L237.2,122.1 A215,215 0 0,1 582.8,122.1 Z" fill="var(--fl)" fill-opacity="0.12" stroke="var(--fl)" stroke-width="2"/>
+      <path d="M410,250 L324.3,52.8 A215,215 0 0,1 495.7,52.8 Z" fill="var(--fl)" fill-opacity="0.18" stroke="var(--fl)" stroke-width="2"/>
+      <path d="M410,250 L387.5,36.2 A215,215 0 0,1 432.5,36.2 Z" fill="var(--fl)" fill-opacity="0.35" stroke="var(--fl)" stroke-width="2"/>
+      <g transform="translate(410,250)"><rect x="-22" y="-6" width="44" height="22" rx="4" fill="var(--ink)"/><rect x="-9" y="-13" width="18" height="9" rx="2" fill="var(--ink)"/><circle cx="0" cy="5" r="6" fill="var(--paper)"/></g>
+      <g font-size="14" font-weight="700" fill="var(--fl)">
+        <text x="410" y="24" text-anchor="middle">200 мм · 12°</text>
+        <text x="510" y="62">50 мм · 47° «как глаз»</text>
+        <text x="600" y="128">16 мм · 107° широкий угол</text>
+      </g>
+      <g font-size="13" fill="var(--muted)">
+        <text x="20" y="170">Вид сверху: камера</text>
+        <text x="20" y="188">в центре внизу, цветом —</text>
+        <text x="20" y="206">то, что попадает в кадр.</text>
+        <text x="20" y="232">Углы — по диагонали</text>
+        <text x="20" y="250">для полного кадра.</text>
+      </g>
+    </svg>
+  </figure>
+
+  <h3>Покрути зум</h3>
+  <p>Эти снимки сделаны <b>с одного и того же места</b>, менялся только объектив. Двигай ползунок и следи, как сужается угол.</p>
+  <div class="focal-box" data-folio-id="focal-slider">
+    <div class="focal-img"><img id="focalImg" src="img/focal-17.jpg" alt="Вид с одной точки при разном фокусном расстоянии"></div>
+    <div class="focal-row">
+      <div>
+        <input id="focalR" type="range" min="0" max="11" step="1" value="0" aria-label="Фокусное расстояние" style="accent-color:var(--fl)">
+        <div class="ticks"><span>17</span><span>50</span><span>200</span><span>2000 мм</span></div>
+      </div>
+      <div class="focal-read" id="focalRead">17 мм<small>≈ 27 мм экв. · угол 66°</small></div>
+    </div>
+    <figcaption>Камера с матрицей APS-C, поэтому «эквивалент» в 1,6 раза больше настоящего фокусного (об этом ниже). Угол — по горизонтали.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Focal_length_f17mm.jpg" target="_blank" rel="noopener">Armin Kübelbeck</a>, CC BY-SA 3.0, Wikimedia Commons</span></figcaption>
+  </div>
+
+  <h3>Эквивалентное фокусное и телефоны</h3>
+  <p>Угол обзора зависит не только от объектива, но и от размера матрицы: маленькая матрица «вырезает» центр картинки. Чтобы сравнивать разные камеры, фокусное пересчитывают в <b>эквивалент для полного кадра</b> (матрица 36×24 мм, как старая плёнка). Именно эти числа пишут у телефонов.</p>
+  <div class="tbl-wrap" data-folio-id="phone-focal">
+    <table>
+      <thead><tr><th>Кнопка в телефоне</th><th>Эквивалент</th><th>Fujifilm X-S10<br><small style="text-transform:none;letter-spacing:0;font-weight:500">на объективе</small></th><th>Тип</th><th>Для чего</th></tr></thead>
+      <tbody>
+        <tr><td><b>0.5×</b></td><td class="mono">≈ 13–16 мм</td><td class="mono">≈ 9–11 мм</td><td>сверхширокий</td><td>интерьеры, архитектура, «влезть всем»</td></tr>
+        <tr><td><b>1×</b></td><td class="mono">≈ 24–26 мм</td><td class="mono">≈ 16–17 мм</td><td>широкий</td><td>повседневные снимки, пейзаж</td></tr>
+        <tr><td><b>2×</b></td><td class="mono">≈ 48–52 мм</td><td class="mono">≈ 32–35 мм</td><td>нормальный</td><td>близко к тому, как видит глаз</td></tr>
+        <tr><td><b>3–5×</b></td><td class="mono">≈ 70–120 мм</td><td class="mono">≈ 47–80 мм</td><td>портретный / теле</td><td>портреты без искажений лица, детали</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note" data-folio-id="xs10-note"><b>Как читать колонку Fujifilm X-S10</b>У X-S10 матрица APS-C размером 23,5×15,6 мм, это в 1,5 раза меньше полного кадра (<b>кроп-фактор 1,5</b>). На объективах Fujifilm пишут настоящее фокусное расстояние. Чтобы получить эквивалент, умножь его на 1,5, а чтобы понять, какое фокусное выставить на X-S10, раздели эквивалент на 1,5. Например, при 16 мм на X-S10 угол будет как у телефона на 1× (≈ 24 мм экв.), а при 33 мм — как на 2× (≈ 50 мм экв.).
+  <span style="display:block;margin-top:8px">Популярные зумы для X-S10 в эквиваленте:</span>
+  <span style="display:block">• XC 15–45 мм → ≈ 23–68 мм: от «чуть шире телефона» до лёгкого теле;</span>
+  <span style="display:block">• XF 18–55 мм → ≈ 27–84 мм;</span>
+  <span style="display:block">• XF 16–80 мм → ≈ 24–120 мм: от 1× до 5× телефона;</span>
+  <span style="display:block">• XF 18–135 мм → ≈ 27–200 мм.</span></div>
+
+  <h3 id="normal-lens">Нормальный объектив</h3>
+  <p><b>Нормальным</b> называют объектив, у которого фокусное расстояние примерно равно <b>диагонали матрицы</b>. Он не растягивает пространство, как широкоугольник, и не «сжимает», как телеобъектив. Если распечатать снимок и смотреть на него с обычного расстояния, пропорции и перспектива кажутся такими же, как в жизни. Глазом мы охватываем гораздо больше, почти 180°, но внимательно рассматриваем примерно такой же кусок, около 45–55° по диагонали.</p>
+  <figure class="diagram" data-folio-id="normal-lens-diagram">
+    <svg viewBox="0 0 820 268" role="img" aria-label="Диагональ полнокадровой матрицы 43 мм и APS-C 28 мм">
+      <g transform="translate(70,40)">
+        <rect width="288" height="192" rx="4" fill="var(--soft)" stroke="var(--ink)" stroke-width="2"/>
+        <line x1="0" y1="192" x2="288" y2="0" stroke="var(--fl)" stroke-width="3"/>
+        <text x="150" y="88" font-size="15" font-weight="700" fill="var(--fl)" transform="rotate(-33.7 150 88)">диагональ 43 мм</text>
+        <text x="144" y="-10" text-anchor="middle" font-size="13" fill="var(--muted)">полный кадр 36×24 мм</text>
+        <text x="144" y="212" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">нормальный: 40–55 мм (классика — 50)</text>
+      </g>
+      <g transform="translate(500,82)">
+        <rect width="188" height="125" rx="4" fill="var(--soft)" stroke="var(--ink)" stroke-width="2"/>
+        <line x1="0" y1="125" x2="188" y2="0" stroke="var(--fl)" stroke-width="3"/>
+        <text x="95" y="56" font-size="14" font-weight="700" fill="var(--fl)" transform="rotate(-33.6 95 56)">28 мм</text>
+        <text x="94" y="-10" text-anchor="middle" font-size="13" fill="var(--muted)">APS-C Fujifilm X-S10, 23,5×15,6 мм</text>
+        <text x="94" y="145" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">нормальный: ≈ 27–35 мм</text>
+      </g>
+    </svg>
+    <figcaption>Матрицы в одном масштабе. Чем меньше матрица, тем короче её нормальный объектив.</figcaption>
+  </figure>
+  <div class="tbl-wrap" data-folio-id="normal-lens-xs10">
+    <table>
+      <thead><tr><th>Объектив для X-S10</th><th>Эквивалент</th><th>Комментарий</th></tr></thead>
+      <tbody>
+        <tr><td><b>XF 35 мм f/1.4</b> или <b>XF 35 мм f/2</b></td><td class="mono">≈ 53 мм</td><td>классический «полтинник» Fujifilm, самый популярный нормальный объектив системы</td></tr>
+        <tr><td><b>XF 33 мм f/1.4</b></td><td class="mono">≈ 50 мм</td><td>современная, более светосильная и быстрая версия</td></tr>
+        <tr><td><b>XF 27 мм f/2.8</b> («блинчик»)</td><td class="mono">≈ 41 мм</td><td>почти ровно по диагонали матрицы; плоский, камера с ним влезает в карман куртки</td></tr>
+        <tr><td><b>XC 35 мм f/2</b></td><td class="mono">≈ 53 мм</td><td>недорогой вариант той же оптической схемы</td></tr>
+        <tr><td>Китовый зум (XC 15–45, XF 18–55…)</td><td class="mono">на 30–35 мм</td><td>чтобы получить «нормальный» угол, просто поставь кольцо зума на 30–35 мм</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note"><b>Зачем нормальный объектив начинающему</b>С ним приходится не зумировать, а <i>ходить ногами</i>: подойти, отойти, найти точку съёмки. Это лучший способ научиться видеть кадр. К тому же нормальные объективы обычно светосильные (f/1.4–f/2), а значит, хорошо размывают фон и выручают в темноте.</div>
+
+  <h3>Фокусное и перспектива</h3>
+  <p>Часто говорят, что длинный объектив «сжимает» пространство, а широкий — искажает лица. На самом деле всё решает <b>расстояние до предмета</b>. С широким объективом приходится подходить вплотную, и тогда нос оказывается гораздо ближе к камере, чем уши, — он и выглядит огромным. С длинным объективом стоишь далеко, и все части лица почти на одном расстоянии.</p>
+  <div class="pair" style="align-items:center" data-folio-id="dolly-zoom">
+    <figure><img src="img/dolly-zoom.gif" alt="Анимация: камера отъезжает и зумирует, дом остаётся того же размера, но меняется перспектива" loading="lazy" style="max-width:360px;margin:0 auto"></figure>
+    <figcaption>Камера отъезжает от домика и одновременно увеличивает фокусное, чтобы домик оставался того же размера. Обрати внимание, как меняется форма: вблизи (короткое фокусное) он выпирает и искажён, издалека (длинное) — плоский и «правильный». Этот приём в кино называется «долли-зум».<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Camera_focal_length_distance_house_animation.gif" target="_blank" rel="noopener">SharkD</a>, CC BY-SA 4.0, Wikimedia Commons</span></figcaption>
+  </div>
+
+  <h3>Длинный объектив «сжимает» фон</h3>
+  <p>Если отходить всё дальше и одновременно увеличивать фокусное, чтобы человек оставался в кадре того же размера, фон начинает «подтягиваться» и расти. Происходит это опять из-за расстояния. Человек от камеры далеко, фон ещё дальше, но <i>относительная</i> разница расстояний уменьшается. В узкий угол длинного объектива при этом влезает лишь маленький кусочек фона, и он растягивается на весь кадр.</p>
+  <div class="trio" data-folio-id="bridge-series">
+    <figure><img src="img/bridge-24.jpg" alt="Девушка на мосту, 24 мм: виден весь мост и ущелье" loading="lazy"><div class="lbl">24 мм <small>· ~1 м: мост и ущелье</small></div></figure>
+    <figure><img src="img/bridge-100.jpg" alt="Девушка на мосту, 100 мм: фон крупнее" loading="lazy"><div class="lbl">100 мм <small>· ~4 м: фон подтянулся</small></div></figure>
+    <figure><img src="img/bridge-400.jpg" alt="Девушка на мосту, 400 мм: за ней только скала" loading="lazy"><div class="lbl">400 мм <small>· ~15 м: за спиной одна скала</small></div></figure>
+  </div>
+  <figcaption style="margin-top:6px">Одна и та же девушка, кадр по пояс, f/5.6. Расстояния примерные.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Portrait24mm5_6.jpg" target="_blank" rel="noopener">Florian Schott</a>, CC BY-SA 3.0, Wikimedia Commons</span></figcaption>
+
+
+
+
+  <h3 id="portrait">Портрет: какое фокусное выбрать</h3>
+  <p>Лицо — самое чувствительное место для перспективы. Нос торчит вперёд сантиметров на 10–12 по сравнению с ушами. Если камера в 40 см от лица, нос оказывается заметно ближе к ней, чем уши, и выходит непропорционально большим. Лицо при этом кажется вытянутым, а уши прячутся за щеками. Если отойти на полтора-два метра, разница расстояний почти исчезает, и пропорции становятся естественными.</p>
+  <p>Чтобы с такого расстояния лицо было крупным, нужен длинный объектив. Поэтому <b>портретными</b> («портретниками») называют объективы <b>85–135 мм в эквиваленте</b>. У них есть ещё два плюса. Узкий угол захватывает маленький кусочек фона, его легко выбрать и размыть. А человек, которого снимают с двух метров, а не в упор, меньше стесняется.</p>
+
+  <div class="sim" data-folio-id="face-sim">
+    <div class="sim-top"><div style="font-weight:600">Одно лицо, разные объективы</div><div style="font-size:13px;color:var(--muted)">камера каждый раз отходит так, чтобы голова заняла кадр одинаково</div></div>
+    <div style="display:grid;grid-template-columns:240px minmax(0,1fr);gap:22px;align-items:center" class="face-grid">
+      <canvas id="faceCv" width="240" height="320" style="width:100%;max-width:240px;border-radius:12px;background:var(--soft);display:block;margin:0 auto"></canvas>
+      <div>
+        <div class="ctl"><label for="faceR">Фокусное (экв.) <output id="faceO" style="color:var(--fl)">85 мм</output></label><input id="faceR" type="range" min="0" max="7" step="1" value="5" style="accent-color:var(--fl)"><div class="ticks"><span>14</span><span>18</span><span>24</span><span>35</span><span>50</span><span>85</span><span>135</span><span>200</span></div></div>
+        <div class="effects" style="grid-template-columns:1fr 1fr;margin-top:16px">
+          <div><b>Камера от лица</b><span id="faceD"></span></div>
+          <div><b>На X-S10</b><span id="faceX"></span></div>
+          <div><b>Нос крупнее ушей на</b><span id="faceN"></span></div>
+          <div><b>Тип</b><span id="faceT"></span></div>
+        </div>
+        <p style="font-size:14px;color:var(--muted);margin:12px 0 0">Картинка не нарисована от руки: компьютер честно строит перспективу для простой 3D-головы. Сравни 14 и 135 мм: посмотри на нос, уши и ширину плеч.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>Как это выглядит на настоящих фотографиях</h3>
+  <p>Фотограф снимал свою дочь Таню с разных расстояний. Кадр каждый раз одинаковый, от макушки до носков, меняется только объектив. Сравни ноги и голову.</p>
+  <div class="trio tall" data-folio-id="tanja-series">
+    <figure><img src="img/tanja-17.jpg" alt="Девочка сидит на траве, 17 мм вблизи: ступни огромные, голова маленькая" loading="lazy"><div class="lbl">17 мм <small>(≈ 27 экв.) · вплотную: ступни огромные, голова маленькая</small></div></figure>
+    <figure><img src="img/tanja-50.jpg" alt="Та же девочка, 50 мм" loading="lazy"><div class="lbl">50 мм <small>(≈ 80 экв.) · уже почти естественно</small></div></figure>
+    <figure><img src="img/tanja-200.jpg" alt="Та же девочка, 200 мм издалека: пропорции естественные" loading="lazy"><div class="lbl">200 мм <small>(≈ 320 экв.) · издалека: пропорции как в жизни, фон размыт</small></div></figure>
+  </div>
+  <figcaption style="margin-top:6px">Камера Canon 20D с матрицей APS-C, поэтому эквивалент в 1,6 раза больше.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Tanja_17mm.jpg" target="_blank" rel="noopener">Armin Kübelbeck</a>, CC BY-SA 3.0, Wikimedia Commons</span></figcaption>
+
+  <div class="trio fit" style="margin-top:24px" data-folio-id="portrait-examples">
+    <figure><img src="img/fisheye-selfie.jpg" alt="Автопортрет через объектив «рыбий глаз» вплотную: нос и середина лица раздуты" loading="lazy"><div class="lbl">≈ 7 мм экв., 10–20 см <small>· «рыбий глаз» вплотную</small></div><figcaption>Автор подписал свой снимок «так льстит!».<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:4.5mm_fisheye_self_portrait.jpg" target="_blank" rel="noopener">Chris Hoare</a>, CC BY 2.0, Wikimedia Commons</span></figcaption></figure>
+    <figure><img src="img/dog-05x.jpg" alt="Собака снята вплотную на сверхширокую камеру телефона: огромный нос" loading="lazy"><div class="lbl">0.5× телефона, вплотную <small>· нос размером с голову</small></div><figcaption><span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Dog_pictured_from_very_close_with_a_0.5x_lens.jpg" target="_blank" rel="noopener">Jsw618</a>, CC0, Wikimedia Commons</span></figcaption></figure>
+    <figure><img src="img/portrait-135.jpg" alt="Портрет девушки на 135 мм: естественные пропорции, мягкий фон" loading="lazy"><div class="lbl">135 мм, f/2, ≈ 2 м <small>· классический портретник</small></div><figcaption><span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Portrait_Sovannlyly_Cheng_(April_2025)-104A8647.jpg" target="_blank" rel="noopener">Frank Schulenburg</a>, CC BY-SA 4.0, Wikimedia Commons</span></figcaption></figure>
+  </div>
+
+
+  <div class="tbl-wrap" data-folio-id="portrait-lenses" style="margin-top:24px">
+    <table>
+      <thead><tr><th>Задача</th><th>Эквивалент</th><th>На X-S10</th><th>Откуда снимать</th></tr></thead>
+      <tbody>
+        <tr><td>Человек в обстановке: в мастерской, на улице</td><td class="mono">24–35 мм</td><td class="mono">16–23 мм</td><td>2–3 м, лицо ближе к центру кадра (у краёв широкоугольник растягивает)</td></tr>
+        <tr><td>По пояс, «как видишь»</td><td class="mono">50 мм</td><td class="mono">33–35 мм</td><td>1,5–2 м</td></tr>
+        <tr><td>Классический портрет: голова и плечи</td><td class="mono">85 мм</td><td class="mono">56 мм (XF 56 f/1.2) или 50 мм (XF 50 f/2)</td><td>1,5–2,5 м</td></tr>
+        <tr><td>Крупно лицо, фон в кашу</td><td class="mono">105–135 мм</td><td class="mono">70–90 мм (XF 90 f/2 или зум)</td><td>2–3 м</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note"><b>Широкоугольник для портрета тоже можно</b>Просто не подходи вплотную. Широкий угол хорош, когда важно, <i>где</i> человек: на фоне гор, в комнате, среди друзей. А селфи на вытянутой руке (около 30–50 см, 24–26 мм экв.) почти всегда немного увеличивает нос. Поэтому у многих телефонов в портретном режиме по умолчанию включается камера 2× или 3×.</div>
+
+  <div class="note"><b>Фокусное расстояние тоже связано с остальными</b>
+  <span style="display:block">• Чем длиннее объектив, тем сильнее он увеличивает дрожание рук — нужна более короткая <span class="tag t">выдержка</span> (то самое правило 1/фокусное).</span>
+  <span style="display:block">• При той же <span class="tag f">диафрагме</span> и том же размере предмета в кадре длинный объектив сильнее размывает фон: он берёт в кадр крошечный кусочек фона и растягивает его — размытие тоже растягивается.</span></div>
+</section>
+
+<!-- ============ 7. DR ============ -->
+<section id="dr" data-folio-id="dynamic-range">
+  <span class="sec-num">08</span>
+  <h2><span style="color:var(--dr)">Динамический диапазон</span> — от тени до света</h2>
+  <p>Встань у окна в солнечный день и посмотри на улицу, а потом — в тёмный угол комнаты. Глаза видят и то и другое. А камера, скорее всего, нет: либо окно будет белым пятном, либо комната чёрной ямой. Всё дело в <b>динамическом диапазоне</b> (ДД, DR) — разнице между самым тёмным и самым светлым, что матрица может записать <b>в одном кадре</b> с деталями.</p>
+  <p>ДД тоже меряют в ступенях. 10 ступеней — это когда самое яркое в 2<sup>10</sup> ≈ 1000 раз ярче самого тёмного, 14 ступеней — уже в 16 000 раз.</p>
+
+  <figure class="diagram" data-folio-id="dr-bars">
+    <svg viewBox="0 0 820 300" role="img" aria-label="Сравнение динамического диапазона: сцена, глаз, камера, телефон, экран, печать">
+      <g font-size="14">
+        <!-- scale 0..20 stops, x from 200 to 780 => 29px per stop -->
+        <g fill="var(--muted)" font-size="11" text-anchor="middle">
+          <text x="200" y="22">0</text><text x="345" y="22">5</text><text x="490" y="22">10</text><text x="635" y="22">15</text><text x="780" y="22">20 ступеней</text>
+        </g>
+        <g stroke="var(--line)"><line x1="200" y1="30" x2="200" y2="270"/><line x1="345" y1="30" x2="345" y2="270"/><line x1="490" y1="30" x2="490" y2="270"/><line x1="635" y1="30" x2="635" y2="270"/><line x1="780" y1="30" x2="780" y2="270"/></g>
+        <text x="0" y="57" fill="var(--ink)" font-weight="600">Солнечная сцена с тенью</text>
+        <rect x="200" y="42" width="551" height="22" rx="4" fill="url(#drg)"/>
+        <text x="0" y="97" fill="var(--ink)" font-weight="600">Глаз (привыкая)</text>
+        <rect x="200" y="82" width="580" height="22" rx="4" fill="var(--dr)" opacity=".55"/>
+        <text x="0" y="137" fill="var(--ink)" font-weight="600">Хорошая камера</text>
+        <rect x="200" y="122" width="406" height="22" rx="4" fill="var(--dr)"/>
+        <text x="0" y="177" fill="var(--ink)" font-weight="600">Телефон, один кадр</text>
+        <rect x="200" y="162" width="319" height="22" rx="4" fill="var(--dr)" opacity=".8"/>
+        <text x="0" y="217" fill="var(--ink)" font-weight="600">Экран, JPEG</text>
+        <rect x="200" y="202" width="261" height="22" rx="4" fill="var(--dr)" opacity=".6"/>
+        <text x="0" y="257" fill="var(--ink)" font-weight="600">Печать на бумаге</text>
+        <rect x="200" y="242" width="188" height="22" rx="4" fill="var(--dr)" opacity=".45"/>
+        <g font-size="12" fill="var(--ink)" font-weight="700">
+          <text x="758" y="58">~19</text><text x="612" y="138">~14</text><text x="526" y="178">~11</text><text x="468" y="218">~9</text><text x="395" y="258">~6–7</text>
+        </g>
+      </g>
+      <defs><linearGradient id="drg" x1="0" x2="1"><stop offset="0" stop-color="#000"/><stop offset="1" stop-color="#fff8dc"/></linearGradient></defs>
+      <text x="410" y="292" text-anchor="middle" font-size="12.5" fill="var(--muted)">Числа примерные: важно соотношение. Сцена часто «шире», чем может записать камера, а экран — ещё уже.</text>
+    </svg>
+  </figure>
+
+  <h3>Что происходит, когда сцена не влезает</h3>
+  <p>Если сцена шире, чем ДД матрицы, приходится выбирать: <b>сохранить светлое</b> (тогда тени провалятся в черноту) или <b>вытянуть тёмное</b> (тогда светлое «выгорит» в чистый белый). Ниже — один и тот же вечерний вид, снятый с разной экспозицией.</p>
+  <div class="quad" data-folio-id="arch-bracket">
+    <figure><img src="img/arch-dark.jpg" alt="Очень тёмный кадр: видны только фонари" loading="lazy"><div class="lbl">−4.7 <small>· видны лишь фонари</small></div></figure>
+    <figure><img src="img/arch-mid.jpg" alt="Тёмный кадр" loading="lazy"><div class="lbl">−1.8 <small>· светлое в норме, тени чёрные</small></div></figure>
+    <figure><img src="img/arch-bright.jpg" alt="Светлый кадр" loading="lazy"><div class="lbl">+1.5 <small>· тени видно, фонари выгорели</small></div></figure>
+    <figure><img src="img/arch-brightest.jpg" alt="Очень светлый кадр" loading="lazy"><div class="lbl">+4.1 <small>· всё светлое стало белым</small></div></figure>
+  </div>
+  <figure data-folio-id="arch-hdr">
+    <img src="img/arch-hdr.jpg" alt="Склеенный HDR-снимок: видны и детали в тенях, и фонари" loading="lazy">
+    <figcaption><b style="color:var(--ink)">А это все четыре кадра, склеенные в один (HDR).</b> Из каждого взяты лучшие участки: из тёмного — фонари и купол, из светлого — деревья и здания. Ровно это делает режим HDR в телефоне, только быстро и незаметно.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:StLouisArchMultExpToneMapped.jpg" target="_blank" rel="noopener">Kevin McCoy</a>, CC BY-SA 3.0, Wikimedia Commons</span></figcaption>
+  </figure>
+
+  <div class="pair" data-folio-id="park">
+    <figure><img src="img/park-original.jpg" alt="Исходный снимок парка: тени тёмные" loading="lazy"><div class="lbl">Как сняла камера</div></figure>
+    <figure><img src="img/park-processed.jpg" alt="Обработанный снимок: тени вытянуты" loading="lazy"><div class="lbl">После вытягивания теней</div></figure>
+  </div>
+  <figcaption style="margin-top:6px">Фотограф специально снял так, чтобы не выжечь небо и здания, а потом при обработке осветлил тени: в них остались детали. С выгоревшим небом такой трюк бы не прошёл.<span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Central_Park_New_York_May_2015_007.jpg" target="_blank" rel="noopener">King of Hearts</a>, CC BY-SA 3.0, Wikimedia Commons</span></figcaption>
+
+  <h3>Гистограмма — градусник экспозиции</h3>
+  <p>В камере и в большинстве фоторедакторов можно включить гистограмму: график, который показывает, сколько в кадре тёмных, средних и светлых точек. Слева — чёрное, справа — белое. Если «гора» упирается в правый край — что-то выгорело, если в левый — что-то провалилось в черноту.</p>
+  <figure class="diagram" data-folio-id="histograms">
+    <svg viewBox="0 0 820 200" role="img" aria-label="Три гистограммы: недодержка, норма, передержка">
+      <defs><linearGradient id="hg" x1="0" x2="1"><stop offset="0" stop-color="#000"/><stop offset="1" stop-color="#fff"/></linearGradient></defs>
+      <g transform="translate(20,20)">
+        <rect width="240" height="120" rx="6" fill="var(--soft)"/>
+        <path d="M0,120 L0,8 C20,10 40,30 60,60 C90,95 130,112 240,119 L240,120 Z" fill="var(--ink)" opacity=".75"/>
+        <rect x="0" y="0" width="4" height="120" fill="#e5484d"/>
+        <rect y="126" width="240" height="8" rx="2" fill="url(#hg)"/>
+        <text x="120" y="158" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">Недодержка</text>
+        <text x="120" y="176" text-anchor="middle" font-size="12" fill="var(--muted)">тени «обрезаны» слева</text>
+      </g>
+      <g transform="translate(290,20)">
+        <rect width="240" height="120" rx="6" fill="var(--soft)"/>
+        <path d="M0,120 C30,118 50,100 80,70 C100,48 120,30 140,40 C170,55 190,95 240,118 L240,120 Z" fill="var(--ink)" opacity=".75"/>
+        <rect y="126" width="240" height="8" rx="2" fill="url(#hg)"/>
+        <text x="120" y="158" text-anchor="middle" font-size="14" font-weight="700" fill="var(--iso)">Норма</text>
+        <text x="120" y="176" text-anchor="middle" font-size="12" fill="var(--muted)">гора помещается целиком</text>
+      </g>
+      <g transform="translate(560,20)">
+        <rect width="240" height="120" rx="6" fill="var(--soft)"/>
+        <path d="M0,120 L0,119 C110,112 150,95 180,60 C200,30 220,12 240,6 L240,120 Z" fill="var(--ink)" opacity=".75"/>
+        <rect x="236" y="0" width="4" height="120" fill="#e5484d"/>
+        <rect y="126" width="240" height="8" rx="2" fill="url(#hg)"/>
+        <text x="120" y="158" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">Передержка</text>
+        <text x="120" y="176" text-anchor="middle" font-size="12" fill="var(--muted)">света «обрезаны» справа</text>
+      </g>
+    </svg>
+  </figure>
+
+  <div class="pair" style="align-items:center" data-folio-id="blown">
+    <figure><img src="img/blown-highlights.jpg" alt="Сверху обычный снимок, снизу выгоревшие места отмечены красным" loading="lazy" style="max-width:340px;margin:0 auto"></figure>
+    <div>
+      <p>Многие камеры умеют подсвечивать выгоревшие места мигающей «зеброй» или цветом — как красным на нижней картинке. Внутри этих пятен нет никакой информации: только белый. Восстановить их нельзя.</p>
+      <div class="rule dr" style="font-size:16px">Правило цифровой съёмки: <b>береги света</b>. Чуть тёмный снимок можно вытянуть, выгоревший — нет.</div>
+      <figcaption><span class="cr">Фото: <a href="https://commons.wikimedia.org/wiki/File:Blown-out_highlights.jpg" target="_blank" rel="noopener">Daniel Schwen</a>, CC BY-SA 2.5, Wikimedia Commons</span></figcaption>
+    </div>
+  </div>
+
+  <div class="note"><b>ДД и ISO</b>Самый широкий динамический диапазон у матрицы на минимальном ISO. С каждой ступенью усиления шум «съедает» нижние ступени — тени, и ДД сужается. Ещё одна причина не задирать ISO без нужды.</div>
+</section>
+
+<!-- ============ 8. LINKS ============ -->
+<section id="links" data-folio-id="relationships">
+  <span class="sec-num">09</span>
+  <h2>Как всё связано</h2>
+  <p>Соберём всё на одной схеме. Слева — то, что ты настраиваешь. Справа — что от этого меняется на снимке. Каждая настройка влияет на яркость, но у каждой есть ещё и свой «характер».</p>
+  <figure class="diagram" data-folio-id="relationship-map">
+    <svg viewBox="0 0 820 470" role="img" aria-label="Карта связей настроек и их эффектов">
+      <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/></marker></defs>
+      <g font-size="15" font-weight="700" text-anchor="middle">
+        <g transform="translate(110,60)"><rect x="-90" y="-24" width="180" height="48" rx="12" fill="var(--fl-soft)" stroke="var(--fl)" stroke-width="2"/><text y="6" fill="var(--fl)">Фокусное</text></g>
+        <g transform="translate(110,160)"><rect x="-90" y="-24" width="180" height="48" rx="12" fill="var(--f-soft)" stroke="var(--f)" stroke-width="2"/><text y="6" fill="var(--f)">Диафрагма F</text></g>
+        <g transform="translate(110,260)"><rect x="-90" y="-24" width="180" height="48" rx="12" fill="var(--t-soft)" stroke="var(--t)" stroke-width="2"/><text y="6" fill="var(--t)">Выдержка</text></g>
+        <g transform="translate(110,360)"><rect x="-90" y="-24" width="180" height="48" rx="12" fill="var(--iso-soft)" stroke="var(--iso)" stroke-width="2"/><text y="6" fill="var(--iso)">ISO</text></g>
+      </g>
+      <g font-size="14.5" font-weight="600" text-anchor="middle" fill="var(--ink)">
+        <g transform="translate(680,40)"><rect x="-120" y="-22" width="240" height="44" rx="10" fill="var(--paper)" stroke="var(--line)" stroke-width="2"/><text y="5">Угол обзора, «зум»</text></g>
+        <g transform="translate(680,110)"><rect x="-120" y="-22" width="240" height="44" rx="10" fill="var(--paper)" stroke="var(--line)" stroke-width="2"/><text y="5">Размытие фона (ГРИП)</text></g>
+        <g transform="translate(680,180)"><rect x="-120" y="-22" width="240" height="44" rx="10" fill="var(--paper)" stroke="var(--line)" stroke-width="2"/><text y="5">Шевелёнка от рук</text></g>
+        <g transform="translate(680,250)"><rect x="-120" y="-22" width="240" height="44" rx="10" fill="var(--ink)" stroke="var(--ink)" stroke-width="2"/><text y="5" fill="var(--bg)">ЯРКОСТЬ (экспозиция)</text></g>
+        <g transform="translate(680,320)"><rect x="-120" y="-22" width="240" height="44" rx="10" fill="var(--paper)" stroke="var(--line)" stroke-width="2"/><text y="5">Смаз движения</text></g>
+        <g transform="translate(680,390)"><rect x="-120" y="-22" width="240" height="44" rx="10" fill="var(--paper)" stroke="var(--line)" stroke-width="2"/><text y="5">Шум</text></g>
+        <g transform="translate(680,450)"><rect x="-120" y="-20" width="240" height="40" rx="10" fill="var(--dr-soft)" stroke="var(--dr)" stroke-width="2"/><text y="5" fill="var(--dr)">Динамический диапазон</text></g>
+      </g>
+      <g fill="none" stroke-width="2.2">
+        <!-- focal -->
+        <path d="M200,60 C380,60 400,40 556,40" stroke="var(--fl)" marker-end="url(#ar2)"/>
+        <path d="M200,60 C380,70 400,110 556,110" stroke="var(--fl)" marker-end="url(#ar2)" stroke-dasharray="6 4"/>
+        <path d="M200,60 C380,80 400,180 556,180" stroke="var(--fl)" marker-end="url(#ar2)" stroke-dasharray="6 4"/>
+        <!-- aperture -->
+        <path d="M200,160 C380,160 400,110 556,110" stroke="var(--f)" marker-end="url(#ar2)"/>
+        <path d="M200,160 C380,170 400,250 556,250" stroke="var(--f)" marker-end="url(#ar2)"/>
+        <!-- shutter -->
+        <path d="M200,260 C380,260 400,250 556,250" stroke="var(--t)" marker-end="url(#ar2)"/>
+        <path d="M200,260 C380,265 400,320 556,320" stroke="var(--t)" marker-end="url(#ar2)"/>
+        <path d="M200,260 C380,250 400,190 556,186" stroke="var(--t)" marker-end="url(#ar2)"/>
+        <!-- iso -->
+        <path d="M200,360 C380,360 400,256 556,256" stroke="var(--iso)" marker-end="url(#ar2)"/>
+        <path d="M200,360 C380,365 400,390 556,390" stroke="var(--iso)" marker-end="url(#ar2)"/>
+        <path d="M200,360 C380,375 400,450 556,450" stroke="var(--iso)" marker-end="url(#ar2)"/>
+      </g>
+      <text x="20" y="440" font-size="12.5" fill="var(--muted)">пунктир — косвенная связь</text>
+    </svg>
+  </figure>
+
+  <div class="tbl-wrap" data-folio-id="relationships-table">
+    <table>
+      <thead><tr><th>Если…</th><th>то яркость</th><th>и ещё</th></tr></thead>
+      <tbody>
+        <tr><td>открыть диафрагму (f/8 → f/2.8)</td><td>+3 ступени</td><td>фон сильнее размыт, резкость тоньше</td></tr>
+        <tr><td>удлинить выдержку (1/500 → 1/60)</td><td>+3 ступени</td><td>движение смазывается, нужен упор</td></tr>
+        <tr><td>поднять ISO (100 → 800)</td><td>+3 ступени</td><td>больше шума, уже динамический диапазон</td></tr>
+        <tr><td>увеличить фокусное (24 → 100 мм)</td><td>не меняется*</td><td>угол уже, фон размыт сильнее, руки дрожат заметнее</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:14px;color:var(--muted);margin-top:8px">* У многих зум-объективов при увеличении фокусного максимальная диафрагма сама становится меньше (например, f/3.5 на 18 мм и f/5.6 на 55 мм) — тогда света всё-таки становится меньше.</p>
+</section>
+
+<!-- ============ 9. PRACTICE ============ -->
+<section id="practice" data-folio-id="practice">
+  <span class="sec-num">10</span>
+  <h2>Шпаргалка</h2>
+  <p>С чего начать в типичных ситуациях. Сначала реши, что для кадра <b>главное</b>, — эту настройку и выбирай первой, остальные подстраивай под неё.</p>
+  <div class="tbl-wrap" data-folio-id="cheatsheet">
+    <table>
+      <thead><tr><th>Что снимаем</th><th>Главное</th><th>С чего начать</th></tr></thead>
+      <tbody>
+        <tr><td>Портрет, питомец</td><td><span class="tag f">размытый фон</span></td><td>f/1.8–f/2.8, 50–85 мм экв., выдержка 1/125+</td></tr>
+        <tr><td>Пейзаж</td><td><span class="tag f">всё резкое</span></td><td>f/8–f/11, ISO 100, широкий угол</td></tr>
+        <tr><td>Спорт, бег, прыжки</td><td><span class="tag t">заморозить</span></td><td>1/1000 и короче, диафрагму открыть, ISO по необходимости</td></tr>
+        <tr><td>Вода, ручей, фонтан</td><td><span class="tag t">гладкая вода</span></td><td>1/4–2 с, f/11–f/16, штатив</td></tr>
+        <tr><td>В помещении без вспышки</td><td><span class="tag iso">не смазать</span></td><td>диафрагма открыта, 1/60–1/125, ISO 1600–3200</td></tr>
+        <tr><td>Закат, окно с видом</td><td><span class="tag dr">не выжечь небо</span></td><td>замер по небу, потом вытянуть тени или режим HDR</td></tr>
+        <tr><td>Ночной город, огни машин</td><td><span class="tag t">следы света</span></td><td>5–15 с, f/8, ISO 100, штатив</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note"><b>Режимы камеры</b>Не обязательно всё ставить вручную. В режиме <b>A</b> (или Av) ты задаёшь диафрагму, камера подбирает выдержку. В режиме <b>S</b> (или Tv) — наоборот. <b>M</b> — всё сам. С авто-ISO это самый удобный способ учиться: управляешь главным, а камера страхует.</div>
+
+  <div class="note" data-folio-id="link-film-sims-2"><b>Цвет и «плёнка» на Fujifilm X-S10</b>Кроме экспозиции, у снимка есть ещё характер цвета. На Fujifilm за него отвечают симуляции плёнки. Подробно о них — на <a href="https://folio.fold-core.ru/a/bernhard/simulyatsii-plenki-fujifilm-x-s10-kejiswf8/">отдельной странице</a>: сравнение на одних и тех же сценах, шпаргалка «сцена → симуляция» и рецепты.</div>
+
+  <h3>Задания-эксперименты</h3>
+  <p>Подойдёт любая камера с ручным режимом или телефон с режимом «Профи» / «Pro».</p>
+  <ol class="tasks" data-folio-id="tasks">
+    <li><b>Лесенка диафрагм.</b> Поставь в ряд несколько игрушек или карандашей, сфокусируйся на ближнем и сними при f/2, f/5.6 и f/16 (режим A). Сравни фон — повтори опыт с кубиками.</li>
+    <li><b>Вода из крана.</b> Сними струю воды на выдержках 1/1000, 1/60 и 1/4 (режим S, телефон положи на опору). Где капли, а где «стеклянная» нить?</li>
+    <li><b>Охота на шум.</b> В тёмной комнате сними одну и ту же сцену при ISO 100 (с опоры, длинная выдержка) и при ISO 3200. Увеличь оба снимка и сравни тени.</li>
+    <li><b>Зум на месте.</b> Не сходя с места, сними один вид на 0.5×, 1× и 3×. Потом сними портрет друга на 0.5× вблизи и на 3× издалека, чтобы лицо было одного размера. Где лицо выглядит естественнее?</li>
+    <li><b>Окно.</b> Сними комнату с окном в солнечный день: сначала тапни для экспозиции по стене, потом по окну, потом включи HDR. Найди на гистограмме, где что выгорело.</li>
+    <li><b>Рисунок светом.</b> В темноте с выдержкой 5–10 секунд нарисуй фонариком своё имя. Камера на опоре, ISO 100.</li>
+  </ol>
+</section>
+
+<section data-folio-id="credits">
+  <h2 style="font-size:20px">Фотографии</h2>
+  <p class="credits">Все фотографии взяты с Wikimedia Commons и распространяются по свободным лицензиям. Схемы и симулятор нарисованы для этой страницы.</p>
+  <ul class="credits">
+    <li><a href="https://commons.wikimedia.org/wiki/File:Lenses_with_different_apertures.jpg" target="_blank" rel="noopener">Lenses with different apertures.jpg</a> — KoeppiK, CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Dof_blocks_f1_4.jpg" target="_blank" rel="noopener">Dof blocks f1 4.jpg</a> — Alex1ruff, CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Dof_blocks_f4_0.jpg" target="_blank" rel="noopener">Dof blocks f4 0.jpg</a> — Alex1ruff, CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Dof_blocks_f22.jpg" target="_blank" rel="noopener">Dof blocks f22.jpg</a> — Alex1ruff, CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Jonquil_flowers_at_f5.jpg" target="_blank" rel="noopener">Jonquil flowers at f5.jpg</a> — fir0002 (flagstaffotos), GFDL 1.2</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Jonquil_flowers_at_f32.jpg" target="_blank" rel="noopener">Jonquil flowers at f32.jpg</a> — fir0002 (flagstaffotos), GFDL 1.2</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Kew_fountain_(short_exposure).jpg" target="_blank" rel="noopener">Kew fountain (short exposure).jpg</a> — Stephen B Streater, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Kew_fountain_(long_exposure).jpg" target="_blank" rel="noopener">Kew fountain (long exposure).jpg</a> — Stephen B Streater, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Truck_with_motion_blur.jpg" target="_blank" rel="noopener">Truck with motion blur.jpg</a> — fir0002 (flagstaffotos), GFDL 1.2</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Sparklers_with_a_slow_shutter_speed.JPG" target="_blank" rel="noopener">Sparklers with a slow shutter speed.JPG</a> — Adam.J.W.C., CC BY 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Flower_at_100_ISO_for_comparison.JPG" target="_blank" rel="noopener">Flower at 100 ISO for comparison.JPG</a> — Andrew Hutton, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:StLouisArchMultExpEV-4.72.JPG" target="_blank" rel="noopener">StLouisArchMultExpEV-4.72.JPG</a> — Kevin McCoy, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:StLouisArchMultExpEV%2B1.51.JPG" target="_blank" rel="noopener">StLouisArchMultExpEV+1.51.JPG</a> — Kevin McCoy, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:StLouisArchMultExpToneMapped.jpg" target="_blank" rel="noopener">StLouisArchMultExpToneMapped.jpg</a> — Kevin McCoy, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Central_Park_New_York_May_2015_007_original.jpg" target="_blank" rel="noopener">Central Park New York May 2015 007 original.jpg</a> — King of Hearts, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Central_Park_New_York_May_2015_007.jpg" target="_blank" rel="noopener">Central Park New York May 2015 007.jpg</a> — King of Hearts, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Blown-out_highlights.jpg" target="_blank" rel="noopener">Blown-out highlights.jpg</a> — Daniel Schwen, CC BY-SA 2.5</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Aperture_and_bokeh.jpg" target="_blank" rel="noopener">Aperture and bokeh.jpg</a> — Basile Morin, CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Focal_length_f17mm.jpg" target="_blank" rel="noopener">Focal length f17mm.jpg</a> — Armin Kübelbeck, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Focal_length_f24mm.jpg" target="_blank" rel="noopener">Focal length f24mm.jpg</a> — Armin Kübelbeck, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Focal_length_f35mm.jpg" target="_blank" rel="noopener">Focal length f35mm.jpg</a> — Armin Kübelbeck, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Focal_length_f50mm.jpg" target="_blank" rel="noopener">Focal length f50mm.jpg</a> — Armin Kübelbeck, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Focal_length_f70mm.jpg" target="_blank" rel="noopener">Focal length f70mm.jpg</a> — Armin Kübelbeck, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Focal_length_f100mm.jpg" target="_blank" rel="noopener">Focal length f100mm.jpg</a> — Armin Kübelbeck, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Focal_length_f135mm.jpg" target="_blank" rel="noopener">Focal length f135mm.jpg</a> — Armin Kübelbeck, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Focal_length_f200mm.jpg" target="_blank" rel="noopener">Focal length f200mm.jpg</a> — Armin Kübelbeck, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Focal_length_f300mm.jpg" target="_blank" rel="noopener">Focal length f300mm.jpg</a> — Armin Kübelbeck, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Focal_length_500mm.jpg" target="_blank" rel="noopener">Focal length 500mm.jpg</a> — Armin Kübelbeck, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Focal_length_1000mm.jpg" target="_blank" rel="noopener">Focal length 1000mm.jpg</a> — Armin Kübelbeck, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Focal_length_2000mm.jpg" target="_blank" rel="noopener">Focal length 2000mm.jpg</a> — Armin Kübelbeck, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Flower_at_1600_ISO_for_comparison.JPG" target="_blank" rel="noopener">Flower at 1600 ISO for comparison.JPG</a> — Andrew Hutton, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Camera_focal_length_distance_house_animation.gif" target="_blank" rel="noopener">Camera focal length distance house animation.gif</a> — SharkD, CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:StLouisArchMultExpEV-1.82.JPG" target="_blank" rel="noopener">StLouisArchMultExpEV-1.82.JPG</a> — Kevin McCoy, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:StLouisArchMultExpEV%2B4.09.JPG" target="_blank" rel="noopener">StLouisArchMultExpEV+4.09.JPG</a> — Kevin McCoy, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Lupa_zapaluje.jpg" target="_blank" rel="noopener">Lupa zapaluje.jpg</a> — Pastorius, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Nikon_SLR_Camera_cutaway.jpg" target="_blank" rel="noopener">Nikon SLR Camera cutaway.jpg</a> — Martin Vorel, CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:DOF_scale_detail.png" target="_blank" rel="noopener">DOF scale detail.png</a> — dicklyon, Public domain</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:FocusDemonstration-BambooRooftop.jpg" target="_blank" rel="noopener">FocusDemonstration-BambooRooftop.jpg</a> — SoHome Jacaranda Lilau, CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:AF_failed.jpg" target="_blank" rel="noopener">AF failed.jpg</a> — Photolis, CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:AF_tack-sharp.jpg" target="_blank" rel="noopener">AF tack-sharp.jpg</a> — Photolis, CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:One_selected_green_focus_point_using_pinpoint_autofocus.jpg" target="_blank" rel="noopener">One selected green focus point using pinpoint autofocus.jpg</a> — W.carter, CC0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Several_green_focus_points_using_autofocus.jpg" target="_blank" rel="noopener">Several green focus points using autofocus.jpg</a> — W.carter, CC0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Zone_autofocus_WP.jpg" target="_blank" rel="noopener">Zone autofocus WP.jpg</a> — JPRoche, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Fokus-Peaking.jpg" target="_blank" rel="noopener">Fokus-Peaking.jpg</a> — Bautsch, CC0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Tanja_17mm.jpg" target="_blank" rel="noopener">Tanja 17mm.jpg</a> — Armin Kübelbeck, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Tanja_50mm.jpg" target="_blank" rel="noopener">Tanja 50mm.jpg</a> — Armin Kübelbeck, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Tanja_200mm.jpg" target="_blank" rel="noopener">Tanja 200mm.jpg</a> — Armin Kübelbeck, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Portrait24mm5_6.jpg" target="_blank" rel="noopener">Portrait24mm5 6.jpg</a> — Florian Schott, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Portrait100mm5_6.jpg" target="_blank" rel="noopener">Portrait100mm5 6.jpg</a> — Florian Schott, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Portrait400mm5_6.jpg" target="_blank" rel="noopener">Portrait400mm5 6.jpg</a> — Florian Schott, CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Portrait_Sovannlyly_Cheng_(April_2025)-104A8647.jpg" target="_blank" rel="noopener">Portrait Sovannlyly Cheng (April 2025)-104A8647.jpg</a> — Frank Schulenburg, CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:4.5mm_fisheye_self_portrait.jpg" target="_blank" rel="noopener">4.5mm fisheye self portrait.jpg</a> — Chris Hoare, CC BY 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Dog_pictured_from_very_close_with_a_0.5x_lens.jpg" target="_blank" rel="noopener">Dog pictured from very close with a 0.5x lens.jpg</a> — Jsw618, CC0</li>
+  </ul>
+</section>
+
+<footer>Октябрь 2026</footer>
+</main>
+
+<script>
+(function(){
+  // DOF tabs
+  var dofCaps={
+    'img/dof-f1-4.jpg':'f/1.4: резкость только на первом кубике, остальные тают в размытии.',
+    'img/dof-f4.jpg':'f/4: резкой стала пара кубиков, дальние всё ещё мягкие.',
+    'img/dof-f22.jpg':'f/22: читается почти каждая буква — от первого до последнего кубика.'
+  };
+  var dofImg=document.getElementById('dofImg'), dofCap=document.getElementById('dofCap');
+  var crHtml=dofCap.querySelector('.cr') ? dofCap.querySelector('.cr').outerHTML : '';
+  document.querySelectorAll('#dofSeg button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#dofSeg button').forEach(function(x){x.setAttribute('aria-pressed','false')});
+      b.setAttribute('aria-pressed','true');
+      dofImg.src=b.dataset.src; dofCap.innerHTML=dofCaps[b.dataset.src]+crHtml;
+    });
+  });
+  ['img/dof-f4.jpg','img/dof-f22.jpg'].forEach(function(s){var i=new Image();i.src=s;});
+
+  // Sunflower petals
+  var pg=document.getElementById('petals'), ns='http://www.w3.org/2000/svg';
+  for(var k=0;k<16;k++){
+    var e=document.createElementNS(ns,'ellipse');
+    e.setAttribute('cx','0');e.setAttribute('cy','-40');e.setAttribute('rx','10');e.setAttribute('ry','22');
+    e.setAttribute('transform','rotate('+(k*22.5)+')');pg.appendChild(e);
+  }
+
+  // Simulator
+  var F=[1.4,2,2.8,4,5.6,8,11,16,22];
+  var T=[1/4000,1/2000,1/1000,1/500,1/250,1/125,1/60,1/30,1/15,1/8,1/4,1/2,1];
+  var TL=['1/4000','1/2000','1/1000','1/500','1/250','1/125','1/60','1/30','1/15','1/8','1/4','1/2','1 с'];
+  var ISO=[100,200,400,800,1600,3200,6400,12800];
+  var sceneEV=12;
+  var fR=document.getElementById('fR'), tR=document.getElementById('tR'), iR=document.getElementById('iR');
+  var svg=document.getElementById('simSvg');
+  function $(id){return document.getElementById(id)}
+  function verdictText(d){
+    if(d>2.5) return ['Сильный пересвет — всё белое','var(--t)'];
+    if(d>1.2) return ['Пересвет','var(--t)'];
+    if(d>0.5) return ['Чуть светловато','var(--muted)'];
+    if(d>=-0.5) return ['Норма ✓','var(--iso)'];
+    if(d>=-1.2) return ['Чуть темновато','var(--muted)'];
+    if(d>=-2.5) return ['Недосвет','var(--f)'];
+    return ['Сильный недосвет — почти чёрный','var(--f)'];
+  }
+  function update(){
+    var N=F[fR.value], t=T[tR.value], iso=ISO[iR.value];
+    var settingsEV=Math.log2(N*N/t)-Math.log2(iso/100);
+    var d=sceneEV-settingsEV; // >0 overexposed
+    $('fO').textContent='f/'+N; $('tO').textContent=TL[tR.value]; $('iO').textContent=iso;
+    // brightness
+    var b=Math.pow(2,d*0.6);
+    var contrast = d>1 ? 1+ (d-1)*0.15 : 1;
+    svg.style.filter='brightness('+b.toFixed(3)+') contrast('+contrast.toFixed(2)+')';
+    // bg blur
+    var blur=Math.max(0,9*1.4/N-0.5);
+    $('bgBlurN').setAttribute('stdDeviation',blur.toFixed(2));
+    // motion blur: ball moves ~1500 px/s
+    var mb=Math.min(70,1500*t/2.2);
+    $('motionN').setAttribute('stdDeviation',mb.toFixed(2)+' 0');
+    // noise
+    var stops=Math.log2(iso/100);
+    var nOp=stops<=0?0:Math.min(0.85,0.05+stops*0.11);
+    if(d<0) nOp=Math.min(0.9,nOp+(-d)*0.04);
+    $('noiseRect').setAttribute('opacity',nOp.toFixed(2));
+    // meter
+    var clamped=Math.max(-3,Math.min(3,d));
+    $('needle').style.left=((clamped+3)/6*100)+'%';
+    var v=verdictText(d); $('verdict').textContent=v[0]; $('verdict').style.color=v[1];
+    // hints
+    $('fS').textContent = N<=2.8?'Дырка большая: много света, тонкая резкость':(N>=11?'Дырка маленькая: мало света, резко всё':'Средняя дырка: баланс');
+    $('tS').textContent = t<=1/1000?'Очень коротко: заморозит что угодно':(t>=1/30?'Долго: всё движущееся смажется, нужен штатив':'Обычная скорость для прогулки');
+    $('iS').textContent = iso<=200?'Без усиления: самая чистая картинка':(iso>=3200?'Сильное усиление: заметный шум':'Умеренное усиление');
+    $('eBg').textContent = blur>5?'сильно размыт — портретный вид':(blur>2?'слегка размыт':(blur>0.6?'почти резкий':'резкий, как и цветок'));
+    $('eBall').textContent = mb<2?'заморожен в воздухе':(mb<8?'чуть смазан':(mb<30?'заметный шлейф':'превратился в полосу'));
+    $('eNoise').textContent = nOp<0.08?'нет':(nOp<0.3?'лёгкое зерно':(nOp<0.55?'заметный':'сильный'));
+  }
+  [fR,tR,iR].forEach(function(r){r.addEventListener('input',update)});
+  document.querySelectorAll('#sceneSeg button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#sceneSeg button').forEach(function(x){x.setAttribute('aria-pressed','false')});
+      b.setAttribute('aria-pressed','true'); sceneEV=+b.dataset.ev; update();
+    });
+  });
+  $('autoIso').addEventListener('click',function(){
+    var N=F[fR.value], t=T[tR.value];
+    var need=Math.log2(N*N/t)-sceneEV; // stops of ISO needed above 100
+    var idx=Math.round(need); idx=Math.max(0,Math.min(ISO.length-1,idx));
+    iR.value=idx; update();
+  });
+  update();
+
+
+  // Focus simulator
+  (function(){
+    var f=50, D=25, sMax=60, K=15, Fpx=160, SX=770, AX=150, A=55;
+    var foc=$('fsFocus'), dist=$('fsDist');
+    var pp=$('fsPetals');
+    for(var k=0;k<14;k++){var e=document.createElementNS(ns,'ellipse');e.setAttribute('cy','-32');e.setAttribute('rx','8');e.setAttribute('ry','17');e.setAttribute('transform','rotate('+(k*360/14)+')');pp.appendChild(e);}
+    $('fsPrevFlower').setAttribute('transform','translate(110,95)');
+    function dOf(u){return 0.3*Math.pow(20/0.3,u/1000);} // metres
+    function fmtM(m){return m>=10?Math.round(m)+' м':(m>=1?m.toFixed(1).replace('.',',').replace(',0','')+' м':Math.round(m*100)+' см');}
+    function sOf(u){return f+(sMax-f)*Math.pow(u/10000,1.6);}
+    function uOfS(s){return 10000*Math.pow(Math.max(0,(s-f)/(sMax-f)),1/1.6);}
+    function vOf(dm){var d=dm*1000;return f*d/(d-f);}
+    function rays(g,src,lensX,vpx){
+      var h='';
+      [-A,0,A].forEach(function(y0){
+        var y1=AX+y0;
+        h+= src==='inf' ? '<path d="M14,'+y1+' L'+lensX+','+y1+'"/>' : '<path d="M'+src+','+AX+' L'+lensX+','+y1+'"/>';
+        var yS=AX+y0*(1-(SX-lensX)/vpx);
+        h+='<path d="M'+lensX+','+y1+' L'+SX+','+yS.toFixed(1)+'"/>';
+        if(lensX+vpx>SX) h+='<path d="M'+SX+','+yS.toFixed(1)+' L'+(lensX+vpx).toFixed(1)+','+AX+'" stroke-dasharray="4 4" opacity=".45"/>';
+      });
+      g.innerHTML=h;
+      return Math.abs(A*(1-(SX-lensX)/vpx));
+    }
+    function verdict(c){return c<0.03?'резко ✓':(c<0.15?'почти резко':(c<0.6?'размыто':'сильно размыто'));}
+    function upd(){
+      var s=sOf(+foc.value), d=dOf(+dist.value), v=vOf(d);
+      var spx=Fpx+K*(s-f), lensX=SX-spx;
+      $('fsLens').setAttribute('transform','translate('+lensX+','+AX+')');
+      $('fsF').setAttribute('transform','translate('+(lensX+Fpx)+','+AX+')');
+      var xObj=610-(170+390*Math.log(d/0.3)/Math.log(20/0.3));
+      $('fsFlower').setAttribute('transform','translate('+xObj+','+AX+')');
+      var hInf=rays($('fsRaysInf'),'inf',lensX,Fpx);
+      var hNear=rays($('fsRaysNear'),xObj,lensX,Fpx+K*(v-f));
+      [['fsSpotInf',hInf],['fsSpotNear',hNear]].forEach(function(p){var r=$(p[0]),hh=Math.max(2,p[1]);r.setAttribute('y',AX-hh);r.setAttribute('height',2*hh);});
+      $('fsDimL').setAttribute('x1',lensX);$('fsDimA').setAttribute('x1',lensX);$('fsDimA').setAttribute('x2',lensX);
+      $('fsDimT').setAttribute('x',(lensX+SX)/2);
+      $('fsDimT').textContent='от объектива до матрицы: '+s.toFixed(s-f<1?2:1).replace('.',',')+' мм';
+      var fd = s-f<0.005 ? Infinity : f*s/(s-f)/1000;
+      $('fsFocusO').textContent = fd===Infinity?'∞':(fd>200?'≈ ∞':'на '+fmtM(fd));
+      $('fsExt').textContent = s-f<0.005 ? 'Объектив задвинут до упора: матрица ровно на фокусном расстоянии, 50 мм.' : 'Объектив выдвинут на '+(s-f).toFixed(s-f<1?2:1).replace('.',',')+' мм.';
+      $('fsDistO').textContent=fmtM(d);
+      $('fsV').textContent='Лучи от цветка сходятся в '+v.toFixed(v-f<1?2:1).replace('.',',')+' мм за линзой.';
+      var cInf=D*(s-f)/f, cNear=D*Math.abs(s-v)/v;
+      $('fsBgN').setAttribute('stdDeviation',Math.min(16,cInf*8).toFixed(2));
+      $('fsFgN').setAttribute('stdDeviation',Math.min(16,cNear*8).toFixed(2));
+      $('fsVerInf').textContent=verdict(cInf); $('fsVerNear').textContent=verdict(cNear);
+    }
+    foc.addEventListener('input',upd); dist.addEventListener('input',upd);
+    $('fsInf').addEventListener('click',function(){foc.value=0;upd();});
+    $('fsNear').addEventListener('click',function(){foc.value=Math.round(uOfS(vOf(dOf(+dist.value))));upd();});
+    upd();
+  })();
+
+  // Face perspective demo
+  (function(){
+    var cv=$('faceCv'); if(!cv) return;
+    var ctx=cv.getContext('2d'), W=cv.width, H=cv.height, img=ctx.createImageData(W,H);
+    var FLS=[14,18,24,35,50,85,135,200];
+    var TYPES={14:'сверхширокий, 0.5× телефона',18:'сверхширокий',24:'широкий, 1× телефона / селфи',35:'широкий-нормальный',50:'нормальный',85:'портретник',135:'длинный портретник',200:'телеобъектив'};
+    // primitives: ellipsoids [cx,cy,cz, rx,ry,rz, kind]
+    var P=[
+      [0,0,0, .075,.105,.095,'head'],
+      [0,-.012,.084, .015,.032,.03,'nose'],
+      [.077,.002,-.006, .013,.032,.022,'ear'],[-.077,.002,-.006, .013,.032,.022,'ear'],
+      [.031,.024,.073, .0125,.0125,.0125,'eye'],[-.031,.024,.073, .0125,.0125,.0125,'eye'],
+      [0,-.15,-.01, .045,.07,.045,'neck'],
+      [0,-.27,-.03, .21,.08,.11,'body']
+    ];
+    var L=[-.45,.55,.7], ll=Math.hypot(L[0],L[1],L[2]); L=[L[0]/ll,L[1]/ll,L[2]/ll];
+    function color(kind,p,n){
+      if(kind==='eye'){ var dx=p[0]-(p[0]>0?.031:-.031), dy=p[1]-.024; return (dx*dx+dy*dy<.0055*.0055)?[40,30,25]:[245,245,240]; }
+      if(kind==='body') return [70,110,170];
+      if(kind==='head'){
+        if(p[1]>.05 || p[2]<-.035 || (p[1]>.02 && Math.abs(p[0])>.062)) return [92,58,34];
+        if(p[1]>-.066 && p[1]<-.054 && Math.abs(p[0])<.024 && p[2]>0) return [190,90,90];
+        if(p[1]>.043 && p[1]<.05 && Math.abs(p[0])>.015 && Math.abs(p[0])<.05 && p[2]>0) return [92,58,34];
+      }
+      return [236,190,160];
+    }
+    function render(fmm){
+      var f=fmm/1000, D=f*0.50/0.036;
+      var hw=0.024/2/f, hh=0.036/2/f, d=img.data;
+      for(var j=0;j<H;j++){ for(var i=0;i<W;i++){
+        var dx=((i+.5)/W*2-1)*hw, dy=(1-(j+.5)/H*2)*hh, dz=-1;
+        var best=1e9, bp=-1;
+        for(var k=0;k<P.length;k++){
+          var e=P[k];
+          var ox=(0-e[0])/e[3], oy=(0-e[1])/e[4], oz=(D-e[2])/e[5];
+          var vx=dx/e[3], vy=dy/e[4], vz=dz/e[5];
+          var a=vx*vx+vy*vy+vz*vz, b=2*(ox*vx+oy*vy+oz*vz), c=ox*ox+oy*oy+oz*oz-1, disc=b*b-4*a*c;
+          if(disc<0) continue;
+          var tt=(-b-Math.sqrt(disc))/(2*a);
+          if(tt>0&&tt<best){best=tt;bp=k;}
+        }
+        var o=(j*W+i)*4;
+        if(bp<0){ var g=225-j*.15; d[o]=g-25;d[o+1]=g-10;d[o+2]=g;d[o+3]=255; continue; }
+        var e=P[bp], px=dx*best, py=dy*best, pz=D+dz*best;
+        var nx=(px-e[0])/(e[3]*e[3]), ny=(py-e[1])/(e[4]*e[4]), nz=(pz-e[2])/(e[5]*e[5]), nl=Math.hypot(nx,ny,nz);
+        nx/=nl;ny/=nl;nz/=nl;
+        var lam=Math.max(0,nx*L[0]+ny*L[1]+nz*L[2]), sh=.38+.68*lam;
+        var c0=color(e[6],[px,py,pz],[nx,ny,nz]);
+        d[o]=Math.min(255,c0[0]*sh);d[o+1]=Math.min(255,c0[1]*sh);d[o+2]=Math.min(255,c0[2]*sh);d[o+3]=255;
+      }}
+      ctx.putImageData(img,0,0);
+      return D;
+    }
+    function upd(){
+      var fmm=FLS[$('faceR').value], D=render(fmm);
+      $('faceO').textContent=fmm+' мм';
+      $('faceD').textContent=D<1?Math.round(D*100)+' см':D.toFixed(1).replace('.',',')+' м';
+      $('faceX').textContent='≈ '+Math.round(fmm/1.5)+' мм на объективе';
+      var big=((D+.006)/(D-.114)-1)*100;
+      $('faceN').textContent=Math.round(big)+' %';
+      $('faceT').textContent=TYPES[fmm];
+    }
+    $('faceR').addEventListener('input',upd); upd();
+  })();
+
+  // Side TOC
+  (function(){
+    var list=$('tocList'); if(!list) return;
+    var items=[], subs=[];
+    document.querySelectorAll('.hero .chip').forEach(function(ch){
+      var id=ch.getAttribute('href').slice(1), sec=document.getElementById(id); if(!sec) return;
+      var dot=ch.querySelector('.dot'), acc=dot?dot.style.background:'';
+      var num=(sec.querySelector('.sec-num')||{}).textContent||'';
+      var li=document.createElement('li'); li.style.setProperty('--acc',acc);
+      li.innerHTML='<a href="#'+id+'"><span class="n">'+num+'</span><span>'+ch.textContent.trim()+'</span></a>';
+      var h3s=sec.querySelectorAll('h3'), sub=[];
+      if(h3s.length){
+        var ol=document.createElement('ol');
+        h3s.forEach(function(h,k){
+          if(!h.id) h.id=id+'-'+(k+1);
+          var sli=document.createElement('li'); sli.innerHTML='<a href="#'+h.id+'">'+h.textContent.replace(/^\d+\.\s*/,'')+'</a>';
+          ol.appendChild(sli); sub.push({el:h,li:sli});
+        });
+        li.appendChild(ol);
+      }
+      list.appendChild(li); items.push({el:sec,li:li,sub:sub});
+    });
+    var ext=document.createElement('li'); ext.innerHTML='<a href="https://folio.fold-core.ru/a/bernhard/simulyatsii-plenki-fujifilm-x-s10-kejiswf8/" style="margin-top:10px;border-top:1px solid var(--line);border-radius:0;padding-top:12px"><span class="n">↗</span><span>Симуляции плёнки X-S10</span></a>'; list.appendChild(ext);
+    var ticking=false;
+    function onScroll(){
+      ticking=false;
+      var y=120, cur=null;
+      items.forEach(function(it){ if(it.el.getBoundingClientRect().top<y) cur=it; });
+      items.forEach(function(it){ it.li.classList.toggle('active',it===cur); });
+      if(cur){
+        var cs=null; cur.sub.forEach(function(s){ s.li.classList.remove('cur'); if(s.el.getBoundingClientRect().top<y) cs=s; });
+        if(cs) cs.li.classList.add('cur');
+        var a=cur.li.querySelector('a'), toc=$('toc');
+        var r=a.getBoundingClientRect(), tr=toc.getBoundingClientRect();
+        if(r.top<tr.top+30||r.bottom>tr.bottom-30) toc.scrollTop+=r.top-tr.top-60;
+      }
+    }
+    window.addEventListener('scroll',function(){ if(!ticking){ticking=true;setTimeout(onScroll,60);} },{passive:true});
+    onScroll();
+  })();
+  // Focal slider
+  var FL=[17,24,35,50,70,100,135,200,300,500,1000,2000];
+  var fImg=$('focalImg'), fRead=$('focalRead'), focalR=$('focalR');
+  FL.forEach(function(m){var i=new Image();i.src='img/focal-'+m+'.jpg';});
+  function upF(){
+    var m=FL[focalR.value];
+    fImg.src='img/focal-'+m+'.jpg';
+    var aov=2*Math.atan(22.3/(2*m))*180/Math.PI;
+    var a=aov>=10?Math.round(aov):aov.toFixed(1).replace('.',',');
+    fRead.innerHTML=m+' мм<small>≈ '+Math.round(m*1.6)+' мм экв. · угол '+a+'°</small>';
+  }
+  focalR.addEventListener('input',upF); upF();
+})();
+</script>
+</body>
+</html>
