@@ -20,7 +20,6 @@
       }
       list.appendChild(li); items.push({el:sec,li:li,sub:sub});
     });
-    var ext=document.createElement('li'); ext.innerHTML='<a href="{{url:xs10}}" style="margin-top:10px;border-top:1px solid var(--line);border-radius:0;padding-top:12px"><span class="n">↗</span><span>Справочник X-S10</span></a>'; list.appendChild(ext);
     var ticking=false;
     function onScroll(){
       ticking=false;

@@ -9,7 +9,7 @@ class RealPagesTest(unittest.TestCase):
     def test_all_pages_check_and_render(self):
         pages = list_pages(ROOT)
         self.assertIn('photo-basics', pages)
-        self.assertIn('fujisims', pages)
+        self.assertIn('xs10', pages)
         for name in pages:
             with self.subTest(page=name):
                 self.assertEqual(errors(check_page(name, ROOT)), [])
